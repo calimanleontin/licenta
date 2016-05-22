@@ -25,6 +25,7 @@
 
 Route::get('/shop',['as' => 'shop', 'uses' => 'ProductController@index']);
 Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/home',['as' => 'home', 'uses' => 'HomeController@index']);
 
 
 Route::group(['middleware' => ['web']], function () {

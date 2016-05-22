@@ -37,6 +37,6 @@ class Profile extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('profiles');
     }
 }

@@ -90,7 +90,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->is_admin();
     }
 
-
+    /**
+     * @return bool
+     */
     public function can_create_product()
     {
         if($this->is_admin() || $this->is_moderator())
@@ -98,9 +100,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return false;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function profile()
     {
         return $this->hasOne('App\Profiles');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function hero()
+    {
+        return $this->hasOne('App\Hero');
     }
 
 }

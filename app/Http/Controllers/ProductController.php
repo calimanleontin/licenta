@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         $products = Products::where('active',1)->paginate(9);
         $categories = Categories::all();
-        return view('home')
+        return view('home-shop')
             ->withProducts($products)
             ->withCategories($categories);
     }
