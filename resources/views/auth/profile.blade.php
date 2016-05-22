@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app-shop')
 @section('title')
         <img src="../images/users/{{$user->profile()->first()->picture}}", alt='{{$user->name}}', class = 'img-responsive user-image'>
         {{ $user->name }}

@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app-shop')
 @section('title')
     Edit
 @endsection
