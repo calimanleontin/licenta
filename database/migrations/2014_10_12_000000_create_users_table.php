@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('dictionary');
             $table->string('image');
+            $table->bigInteger('money')->unsigned()->default(2000);
+            $table->string('reference');
             $table->timestamps();
         });
     }
