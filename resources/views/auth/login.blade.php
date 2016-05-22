@@ -1,5 +1,4 @@
 @extends('app')
-
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -7,16 +6,6 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Login</div>
 				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
 
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -49,7 +38,6 @@
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Login</button>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
 							</div>
 						</div>
 					</form>
@@ -58,4 +46,26 @@
 		</div>
 	</div>
 </div>
+
+{{--@if (Auth::guest())--}}
+		{{--<a href="{{ url('/auth/login') }}">Login</a>--}}
+		{{--<a href="{{ url('/auth/register') }}">Register</a>--}}
+{{--@else--}}
+{{--{{Auth::user()->name}}--}}
+	{{--@endif--}}
+
+@endsection
+@section('category-title')
+	Categories
+@endsection
+@section('category-content')
+	@if(!empty($categories))
+		<ul class="list-group">
+			@foreach($categories as $category)
+				<a href = '/category/{{$category->slug}}'><li class="list-group-item">{{$category->title}} </li></a>
+			@endforeach
+		</ul>
+		@else
+		There are no categories!
+	@endif
 @endsection

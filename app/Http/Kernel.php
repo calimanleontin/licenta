@@ -27,6 +27,21 @@ class Kernel extends HttpKernel {
 		'auth' => 'App\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
+		'web' => [
+			'\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
+			'\Illuminate\Session\Middleware\StartSession',
+			'\Illuminate\View\Middleware\ShareErrorsFromSession',
+			'\App\Http\Middleware\VerifyCsrfToken',
+		],
+
 	];
+
+	protected $middlewareGroups = [
+
+		'api' => [
+			'throttle:60,1',
+		],
+	];
+
 
 }

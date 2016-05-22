@@ -1,5 +1,4 @@
 @extends('app')
-
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -24,14 +23,23 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Name</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								@if(!empty($name))
+								<input type="text" class="form-control" name="name" value="{{$name}}">
+									@else
+								<input type="text" class="form-control" name="name" >
+								@endif
+
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								@if(!empty($email))
+									<input type="email" class="form-control" name="email" value="{{$email}}">
+								@else
+									<input type="email" class="form-control" name="email" >
+								@endif
 							</div>
 						</div>
 
@@ -62,4 +70,19 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('category-title')
+	Categories
+@endsection
+@section('category-content')
+	@if(!empty($categories))
+		<ul class="list-group">
+			@foreach($categories as $category)
+				<a href = '/category/{{$category->slug}}'><li class="list-group-item">{{$category->title}} </li></a>
+			@endforeach
+		</ul>
+	@else
+		There are no categories!
+	@endif
 @endsection
