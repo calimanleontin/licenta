@@ -90,10 +90,9 @@ class ProductController extends Controller
         return view('product.edit')->withProduct($product)->withCategories($categories);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $user = $request->user();
-        $id = $request->input('id');
         $product = Products::where('id',$id)->first();
         if($user->id != $product->author_id and $user->is_admin() == false and $user->is_moderator() == false)
             return redirect('/')->witheErrors('You have not sufficient permissions ');

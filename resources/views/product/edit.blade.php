@@ -8,10 +8,8 @@
 @section('content')
 
 
-    {!! Form::open(array('url' => '/update/product', 'method'=>'POST', 'files'=>true)) !!}
+    {!! Form::open(array('url' => '/update/product/'.$product->id , 'method'=>'POST', 'files'=>true)) !!}
     {!! Form::token() !!}
-
-    {{ Form::hidden('id', $product->id) }}
 
     <div class="form-group">
         {!! Form::label('name','Name') !!}
