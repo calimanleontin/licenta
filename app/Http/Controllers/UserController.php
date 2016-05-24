@@ -161,8 +161,6 @@ class UserController extends Controller
         $profile->lastName = $request->input('lastName');
         $profile->birthday = $request->input('birthday');
         $profile->telephoneNumber = $request->input('telephone');
-//        $profile->about = $request->input('about');
-
 
         $destinationPath = 'images/users';
         $extension = Input::file('image')->getClientOriginalName();

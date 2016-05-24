@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
+    /**
+     * @return mixed
+     */
     public function index()
     {
         $products = Products::where('active',1)->paginate(9);
@@ -22,6 +25,11 @@ class ProductController extends Controller
             ->withProducts($products)
             ->withCategories($categories);
     }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function create(Request $request)
     {
         $categories = Categories::all();
@@ -30,6 +38,10 @@ class ProductController extends Controller
         return redirect('/')->withErrors('You have not sufficient permissions to add a new product');
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function store(Request $request)
     {
         $categories = $request->input('category');
@@ -67,6 +79,10 @@ class ProductController extends Controller
         return redirect('/')->withMessage('New product created');
     }
 
+    /**
+     * @param $slug
+     * @return mixed
+     */
     public function show($slug)
     {
         $product = Products::where('slug',$slug)->first();
@@ -127,9 +143,12 @@ class ProductController extends Controller
         }
         $product->save();
         return redirect('/product/'.$product->slug)->withMessage('Product updated successfully');
-
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function search(Request $request)
     {
         $term = $request->get('q');
@@ -140,6 +159,11 @@ class ProductController extends Controller
             ->withTerm($term);
 
     }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function sort(Request $request)
     {
         $criterion = $request->get('criterion');

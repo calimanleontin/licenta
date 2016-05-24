@@ -12,6 +12,10 @@ use App\Http\Controllers\Controller;
 
 class CommentController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function store(Request $request)
     {
         $product_id = $request->input('product_id');
@@ -27,6 +31,11 @@ class CommentController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return $this
+     */
     public function delete(Request $request, $id)
     {
         $user = $request->user();

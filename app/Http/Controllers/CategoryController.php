@@ -11,6 +11,10 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return $this
+     */
     public function create(Request $request)
     {
         $categories = Categories::all();
@@ -21,6 +25,10 @@ class CategoryController extends Controller
             ->withErrors('You have not sufficient permission to create a new category');
     }
 
+    /**
+     * @param Request $request
+     * @return $this
+     */
     public function store(Request $request)
     {
         $duplicate = Categories::where('title',$request->input('title'))->first();
@@ -38,6 +46,10 @@ class CategoryController extends Controller
             return redirect('/category/create')->withErrors('Name already used');
     }
 
+    /**
+     * @param $slug
+     * @return $this
+     */
     public function show($slug)
     {
         /**
