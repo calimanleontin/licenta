@@ -33,7 +33,11 @@
                     <div class="panel-title  title">
                         <a href="/product/{{$product->slug}}">{{$product->name}} </a>
                         <a href ='/product/{{$product->slug}}'>
+                            @if(!empty($product->image))
                             <img src="../images/catalog/{{$product->image}}"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
+                            @else
+                                <img src="../images/catalog/product.jpg"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
+                            @endif
                         </a>
                         <div class="down">
 
@@ -43,7 +47,7 @@
                                 </strong>
                                 {{$product->price}}
                             </p>
-                            <p>
+                            <p class="quantity">
                                 <strong>
                                     Quantity:
                                 </strong>

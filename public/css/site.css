@@ -46,6 +46,7 @@
 }
 .cart
 {
+    margin-bottom:10px;
     bottom:0px;
     position:absolute;
     text-align:center;
@@ -73,4 +74,7 @@
 .title{
     text-align: center;
     height: 10px;
+}
+.quantity{
+
 }
