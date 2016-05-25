@@ -22,7 +22,7 @@ class CreateStatCostsTable extends Migration {
 			$table->integer('intelligence_cost')->unsigned()->default(10);
 			$table->integer('luck_cost')->unsigned()->default(10);
 
-			$table->integer('stats_id')->unsigned()->default(0);
+			$table->integer('stats_id')->unsigned()->nullabel();
 			$table->foreign('stats_id')
 				->references('id')
 				->on('stats')

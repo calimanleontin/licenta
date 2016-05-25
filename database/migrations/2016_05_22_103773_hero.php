@@ -15,35 +15,35 @@ class Hero extends Migration {
 		Schema::create('hero', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('level')->unsigned()->default(1);
-			$table->integer('experience')->unsigned()->default(0);
-			$table->integer('busy')->default(0);
+			$table->integer('experience')->unsigned()->nullable();
+			$table->integer('busy')->nullable();
 			$table->string('name');
 			$table->string('sex');
 			$table->string('image');
 
-			$table->integer('user_id')->unsigned()->default(0);
+			$table->integer('user_id')->unsigned()->nullable();
 			$table->foreign('user_id')
 				->references('id')
 				->on('users')
 				->onDelete('cascade');
 
-			$table->integer('stats_id')->unsigned()->default(0);
+			$table->integer('stats_id')->unsigned()->nullable();
 			$table->foreign('stats_id')
 				->references('id')
 				->on('stats')
 				->onDelete('cascade');
 
-			$table->integer('intern_places_id')->unsigned()->default(0);
+			$table->integer('intern_places_id')->unsigned()->nullable();
 			$table->foreign('intern_places_id')
 				->references('id')
 				->on('intern_places');
 
-			$table->integer('outside_places_id')->unsigned()->default(0);
+			$table->integer('outside_places_id')->unsigned()->nullable();
 			$table->foreign('outside_places_id')
 				->references('id')
 				->on('outside_places');
 
-			$table->integer('championship_id')->unsigned()->default(0);
+			$table->integer('championship_id')->unsigned()->nullable();
 			$table->foreign('championship_id')
 				->references('id')
 				->on('championship');
