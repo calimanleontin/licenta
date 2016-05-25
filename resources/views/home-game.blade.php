@@ -7,8 +7,13 @@
 
 @section('content')
     <div class="col-md-12">
-        <div class="col-md-3 bordered">
-                <img src="/img/champions/{{ $hero->image }}">
+        <div class="col-md-3">
+            @if($hero->sex == 'masc')
+                <img src="../images/champions/riven.jpg" class="hero-avatar">
+                @else
+                <img src="../images/champions/darius.png" class="hero-avatar">
+
+            @endif
         </div>
     </div>
 

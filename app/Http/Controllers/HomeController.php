@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller {
 
 	/*
@@ -18,7 +20,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-//		$this->middleware('auth');
+		$this->middleware('auth');
 	}
 
 	/**
@@ -26,6 +28,11 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home-game');
+		if(Auth::guest())
+			return view('auth.register');
+		$user = Auth::user();
+		return view('home-game')
+			->with('user', $user)
+			->with('hero', $user->hero);
 	}
 }

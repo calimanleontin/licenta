@@ -81,5 +81,8 @@
 
 .bordered{
     border-style: solid;
+}
 
+.hero-avatar{
+    max-width:200px;
 }

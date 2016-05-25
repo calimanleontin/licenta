@@ -65,7 +65,7 @@ class HeroController extends Controller {
 			$stats_cost->stats_id = $stats->id;
 			$hero->stats_id = $stats->id;
 			$hero->save();
-			return view('home-game')
+			return redirect('/')
 				->with('user', $user)
 				->with('hero', $hero);
 		}
