@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * @return mixed
      */
@@ -157,7 +162,6 @@ class ProductController extends Controller
         return view('home-shop')->withProducts($products)
             ->withCategories($categories)
             ->withTerm($term);
-
     }
 
     /**
@@ -170,11 +174,10 @@ class ProductController extends Controller
         $order = $request->get('order');
         $categories = Categories::all();
         $products = Products::where('active',1)->orderBy($criterion,$order)->paginate(9);
-        return view('home')->withProducts($products)
+        return view('home-shop')->withProducts($products)
             ->withTitle('Sort results')
             ->withCategories($categories)
             ->withOrder($order)
             ->withCriterion($criterion);
     }
-
 }

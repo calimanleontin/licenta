@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
+use App\User;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
@@ -26,6 +27,12 @@ class CreateUsersTable extends Migration
             $table->string('reference');
             $table->timestamps();
         });
+
+        $user = new User();
+        $user->name = 'admin';
+        $user->email = 'calimanleontin@gmail.com';
+        $user->password = \Hash::make('admin');
+        $user->save();
     }
 
     /**

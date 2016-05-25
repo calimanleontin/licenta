@@ -11,7 +11,12 @@ class Stats extends Model {
      */
     public function hero()
     {
-        return $this->belongsTo('App]\Hero');
+        return $this->belongsTo('App\Hero');
+    }
+
+    public function stats_costs()
+    {
+        return $this->hasOne('App\Stats');
     }
 
 }
