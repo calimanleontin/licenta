@@ -27,20 +27,6 @@ class Categories extends Migration
 
         });
 
-        Schema::create('categories_products', function(Blueprint $table)
-        {
-            $table->integer('products_id')->unsigned()->index();
-            $table->foreign('products_id')
-                ->references('id')
-                ->on('products')
-                ->onDelete('cascade');
-            $table->integer('categories_id')->unsigned()->index();
-            $table->foreign('categories_id')
-                ->references('id')
-                ->on('categories')
-                ->onDelete('cascade');
-            $table->timestamps();
-        });
 
 
 }
@@ -52,8 +38,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::drop('categories_products');
         Schema::drop('categories');
-
     }
 }

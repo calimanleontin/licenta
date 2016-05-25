@@ -31,6 +31,27 @@ class Products extends Migration
             $table->bigInteger('dislikes')->unsigned()->default(0);
             $table->bigInteger('noComments')->unsigned()->default(0);
             $table->string('image');
+
+            $table->integer('hero_id')->unsigned()->default(0);
+            $table->foreign('hero_id')
+                ->references('id')
+                ->on('hero');
+            $table->timestamps();
+        });
+
+
+        Schema::create('categories_products', function(Blueprint $table)
+        {
+            $table->integer('products_id')->unsigned()->index();
+            $table->foreign('products_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('cascade');
+            $table->integer('categories_id')->unsigned()->index();
+            $table->foreign('categories_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
             $table->timestamps();
         });
 
@@ -44,6 +65,7 @@ class Products extends Migration
      */
     public function down()
     {
+        Schema::drop('categories_products');
         Schema::drop('products');
     }
 }
