@@ -16,7 +16,7 @@ class Stats extends Model {
 
     public function stats_costs()
     {
-        return $this->hasOne('App\Stats');
+        return $this->hasOne('App\StatsCost');
     }
 
 }
