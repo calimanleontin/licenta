@@ -17,6 +17,12 @@ class CreateLevelsTable extends Migration {
 			$table->increments('id');
 			$table->integer('number')->unsigned();
 			$table->bigInteger('max_experience')->unsigned();
+
+			$table->integer('user_id')->unsigned()->default(0);
+			$table->foreign('user_id')
+				->references('id')
+				->on('users')
+				->onDelete('cascade');
 			$table->timestamps();
 		});
 		for($i=1; $i<=99; $i++)

@@ -35,14 +35,21 @@ class Hero extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function intern_places()
+    public function internal_places()
     {
         return $this->belongsTo('App\InternalPlaces');
     }
 
-    public function extern_places()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function external_places()
     {
         return $this->belongsTo('App\ExternalPlaces');
     }
 
+    public function level()
+    {
+        return $this->hasOne('App\Levels');
+    }
 }
