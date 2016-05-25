@@ -24,4 +24,25 @@ class Hero extends Model {
         return $this->hasOne('App\Stats');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function championship()
+    {
+        return $this->belongsTo('App\Championship');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function intern_places()
+    {
+        return $this->belongsTo('App\InternalPlaces');
+    }
+
+    public function extern_places()
+    {
+        return $this->belongsTo('App\ExternalPlaces');
+    }
+
 }

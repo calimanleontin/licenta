@@ -32,6 +32,21 @@ class Hero extends Migration {
 				->on('stats')
 				->onDelete('cascade');
 
+			$table->integer('intern_places_id')->unsigned()->default(0);
+			$table->foreign('intern_places_id')
+				->references('id')
+				->on('intern_places');
+
+			$table->integer('outside_places_id')->unsigned()->default(0);
+			$table->foreign('outside_places_id')
+				->references('id')
+				->on('outside_places');
+
+			$table->integer('championship_id')->unsigned()->default(0);
+			$table->foreign('championship_id')
+				->references('id')
+				->on('championship');
+
 			$table->timestamps();
 
 		});
