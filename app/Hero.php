@@ -4,20 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hero extends Model {
 
-    public $attributes = [
-        'level',
-        'experience',
-        'busy',
-        'name',
-        'sex',
-        'image',
-        'user_id',
-        'stats_id',
-        'intern_places_id',
-        'outside_places_id',
-        'championship_id',
-    ];
-
     protected $casts = [
         'user_id' => 'integer',
     ];

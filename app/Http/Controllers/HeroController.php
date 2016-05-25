@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Hero;
 use App\Stats;
 use App\Http\Controllers\Controller;
+use App\StatsCost;
 use \Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,9 @@ class HeroController extends Controller {
 			$hero->sex = $sex;
 			$stats = new Stats();
 			$stats->save();
+			$stats_cost= new StatsCost();
+			$stats_cost->stats_id = $stats->id;
+			$hero->stats_id = $stats->id;
 			$hero->save();
 			return view('home-game')
 				->with('user', $user)
