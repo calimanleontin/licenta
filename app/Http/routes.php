@@ -79,8 +79,8 @@ Route::group(['middleware' => ['web']], function () {
 	});
 	Route::get('/to-cart/{id}','CartController@add')->where('id', '[0-9]+');
 
-	Route::Get('/product/{slug}','ProductController@show');
+	Route::get('/product/{slug}','ProductController@show');
 	Route::get('/category/{slug}','CategoryController@show');
-
-
+	Route::get('/create-hero', 'HeroController@index');
+	Route::post('/hero/create', 'HeroController@create');
 });

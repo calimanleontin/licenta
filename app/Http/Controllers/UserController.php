@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Categories;
 use App\Comments;
+use App\Hero;
 use App\Profiles;
 use App\User;
 use Illuminate\Support\Facades\Session;
@@ -44,18 +45,24 @@ class UserController extends Controller
         $duplicate_name = User::where('name',$name)->first();
         $duplicate_email = User::where('email',$email)->first();
         if($duplicate_name != null)
+        {
             return redirect('/auth/register')->withErrors('Name already used');
+        }
         if($duplicate_email != null)
+        {
             return redirect('/auth/register')->withErrors('Email already used');
+        }
         $password = $request->input('password');
         if($name == '' || $email == '' || $password == '')
+        {
             return view('auth.register')->withName($name)->withEmail($email)->withErrors('Please fill all the fields');
+        }
         $password_confirmation = $request->input('password_confirmation');
         if($password != $password_confirmation)
+        {
             return view('auth.register')->withName($name)->withEmail($email)->withErrors('The passwords must coincide');
+        }
         $user = new User();
-//        var_dump($user);
-//        die();
         $user->name = $name;
         $user->email = $email;
         $user->password = bcrypt($password);
@@ -66,7 +73,7 @@ class UserController extends Controller
         $cart = new Cart();
         $cart->setOwnerId($user->id);
         Session::put('cart',$cart);
-        return  redirect('/')->withMessage('Registered successfully');
+        return  redirect('/create-hero')->withMessage('Registered successfully');
     }
 
     /**

@@ -4,9 +4,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hero extends Model {
 
-	protected $table = 'hero';
+    public $attributes = [
+        'level',
+        'experience',
+        'busy',
+        'name',
+        'sex',
+        'image',
+        'user_id',
+        'stats_id',
+        'intern_places_id',
+        'outside_places_id',
+        'championship_id',
+    ];
 
-    protected $attributes = [];
+    protected $casts = [
+        'user_id' => 'integer',
+    ];
+
+	protected $table = 'hero';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

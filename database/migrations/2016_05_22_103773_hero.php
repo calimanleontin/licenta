@@ -18,7 +18,8 @@ class Hero extends Migration {
 			$table->integer('experience')->unsigned()->default(0);
 			$table->integer('busy')->default(0);
 			$table->string('name');
-			$table->tinyInteger('sex');
+			$table->string('sex');
+			$table->string('image');
 
 			$table->integer('user_id')->unsigned()->default(0);
 			$table->foreign('user_id')
