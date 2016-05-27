@@ -48,5 +48,10 @@ class Products extends Model
         $product->save();
     }
 
+    public function hero()
+    {
+        return $this->belongsTo('App\Hero');
+    }
+
 
 }

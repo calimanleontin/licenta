@@ -25,6 +25,9 @@
     float:left;
     margin-bottom:100px;
 }
+.left-title{
+    float:left;
+}
 .left-search
 {
     max-width:100px;

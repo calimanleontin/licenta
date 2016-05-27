@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Comments;
+use App\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Products;
+use \Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -179,5 +181,37 @@ class ProductController extends Controller
             ->withCategories($categories)
             ->withOrder($order)
             ->withCriterion($criterion);
+    }
+
+    public function delete($id)
+    {
+        if(Auth::guest())
+            return redirect('/auth/login')->withErrors('You are not signed in');
+
+        $user = Auth::user();
+        if($user->is_admin() == false)
+            return redirect('/')->withErrors('You have not rights');
+
+        $product = Products::find($id);
+        if(empty($product))
+            return redirect('/backend/products')
+                ->withErrors('404');
+
+        if($product->hero)
+            return redirect('/backend/products')
+                ->withErrors('403');
+
+        $order = Orders::where('product_id', $id)->first();
+        if($order)
+        {
+            return redirect('/backend/products')
+                ->withErrors('403');
+        }
+
+
+        $product->delete();
+
+        return redirect('/backend/products')
+            ->withMessage('Product deleted');
     }
 }

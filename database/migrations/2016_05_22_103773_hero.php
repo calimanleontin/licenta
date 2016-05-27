@@ -17,6 +17,7 @@ class Hero extends Migration {
 			$table->integer('level')->unsigned()->default(1);
 			$table->integer('experience')->unsigned()->nullable();
 			$table->integer('busy')->nullable();
+			$table->string('location');
 			$table->string('name');
 			$table->string('sex');
 			$table->string('image');

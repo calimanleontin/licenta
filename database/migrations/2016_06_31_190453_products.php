@@ -32,7 +32,7 @@ class Products extends Migration
             $table->bigInteger('noComments')->unsigned()->default(0);
             $table->string('image');
 
-            $table->integer('hero_id')->unsigned()->default(0);
+            $table->integer('hero_id')->unsigned()->nullable();
             $table->foreign('hero_id')
                 ->references('id')
                 ->on('hero');

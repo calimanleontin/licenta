@@ -50,8 +50,19 @@ class Hero extends Model {
         return $this->belongsTo('App\ExternalPlaces');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function level()
     {
         return $this->hasOne('App\Levels');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany('App\Products');
     }
 }

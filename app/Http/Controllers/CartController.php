@@ -25,8 +25,12 @@ class CartController extends Controller
         $products = array();
         $quantities = array();
         foreach ($cart->getCart() as $key =>$item) {
-            $products[] = Products::where('id',$key)->first();
-            $quantities[] = $item;
+            $product = Products::where('id',$key)->first();
+            if($product != null)
+            {
+                $products[] = $product;
+                $quantities[] = $item;
+            }
         }
         $categories = Categories::all();
 
@@ -185,7 +189,6 @@ class CartController extends Controller
     public function history(Request $request)
     {
         $user = $request->user();
-        $categories = Categories::all();
         $orders = Orders::where('author_id',$user->id)->orderBy('created_at','asc')->paginate(10);
         for($i=1;$i<count($orders);$i++)
         {
@@ -193,7 +196,6 @@ class CartController extends Controller
                 unset($orders[$i-1]);
         }
         return view('cart.history')
-            ->withCategories($categories)
             ->withOrders($orders);
 
     }

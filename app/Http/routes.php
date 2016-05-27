@@ -53,6 +53,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::group(['middleware' => ['auth']], function()
 	{
 		Route::get('category/create','CategoryController@create');
+		Route::get('category/edit/{id}','CategoryController@edit');
+		Route::post('category/update','CategoryController@update');
 		Route::post('category/store','CategoryController@store');
 		Route::get('/product/create','ProductController@create');
 		Route::post('/product/store','ProductController@store');
@@ -71,6 +73,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/user-profile','UserController@profile');
 		Route::post('/profile/update','UserController@update_profile');
 		Route::get('/edit/product/{id}','ProductController@edit');
+		Route::get('/product/delete/{id}', 'ProductController@delete');
 		Route::post('/update/product/{id}','ProductController@update');
 
 		Route::get('order-details/{id}','CartController@order_details');
@@ -81,6 +84,15 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/product/{slug}','ProductController@show');
 	Route::get('/category/{slug}','CategoryController@show');
+	Route::get('/category/delete/{id}', 'CategoryController@delete');
 	Route::get('/create-hero', 'HeroController@index');
 	Route::post('/hero/create', 'HeroController@create');
+
+
+	Route::get('/backend', 'BackendController@index');
+	Route::get('/backend/products', 'BackendController@products');
+	Route::get('/backend/categories', 'BackendController@categories');
+	Route::get('/backend/families', 'BackendController@family');
+	Route::get('/backend/heroes', 'BackendController@heroes');
+
 });
