@@ -1,7 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Categories;
+use App\Championships;
 use App\Hero;
+use App\HeroesTypes;
 use App\Http\Requests;
 use App\Products;
 use Illuminate\Support\Facades\Auth;
@@ -10,37 +12,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class BackendController extends Controller {
-
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
-
-	/**
-	 * @return $this
-	 */
-	public function checkIfAdmin()
-	{
-		if (Auth::guest()) {
-			return view('auth.register')
-				->with('admin', true);
-		} else {
-			if (Auth::user()->is_admin() == false) {
-				Auth::logout();
-				return view('auth.register')
-					->with('admin', true);
-			}
-		}
-	}
-
 	/**
 	 * @return $this
 	 */
 	public function index()
 	{
-		$this->checkIfAdmin();
-
 		return view('backend.index')
 			->with('page', 'home');
 	}
@@ -50,7 +26,6 @@ class BackendController extends Controller {
 	 */
 	public function products()
 	{
-		$this->checkIfAdmin();
 		$products = Products::all();
 		return view('backend.products')
 			->withProducts($products );
@@ -61,18 +36,36 @@ class BackendController extends Controller {
 	 */
 	public function categories()
 	{
-		$this->checkIfAdmin();
 		$categories = Categories::all();
 		return view('backend.categories')
 			->withCategories($categories );
 	}
 
+	/**
+	 * @return mixed
+	 */
 	public function heroes()
 	{
-		$this->checkIfAdmin();
 		$heroes = Hero::paginate(20);
 		return view('backend.heroes')
 			->withHeroes($heroes );
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function classes()
+	{
+		$classes = HeroesTypes::paginate(20);
+		return view('backend.classes')
+			->with('classes', $classes);
+	}
+
+	public function championships()
+	{
+		$championships = Championships::paginate(20);
+		return view('backend.championships')
+			->with('championships', $championships);
 	}
 
 	public function create()

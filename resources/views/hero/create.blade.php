@@ -1,4 +1,4 @@
-@extends('app-shop')
+@extends('app-game')
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,7 +17,6 @@
                                     @else
                                         <input type="text" class="form-control" name="name" >
                                     @endif
-
                                 </div>
                             </div>
 
@@ -37,6 +36,17 @@
                                             <option value="fem">Fem</option>
                                         </select>
                                     @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Class:</label>
+                                <div class="col-md-6">
+                                        <select required name = 'class' class="form-control">
+                                            @foreach($classes as $class)
+                                                <option value="{{ $class->id }}" >{{$class->name}}</option>
+                                            @endforeach
+                                        </select>
                                 </div>
                             </div>
 

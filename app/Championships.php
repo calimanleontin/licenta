@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Championships extends Model {
 
-	protected $table = 'championships';
+	protected $table = 'championship';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

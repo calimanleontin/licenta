@@ -18,11 +18,18 @@ class CreateChampionshipsTable extends Migration {
 			$table->string('name');
 			$table->integer('reward');
 			$table->integer('level_required')->unsigned()->default(1);
+			//if it begun
+			$table->integer('started');
+
+			//if it is finished or not
+			$table->integer('active');
+
 
 			// how much cost to sign in
 			$table->integer('ticket');
 
 			$table->date('start_date');
+			$table->string('image');
 
 			//max experiente the first place gets
 			$table->integer('max_experience')->unsigned();

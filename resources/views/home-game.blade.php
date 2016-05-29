@@ -11,7 +11,7 @@
             @if($hero->sex == 'masc')
                 <img src="../images/champions/riven.jpg" class="hero-avatar">
                 @else
-                <img src="../images/champions/darius.png" class="hero-avatar">
+                <img src="../images/champions/darius.jpg" class="hero-avatar">
 
             @endif
         </div>

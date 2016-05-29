@@ -52,12 +52,6 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function()
 	{
-		Route::get('category/create','CategoryController@create');
-		Route::get('category/edit/{id}','CategoryController@edit');
-		Route::post('category/update','CategoryController@update');
-		Route::post('category/store','CategoryController@store');
-		Route::get('/product/create','ProductController@create');
-		Route::post('/product/store','ProductController@store');
 		Route::get('/cart/index','CartController@index');
 		Route::get('/cart/increase/{id}','CartController@increase');
 		Route::get('/cart/decrease/{id}','CartController@decrease');
@@ -72,27 +66,63 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/edit-profile','UserController@edit_profile');
 		Route::get('/user-profile','UserController@profile');
 		Route::post('/profile/update','UserController@update_profile');
-		Route::get('/edit/product/{id}','ProductController@edit');
-		Route::get('/product/delete/{id}', 'ProductController@delete');
-		Route::post('/update/product/{id}','ProductController@update');
 
 		Route::get('order-details/{id}','CartController@order_details');
+		Route::get('/to-cart/{id}','CartController@add')->where('id', '[0-9]+');
+		Route::get('/product/{slug}','ProductController@show');
+		Route::get('/category/{slug}','CategoryController@show');
 
+		Route::get('/championship/{id}', 'ChampionshipController@show');
 
 	});
-	Route::get('/to-cart/{id}','CartController@add')->where('id', '[0-9]+');
 
-	Route::get('/product/{slug}','ProductController@show');
-	Route::get('/category/{slug}','CategoryController@show');
-	Route::get('/category/delete/{id}', 'CategoryController@delete');
-	Route::get('/create-hero', 'HeroController@index');
-	Route::post('/hero/create', 'HeroController@create');
 
+});
+
+Route::group(['middleware' => ['admin']], function() {
+
+	Route::get('/edit/product/{id}','ProductController@edit');
+	Route::get('/product/delete/{id}', 'ProductController@delete');
+	Route::post('/update/product/{id}','ProductController@update');
+
+	Route::get('category/create','CategoryController@create');
+	Route::get('category/edit/{id}','CategoryController@edit');
+	Route::post('category/update','CategoryController@update');
+	Route::post('category/store','CategoryController@store');
+	Route::get('/product/create','ProductController@create');
+	Route::post('/product/store','ProductController@store');
 
 	Route::get('/backend', 'BackendController@index');
 	Route::get('/backend/products', 'BackendController@products');
 	Route::get('/backend/categories', 'BackendController@categories');
 	Route::get('/backend/families', 'BackendController@family');
 	Route::get('/backend/heroes', 'BackendController@heroes');
+	Route::get('/backend/championships', 'BackendController@championships');
 
+	Route::get('/class/create', 'HeroesTypesController@create');
+	Route::post('/class/store', 'HeroesTypesController@store');
+	Route::post('/class/update/{id}', 'HeroesTypesController@update');
+	Route::get('/class/edit/{id}', 'HeroesTypesController@edit');
+	Route::get('/class/delete/{id}', 'HeroesTypesController@destroy');
+
+	Route::get('/championship/create', 'ChampionshipController@create');
+	Route::post('/championship/store', 'ChampionshipController@store');
+	Route::get('/championship/{id}', 'ChampionshipController@show');
+	Route::get('/championship/destroy/{id}', 'ChampionshipController@destroy');
+
+	Route::get('/backend/classes', 'BackendController@classes');
+
+	Route::get('/category/delete/{id}', 'CategoryController@delete');
+	Route::get('/create-hero', 'HeroController@index');
+	Route::post('/hero/create', 'HeroController@create');
+
+
+	//todo: delete after use
+
+	Route::get('/training', 'TrainingController@createTrainingPlaces');
+	Route::get('/work', 'TrainingController@createWorkPlaces');
+	Route::get('/inside', 'TrainingController@createInsidePlaces');
+	Route::get('/outside', 'TrainingController@createOutsidePlaces');
+
+	//todo: better hard-code them on a routes or artisan, something
 });

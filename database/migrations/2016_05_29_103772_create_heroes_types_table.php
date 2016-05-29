@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Stats extends Migration {
+class CreateHeroesTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,8 +12,11 @@ class Stats extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('stats', function(Blueprint $table) {
+		Schema::create('heroes_types', function(Blueprint $table)
+		{
 			$table->increments('id');
+			$table->string('name');
+			$table->text('description');
 			$table->integer('strength')->unsigned()->default(1);
 			$table->integer('perception')->unsigned()->default(1);
 			$table->integer('endurance')->unsigned()->default(1);
@@ -21,6 +24,12 @@ class Stats extends Migration {
 			$table->integer('intelligence')->unsigned()->default(1);
 			$table->integer('agility')->unsigned()->default(1);
 			$table->integer('luck')->unsigned()->default(1);
+			$table->string('image')->nullable();
+
+			$table->integer('author_id')->unsigned()->nullable();
+			$table->foreign('author_id')
+				->references('id')
+				->on('users');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +41,7 @@ class Stats extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('stats');
+		Schema::drop('heroes_types');
 	}
 
 }

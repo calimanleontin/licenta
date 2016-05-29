@@ -15,13 +15,15 @@ class Hero extends Migration {
 		Schema::create('hero', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('level')->unsigned()->default(1);
-			$table->integer('experience')->unsigned()->nullable();
+			$table->integer('experience')->unsigned()->default(0);
 			$table->integer('busy')->nullable();
+
+			//where is now
 			$table->string('location');
 			$table->string('name');
 			$table->string('sex');
 			$table->string('image');
-
+			$table->integer('class_id');
 			$table->integer('user_id')->unsigned()->nullable();
 			$table->foreign('user_id')
 				->references('id')
@@ -48,6 +50,11 @@ class Hero extends Migration {
 			$table->foreign('championship_id')
 				->references('id')
 				->on('championship');
+
+			$table->integer('work_id')->unsigned()->nullable();
+			$table->foreign('work_id')
+				->references('id')
+				->on('work');
 
 			$table->timestamps();
 

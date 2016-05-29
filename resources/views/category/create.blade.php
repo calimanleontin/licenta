@@ -1,4 +1,4 @@
-@extends('app-shop')
+@extends('app-game')
 @section('title')
     @if(isset($title) and $title  != null)
         {{ $title }}

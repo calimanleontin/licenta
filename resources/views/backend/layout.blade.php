@@ -2,8 +2,8 @@
 
 
 @section('title')
-    <div class="col-md-5 menu">
-        &nbsp&nbsp&nbsp&nbsp Backend
+    <div class="col-md-3 menu text-center">
+         Backend
     </div>
 @endsection
 @section('title1')
@@ -17,9 +17,8 @@
            <div class="col-md-3 menu">
                <a href="/backend/products"><button class="btn btn-default text-center button-large">Products</button></a>
                <a href="/backend/categories"><button class="btn btn-default text-center button-large">Categories</button></a>
-               <a href="/backend/families"><button class="btn btn-default text-center button-large">Families</button></a>
+               <a href="/backend/classes"><button class="btn btn-default text-center button-large">Classes</button></a>
                <a href="/backend/championships"><button class="btn btn-default text-center button-large">Championships</button></a>
-               <a href="/backend/trainings"><button class="btn btn-default text-center button-large">Trainings</button></a>
                <a href="/backend/heroes"><button class="btn btn-default text-center button-large">Heroes</button></a>
 
            </div>

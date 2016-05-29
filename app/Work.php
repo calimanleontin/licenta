@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class StatsCost extends Model {
+class Work extends Model {
 
-	protected $table = 'stats_costs';
+	//
 
 }

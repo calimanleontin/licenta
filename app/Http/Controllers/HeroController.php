@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\HeroesTypes;
 use App\Http\Requests;
 use App\Hero;
 use App\Stats;
@@ -25,7 +26,8 @@ class HeroController extends Controller {
 				return redirect('/')
 					->withError('You already have a hero');
 			}
-			return view('hero.create');
+			return view('hero.create')
+				->with('classes', HeroesTypes::all());
 		}
 		else
 		{
@@ -59,8 +61,23 @@ class HeroController extends Controller {
 			$hero->user_id = $user->id;
 			$hero->name = $name;
 			$hero->sex = $sex;
+			$hero->location  = 'home';
+			$hero->level = 1;
+			$hero->experience = 0;
+			$hero->busy = 0;
+			$hero->class_id = Input::get('class');
+			$class = HeroesTypes::find($hero->class_id);
+
 			$stats = new Stats();
+			$stats->strength = $class->strength;
+			$stats->perception = $class->perception;
+			$stats->endurance = $class->endurance;
+			$stats->charisma = $class->charisma;
+			$stats->intelligence = $class->intelligence;
+			$stats->agility = $class->agility;
+			$stats->luck = $class->luck;
 			$stats->save();
+
 			$stats_cost= new StatsCost();
 			$stats_cost->stats_id = $stats->id;
 			$hero->stats_id = $stats->id;
