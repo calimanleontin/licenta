@@ -75,6 +75,9 @@ Route::group(['middleware' => ['web']], function () {
 
 		Route::get('/championship/{id}', 'ChampionshipController@show');
 
+
+		Route::get('/product/like/{id}','ProductController@like');
+		Route::get('/product/dislike/{id}','ProductController@dislike');
 	});
 
 });

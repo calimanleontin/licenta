@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Categories;
 use App\Comments;
 use App\Orders;
+use App\ProductsLikes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Products;
-use \Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -64,6 +65,7 @@ class ProductController extends Controller
         $product->price = $price;
         $product->quantity = $request->input('quantity');
         $product->author_id = $user_id;
+        $product->likes = 0;
         $product->slug = str_slug($request->input('name'));
         $product->active = 1;
 
@@ -216,5 +218,113 @@ class ProductController extends Controller
 
         return redirect('/backend/products')
             ->withMessage('Product deleted');
+    }
+
+    /**
+     * @param $id
+     * @return Redirect
+     */
+    public function like($id)
+    {
+        if(\Auth::user() == null)
+            return redirect('/auth/login')->withErrors('You have to log in to like');
+        $product = Products::find($id);
+        if($product == null)
+            return redirect('/')->withErrors('Product does not exist');
+        $user_id = Auth::user()->id;
+        $rating = ProductsLikes::where('user_id',$user_id)->where('product_id',$id)->first();
+        if($rating == null)
+        {
+            $product->likes = 1;
+            $product->save();
+            $rating = new ProductsLikes();
+            $rating->likes = 1;
+            $rating->dislikes = 0;
+            $rating->user_id = $user_id;
+            $rating->product_id = $product->id;
+            $rating->save();
+        }
+        else
+            if($rating->likes == 1)
+            {
+                $product->likes -= 1;
+                $product->save();
+                $rating->likes = 0;
+                $rating->dislikes = 0;
+                $rating->save();
+            }
+            else
+                if($rating->likes == 0)
+                {
+                    if($rating->dislikes == 1)
+                    {
+                        $product->likes += 2;
+                        $product->save();
+                    }
+                    else
+                    {
+                        $product->likes += 1;
+                        $product->save();
+                    }
+                    $rating->likes = 1;
+                    $rating->dislikes = 0;
+                    $rating->save();
+                }
+        $product->save();
+        return redirect('/product/view/'.$product->slug);
+    }
+
+    /**
+     * @param $id
+     * @return Redirect
+     */
+    public function dislike($id)
+    {
+        if(Auth::user() == null)
+            return redirect('/auth/login')->withErrors('You are not logged in');
+        $product = Products::find($id);
+        if($product == null)
+            return redirect('/')->withErrors('Post does not exist');
+        $user_id = Auth::user()->id;
+        $rating = ProductsLikes::where('user_id',$user_id)->where('product_id',$id)->first();
+        if($rating == null)
+        {
+            $product->likes = -1;
+            $product->save();
+            $rating = new ProductsLikes();
+            $rating->user_id = $user_id;
+            $rating->product_id = $product->id;
+            $rating->dislikes = 1;
+            $rating->likes = 0;
+            $rating->save();
+        }
+        else
+            if($rating->dislikes == 1)
+            {
+                $product->likes += 1;
+                $product->save();
+                $rating->likes = 0;
+                $rating->dislikes = 0;
+                $rating->save();
+            }
+            else
+                if($rating->dislikes == 0)
+                {
+                    if($rating->likes == 1)
+                    {
+                        $product->likes -= 2;
+                        $product->save();
+                    }
+                    else
+                    {
+                        $product->likes -= 1;
+                        $product->save();
+                    }
+                    $rating->likes = 0;
+                    $rating->dislikes = 1;
+                    $rating->save();
+                }
+        $product->save();
+        return redirect('/product/view/'.$product->slug);
     }
 }

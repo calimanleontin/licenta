@@ -24,8 +24,8 @@ class CreateProductsLikesTable extends Migration {
 				->references('id')
 				->on('users')
 				->onDelete('cascade');
-			$table->bigInteger('likes')->unsigned()->default(0);
-			$table->bigInteger('dislikes')->unsigned()->default(0);
+			$table->bigInteger('likes')->default(0);
+			$table->bigInteger('dislikes')->default(0);
 			$table->timestamps();
 		});
 	}
@@ -37,7 +37,7 @@ class CreateProductsLikesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('products_likes');
+		Schema::drop('product_likes');
 	}
 
 }

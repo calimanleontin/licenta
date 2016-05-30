@@ -57,7 +57,7 @@
                     </td>
                     <td>
                         <a href="/edit/product/{{$product->id}}"><div>edit</div></a>
-                        <a href="/product/{{$product->slug}}"><div>view</div></a>
+                        <a href="/product/view/{{$product->slug}}"><div>view</div></a>
                         <a href="/product/delete/{{$product->id}}"><div>delete</div></a>
                     </td>
                 </tr>

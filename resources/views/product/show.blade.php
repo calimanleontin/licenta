@@ -12,6 +12,32 @@
             <img src="/images/catalog/product.jpg" alt="Smiley face" class = 'img-responsive product-image'>
         @endif
             &nbsp
+
+        <br>
+        @if(!Auth::guest())
+            @if(empty($rating))
+                <a href="/product/like/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-up gray"></span></a>
+                <a href="/product/dislike/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-down gray"></span></a>
+            @elseif($rating->likes == 1 and $rating->dislikes == 0)
+                <a href="/product/like/{{$product->id}}"><span class=" glyphicon glyphicon-thumbs-up green"></span></a>
+                <a href="/product/dislike/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-down gray"></span></a>
+            @elseif($rating->likes == 0 and $rating->dislikes == 1)
+                <a href="/product/like/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-up gray"></span></a>
+                <a href="/product/dislike/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-down red"></span></a>
+            @else
+
+                <a href="/product/like/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-up gray"></span></a>
+                <a href="/product/dislike/{{$product->id}}"><span class="glyphicon glyphicon-thumbs-down gray"></span></a>
+            @endif
+        @endif
+        No votes:
+        @if($product->likes< 0)
+            0
+        @else
+            {{$product->likes}}
+        @endif
+
+        <br><br><br>
     <p>
         <span><strong>Description:</strong>
         {!! $product->description !!}

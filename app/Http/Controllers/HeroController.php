@@ -51,11 +51,13 @@ class HeroController extends Controller {
 					->withError('You already have a hero');
 			}
 			$name = Input::get('name');
+			$classes = HeroesTypes::all();
 			$sex = Input::get('sex');
 			if(empty($name) or $sex == '0')
 				return view('hero.create')
 					->withErrors('Please fill all the fields')
 					->with('name', $name)
+					->withClasses($classes)
 					->with('sex', $sex);
 			$hero = new Hero();
 			$hero->user_id = $user->id;
