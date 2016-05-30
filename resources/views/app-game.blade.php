@@ -59,15 +59,16 @@
             </ul>
 
             @else
-                <li>
-                    <a href="{{ url('/auth/logout') }}" >Logout</a>
-                </li>
+
                 <li>
                     <div class="mini">
-                        <button class="btn btn-default dropdown-toggle " type="button" id="menu1" data-toggle="dropdown">{{Auth::user()->name}}
-                            <span class="caret"></span></button>
+                        <div class="btn btn-default dropdown-toggle " type="button" id="menu1" data-toggle="dropdown">{{Auth::user()->name}}
+                            <span class="caret"></span></div>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="/user-profile">User Profile</a> </li>
+                            <li>
+                                <a href="{{ url('/auth/logout') }}" >Logout</a>
+                            </li>
                         </ul>
                     </div>
                 </li>

@@ -1,6 +1,10 @@
-@extends('app-shop')
+@extends('app-game')
 @section('title')
+    @if($user->profile()->first()->picture == null)
+        <img src="../images/users/avatar.png", alt='{{$user->name}}', class = 'img-responsive user-image'>
+    @else
         <img src="../images/users/{{$user->profile()->first()->picture}}", alt='{{$user->name}}', class = 'img-responsive user-image'>
+    @endif
         {{ $user->name }}
 @endsection
 @section('title-meta')
