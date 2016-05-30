@@ -48,9 +48,20 @@ class Products extends Model
         $product->save();
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function hero()
     {
         return $this->belongsTo('App\Hero');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
     }
 
 

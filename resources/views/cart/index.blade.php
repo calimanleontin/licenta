@@ -21,7 +21,7 @@
         @for($i=0;$i<count($products);$i++)
             <tr>
                 <th scope="row">{{$i+1}}</th>
-                <td><a href="/product/{{$products[$i]->slug}}"> {{$products[$i]->name}} </a></td>
+                <td><a href="/product/view/{{$products[$i]->slug}}"> {{$products[$i]->name}} </a></td>
                 <td>{{$quantities[$i]}}</td>
                 <td>{{$products[$i]->price}}</td>
                 <td><a href="/cart/increase/{{$products[$i]->id}}"><button class= " btn btn-primary btn-success" > + </button></a></td>

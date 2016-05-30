@@ -3,7 +3,7 @@
     @if(!empty($title))
         {{$title}}
     @else
-        Orders History
+        Order History
     @endif
 
 @endsection
@@ -21,8 +21,17 @@
             <tbody>
         @foreach($orders as $order)
             <tr>
+                <?php
+                    $ceva = \App\Orders::where('order_id', $order->order_id)->get();
+                    $sum = 0;
+                    foreach($ceva as $cev)
+                        {
+                            $sum += $cev->sum;
+                        }
+
+                        ?>
                 <td scope="row"></td>
-                <td>{{$order->sum}}</td>
+                <td>{{$sum}}</td>
                 <td>{{$order->created_at}}</td>
                 <td><a href="order-details/{{$order->order_id}}"><button class="btn btn-success btn-group btn-block">Details</button></a></td>
             </tr>

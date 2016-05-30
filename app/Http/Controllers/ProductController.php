@@ -154,7 +154,7 @@ class ProductController extends Controller
             }
         }
         $product->save();
-        return redirect('/product/'.$product->slug)->withMessage('Product updated successfully');
+        return redirect('/product/view/'.$product->slug)->withMessage('Product updated successfully');
     }
 
     /**

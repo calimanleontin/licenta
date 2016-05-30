@@ -6,6 +6,7 @@ use App\Cart;
 use App\Categories;
 use App\Orders;
 use App\Products;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -164,14 +165,43 @@ class CartController extends Controller
             $order_id = $last_order->order_id + 1;
         }
         $sum = 0;
-        foreach($cart->getCart() as $product_id => $quantity)
-        {
-            $product = Products::where('id',$product_id)->first();
-            if($product->quantity < $quantity)
-            {
-                return redirect('/cart/index')->withErrors('We are sorry, the product '.$product->name.' has only '.$product->quantity.' examples');
+        foreach($cart->getCart() as $product_id => $quantity) {
+            $product = Products::where('id', $product_id)->first();
+            if ($product->quantity < $quantity) {
+                return redirect('/cart/index')->withErrors('We are sorry, the product ' . $product->name . ' has only ' . $product->quantity . ' examples');
             }
-            else
+        }
+        foreach($cart->getCart() as $product_id => $quantity) {
+            $product = Products::where('id', $product_id)->first();
+            $user = Auth::user();
+            $ok = 0;
+            $products_id = [];
+            foreach($user->products as $product_cart)
+            {
+                $products_id[] = $product_cart->id;
+            }
+            if(in_array($product_id, $products_id))
+            {
+                foreach($product->categories as $category)
+                {
+                    if($category->title == 'consumable')
+                    {
+                        $ok = 1;
+                    }
+                }
+                if($ok == 0)
+                    return redirect('/cart/index')
+                        ->withErrors('We are sorry, the product ' . $product->name . ' is not consumable so cannot be bought many times' );
+            }
+        }
+        foreach($cart->getCart() as $product_id => $quantity) {
+            $product = Products::where('id', $product_id)->first();
+            /**
+             * @var $user User
+             */
+            $user = Auth::user();
+
+            $user->products()->attach($product->id);
             {
                 $product->quantity -= $quantity;
                 if($product->quantity == 0)
@@ -184,7 +214,7 @@ class CartController extends Controller
             $order->product_id = $product_id;
             $order->quantity = $quantity;
             $order->author_id = $request->user()->id;
-            $order->sum = $sum;
+            $order->sum = $product->price;
             $order->save();
             Session::forget('cart');
             Session::put('cart', new Cart());

@@ -19,7 +19,7 @@
             @for($i=0;$i<count($products);$i++)
                 <tr>
                     <th scope="row">{{$i+1}}</th>
-                    <td><a href="/product/{{$products[$i]->slug}}"> {{$products[$i]->name}} </a></td>
+                    <td><a href="/product/view/{{$products[$i]->slug}}"> {{$products[$i]->name}} </a></td>
                     <td>{{$quantities[$i]}}</td>
                     <td>{{$products[$i]->price}}<span class="glyphicon glyphicon-euro"></span></td>
                     {{--*/ $var = $quantities[$i]*$products[$i]->price  /*--}}
