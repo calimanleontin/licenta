@@ -2,8 +2,8 @@
 
 @section('title-meta')
 
-    <div class="col-md-3 left-title">
-        <h1 class="text-center">Championships</h1>
+    <div class="col-md-5 go-left left-title">
+        <h1 class="text-center">Championships <a href="/championship/create" class="glyphicon glyphicon-plus create-button"></a></h1>
     </div>
 @endsection
 

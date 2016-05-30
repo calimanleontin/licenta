@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('auth/register', 'UserController@getRegister');
 	Route::post('auth/register', 'UserController@postRegister');
 	Route::get('/search','ProductController@search');
+	Route::get('/product/view/{slug}','ProductController@show');
+	Route::get('/category/view/{slug}','CategoryController@show');
 
 
 
@@ -52,6 +54,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function()
 	{
+
 		Route::get('/cart/index','CartController@index');
 		Route::get('/cart/increase/{id}','CartController@increase');
 		Route::get('/cart/decrease/{id}','CartController@decrease');
@@ -69,13 +72,10 @@ Route::group(['middleware' => ['web']], function () {
 
 		Route::get('order-details/{id}','CartController@order_details');
 		Route::get('/to-cart/{id}','CartController@add')->where('id', '[0-9]+');
-		Route::get('/product/{slug}','ProductController@show');
-		Route::get('/category/{slug}','CategoryController@show');
 
 		Route::get('/championship/{id}', 'ChampionshipController@show');
 
 	});
-
 
 });
 
@@ -86,10 +86,10 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::post('/update/product/{id}','ProductController@update');
 
 	Route::get('category/create','CategoryController@create');
+	Route::get('/product/create','ProductController@create');
 	Route::get('category/edit/{id}','CategoryController@edit');
 	Route::post('category/update','CategoryController@update');
 	Route::post('category/store','CategoryController@store');
-	Route::get('/product/create','ProductController@create');
 	Route::post('/product/store','ProductController@store');
 
 	Route::get('/backend', 'BackendController@index');
@@ -108,6 +108,7 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::get('/championship/create', 'ChampionshipController@create');
 	Route::post('/championship/store', 'ChampionshipController@store');
 	Route::get('/championship/{id}', 'ChampionshipController@show');
+	Route::get('/championship/create', 'ChampionshipController@create');
 	Route::get('/championship/destroy/{id}', 'ChampionshipController@destroy');
 
 	Route::get('/backend/classes', 'BackendController@classes');

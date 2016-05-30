@@ -27,3 +27,17 @@
 .little-down{
     margin-top:20px;
 }
+
+.create-button:hover{
+    text-decoration: none;
+    font-size:xx-large;
+}
+
+.create-button{
+    text-decoration: none;
+    font-size:xx-large;
+}
+
+.go-left{
+    margin-left:-100px;
+}

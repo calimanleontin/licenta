@@ -54,8 +54,7 @@ class ProductController extends Controller
         $categories = $request->input('category');
         $name = $request->input('name');
         $duplicate = Products::where('name',$name)->first();
-        if($duplicate)
-            return redirect('/product/create')->withErrors('The name already exists');
+
         $description = $request->input('description');
         $price = $request->input('price');
         $user_id = $request->user()->id;
@@ -75,6 +74,10 @@ class ProductController extends Controller
             $product->image = $fileName;
             Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
         }
+        if($duplicate)
+            return redirect('/product/create')
+                ->withErrors('The name already exists')
+                ->withProduct($product);
         $product->save();
 
         if($categories)
@@ -83,7 +86,7 @@ class ProductController extends Controller
                 $category = Categories::where('title',$category)->first();
                 $product->categories()->attach($category->id);
             }
-        return redirect('/')->withMessage('New product created');
+        return redirect('/backend/products')->withMessage('New product created');
     }
 
     /**

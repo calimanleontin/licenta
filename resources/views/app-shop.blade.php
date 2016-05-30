@@ -40,12 +40,14 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-
                     <a href="{{ url('/') }}">Home</a>
                 </li>
                 <li>
+                    <a href="{{ url('/shop') }}">Shop</a>
+                </li>
+                <li>
                     <form action="/search" method = 'get' class="form-group form form-inline down-search">
-                        <input type="text" name="q" placeholder="Search..." class="form-control">
+                        <input type="text" name="q" placeholder="Products..." class="form-control">
                         <input type="submit" class='form-control left-search' value="Search">
                     </form>
                 </li>

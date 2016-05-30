@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 class CartController extends Controller
 {
@@ -143,7 +144,18 @@ class CartController extends Controller
          * @var $last_order Orders
          */
         $last_order = Orders::whereNotNull('id')->orderBy('updated_at','desc')->first();
-        if($last_order == Null)
+
+        $total_price = 0;
+        foreach($cart->getCart() as $product_id => $quantity)
+        {
+            $product = Products::find($product_id);
+            $total_price += $product->price * $quantity;
+        }
+
+        if(Auth::user()->money < $total_price)
+            return redirect('/cart/index')
+                ->withErrors('Insufficient founds');
+            if($last_order == Null)
         {
             $order_id = 1;
         }
@@ -167,7 +179,6 @@ class CartController extends Controller
                 $product->save();
 
             }
-            $sum += $product->price * $quantity;
             $order = new Orders();
             $order->order_id = $order_id;
             $order->product_id = $product_id;

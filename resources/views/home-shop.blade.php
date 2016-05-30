@@ -31,8 +31,8 @@
             <div class='center-block'>
                 <div class="col-md-3 product text-center" xmlns:max-height="http://www.w3.org/1999/xhtml">
                     <div class="panel-title  title">
-                        <a href="/product/{{$product->slug}}">{{$product->name}} </a>
-                        <a href ='/product/{{$product->slug}}'>
+                        <a href="/product/view/{{$product->slug}}">{{$product->name}} </a>
+                        <a href ='/product/view/{{$product->slug}}'>
                             @if(!empty($product->image))
                             <img src="../images/catalog/{{$product->image}}"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
                             @else

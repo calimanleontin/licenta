@@ -27,7 +27,8 @@
                 First Name: {{$user->profile->firstName}}<br>
                 Last Name:  {{$user->profile()->first()->lastName}}<br>
                 Birthday:   {{$user->profile()->first()->birthday}}<br>
-                Telephone:  {{$user->profile()->first()->telephoneNumber}}
+                Telephone:  {{$user->profile()->first()->telephoneNumber}}<br>
+                Money: $ {{$user->money}}
             </strong>
             </p>
         </div>

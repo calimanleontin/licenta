@@ -3,7 +3,7 @@
 @section('title-meta')
 
     <div class="col-md-3 left-title">
-        <h1 class="text-center">Categories</h1>
+        <h1 class="text-center">Categories <a href="/category/create" class="glyphicon glyphicon-plus create-button"></a></h1>
     </div>
 @endsection
 
@@ -53,7 +53,7 @@
                     <td>
 
                         <a href="/category/edit/{{$category->id}}"><div>edit</div></a>
-                        <a href="/category/{{$category->slug}}"><div>view</div></a>
+                        <a href="/category/view/{{$category->slug}}"><div>view</div></a>
                         <a href="/category/delete/{{$category->id}}"><div>delete</div></a>
                     </td>
                 </tr>

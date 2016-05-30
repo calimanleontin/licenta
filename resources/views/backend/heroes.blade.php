@@ -59,7 +59,7 @@
                         {{ $hero->sex }}
                     </td>
                     <td>
-
+                        <a href="/hero/{{$hero->id}}"><div>view</div></a>
                     </td>
                 </tr>
             @endforeach

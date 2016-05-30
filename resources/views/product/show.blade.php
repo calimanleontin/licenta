@@ -6,9 +6,12 @@
 <script>tinymce.init({ selector:'textarea' });</script>
 
 @section('content')
-
-        <img src="../images/catalog/{{$product->image}}" alt="Smiley face" class = 'img-responsive'>
-    &nbsp
+        @if($product->image)
+            <img src="/images/catalog/{{$product->image}}" alt="Smiley face" class = 'img-responsive product-image'>
+            @else
+            <img src="/images/catalog/product.jpg" alt="Smiley face" class = 'img-responsive product-image'>
+        @endif
+            &nbsp
     <p>
         <span><strong>Description:</strong>
         {!! $product->description !!}
@@ -93,7 +96,7 @@
     @if(!empty($categories))
         <ul class="list-group">
             @foreach($categories as $category)
-                <a href = '/category/{{$category->slug}}'><li class="list-group-item">{{$category->title}} </li></a>
+                <a href = '/category/view/{{$category->slug}}'><li class="list-group-item">{{$category->title}} </li></a>
             @endforeach
         </ul>
     @endif

@@ -3,7 +3,7 @@
 @section('title-meta')
 
     <div class="col-md-3 left-title">
-        <h1 class="text-center">Products</h1>
+        <h1 class="text-center">Products <a href="/product/create" class="glyphicon glyphicon-plus create-button"></a></h1>
     </div>
 @endsection
 
