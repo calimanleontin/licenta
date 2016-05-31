@@ -138,6 +138,9 @@ class ChampionshipController extends Controller {
 				->withErrors('403');
 
 		//todo: check if places available
+		//todo: check if hero is busy
+		//todo: update hero status
+		//todo: let hero go from tournament
 		$hero = $user->hero;
 		$hero->championship_id = $championship->id;
 		$championship->max_places -= 1;
