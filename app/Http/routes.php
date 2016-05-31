@@ -26,6 +26,7 @@
 Route::get('/shop',['as' => 'shop', 'uses' => 'ProductController@index']);
 Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('/home',['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/404', 'HomeController@notFound');
 
 
 Route::group(['middleware' => ['web']], function () {
@@ -77,6 +78,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 		Route::get('/lists/championships', 'ChampionshipController@index');
+		Route::get('/attend/{id}', 'ChampionshipController@attend');
 	});
 
 });

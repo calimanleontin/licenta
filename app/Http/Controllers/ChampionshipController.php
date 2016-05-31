@@ -126,4 +126,12 @@ class ChampionshipController extends Controller {
 		}
 	}
 
+	public function attend($id)
+	{
+		$championship = Championships::find($id);
+		if(!$championship)
+			return view('/')
+				->withErrors('404');
+	}
+
 }

@@ -1,4 +1,4 @@
-@extends('app-shop')
+@extends('app-game')
 @section('content')
     <div class="container-fluid">
         <div class="row">

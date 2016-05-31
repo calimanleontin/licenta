@@ -35,4 +35,9 @@ class HomeController extends Controller {
 			->with('user', $user)
 			->with('hero', $user->hero);
 	}
+
+	public function notFound()
+	{
+		return view('auth.404');
+	}
 }
