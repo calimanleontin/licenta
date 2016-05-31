@@ -132,6 +132,20 @@ class ChampionshipController extends Controller {
 		if(!$championship)
 			return view('/')
 				->withErrors('404');
+		$user = Auth::user();
+		if($user->hero->level < $championship->level_required)
+			return redirect('/championship/view'.$championship->id)
+				->withErrors('403');
+
+		//todo: check if places available
+		$hero = $user->hero;
+		$hero->championship_id = $championship->id;
+		$championship->max_places -= 1;
+
+		$hero->save();
+		$championship->save();
+		return redirect('/championship/view/'.$championship->id)
+			->withMessage('200');
 	}
 
 }

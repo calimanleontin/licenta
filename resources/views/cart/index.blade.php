@@ -34,17 +34,8 @@
             </tbody>
         </table>
        <a  href="/finish-cart" > <button class="btn btn-default">Purchase</button></a>
+    @else
+    You have nothing in the cart!
     @endif
 @endsection
-@section('category-title')
-    Categories
-@endsection
-@section('category-content')
-    @if(!empty($categories))
-        <ul class="list-group">
-            @foreach($categories as $category)
-                <a href = '/category/view/{{$category->slug}}'><li class="list-group-item">{{$category->title}} </li></a>
-            @endforeach
-        </ul>
-    @endif
-@endsection
+
