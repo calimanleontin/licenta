@@ -25,7 +25,6 @@
     float:left;
 }
 .left-title{
-    float:left;
 }
 .left-search
 {
@@ -91,4 +90,44 @@
 
 .product-image{
     max-width:400px;
+}
+
+.space-up{
+    margin-top:50px;
+}
+
+.large-list-item{
+    min-height:100px;
+}
+
+.space-down{
+    margin-bottom:50px;
+}
+
+.championship-title{
+    color:whitesmoke;
+    background-color: gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.gray{
+    color:whitesmoke;
+
+    background-color: gray;
+
+}
+
+.championship-subtitle{
+    color:whitesmoke;
+    background-color: gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top:-10px;
+    padding-bottom:10px ;
+}
+
+.absolute{
+    margin-top:-40px;
 }
