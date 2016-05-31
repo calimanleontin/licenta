@@ -10,13 +10,18 @@
         <div class="">
             <div class="prize col-md-12 col-sm-12 col-xs-12">
                 @foreach($championships as $championship)
-                    <div class="championship">
-                        <div class="col-md-12">
-                            <div class="text-center text-capitalize col-md-12">
-                                <div class="championship-title">
-                                    <h2>{{ $championship->name }}</h2>
+                    <div class="championship" id="championship">
+                        <a href="/championship/view/{{ $championship->id }}">
+                            <div class="col-md-12">
+                                <div class="text-center text-capitalize col-md-12">
+                                    <div class="championship-title">
+                                        <h2>{{ $championship->name }}</h2>
+                                    </div>
                                 </div>
                             </div>
+                        </a>
+
+                        <div class="col-md-12">
                             <div class="col-md-12">
                                 <div class="col-md-12 championship-subtitle">
                                     <div class="col-md-4">

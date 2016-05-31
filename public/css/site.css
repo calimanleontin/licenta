@@ -131,3 +131,7 @@
 .absolute{
     margin-top:-40px;
 }
+.championship-title:hover{
+    background-color: darkblue;
+    cursor: pointer;
+}
