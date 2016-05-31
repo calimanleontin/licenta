@@ -71,8 +71,8 @@
                         {{ $championship->active }}
                     </td>
                     <td>
-                        <a href="/championship/{{$championship->id}}"><div>view</div></a>
-                        <a href="/class/delete/{{$championship->id}}"><div>delete</div></a>
+                        <a href="/championship/view/{{$championship->id}}"><div>view</div></a>
+                        <a href="/championship/destroy/{{$championship->id}}"><div>delete</div></a>
                     </td>
                 </tr>
             @endforeach

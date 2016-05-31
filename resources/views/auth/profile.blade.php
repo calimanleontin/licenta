@@ -41,7 +41,7 @@
                     <div class="list-group-item">
                         <p>{!! $comment->content !!} </p>
                         <p>On {{ $comment->created_at->format('M d,Y \a\t h:i a') }}</p>
-                        <p>On post <a href="{{ url('/product/'.$comment->product->slug) }}">{{ $comment->product->name }}</a></p>
+                        <p>On post <a href="{{ url('/product/view/'.$comment->product->slug) }}">{{ $comment->product->name }}</a></p>
                     </div>
                 @endforeach
             @else

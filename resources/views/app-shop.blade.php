@@ -64,9 +64,7 @@
             </ul>
 
         @else
-                <li>
-                    <a href="{{ url('/auth/logout') }}" >Logout</a>
-                </li>
+
             <li>
             <div class="mini">
                 <button class="btn btn-default dropdown-toggle " type="button" id="menu1" data-toggle="dropdown">{{Auth::user()->name}}
@@ -81,6 +79,9 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/cart/index">My cart</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/order-history">Order History</a> </li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="/user-profile">User Profile</a> </li>
+                        <li>
+                            <a href="{{ url('/auth/logout') }}" >Logout</a>
+                        </li>
                 </ul>
             </div>
             </li>

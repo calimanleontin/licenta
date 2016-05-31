@@ -11,7 +11,7 @@ class Championships extends Model {
      */
     public function heroes()
     {
-        return $this->hasMany('App\Hero');
+        return $this->hasMany('App\Hero', 'championship_id');
     }
 
 }

@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Input;
 
 class ChampionshipController extends Controller {
 
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -26,9 +21,7 @@ class ChampionshipController extends Controller {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
+	 * @return \Illuminate\View\View
 	 */
 	public function create()
 	{
@@ -50,7 +43,7 @@ class ChampionshipController extends Controller {
 		$championship->start_date = Input::get('start_date');
 		$championship->max_experience= Input::get('max_experience');
 		$championship->max_places = Input::get('max_places');
-		$championship->user_id = Auth::user()->id;
+//		$championship->user_id = Auth::user()->id;
 		$championship->started = 0;
 		$championship->active = 1;
 		$image = Input::file('image');
@@ -76,7 +69,12 @@ class ChampionshipController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$championship = Championships::find($id);
+		if(!$championship)
+			return redirect('/')
+				->withErrors('404');
+		return view('championship.view')
+			->with('championship', $championship);
 	}
 
 	/**

@@ -27,7 +27,7 @@ class CommentController extends Controller
         $comment->content = $content;
         $comment->author_name = $request->user()->name;
         $comment->save();
-        return redirect('/product/'.$product->slug)->withMessage('Comment added');
+        return redirect('/product/view/'.$product->slug)->withMessage('Comment added');
 
     }
 
@@ -45,7 +45,7 @@ class CommentController extends Controller
             $product = Products::where('id',$comment->on_product)->first();
 
             $comment->delete();
-            return redirect('/product/' . $product->slug)->withMessage('Comment deleted successfully');
+            return redirect('/product/view/' . $product->slug)->withMessage('Comment deleted successfully');
         }
         else
             return redirect('/')->withErrors('You have not sufficient permissions');
@@ -86,7 +86,7 @@ class CommentController extends Controller
             $comment->save();
 
             $product = Products::where('id', $comment->on_product)->first();
-            return redirect('/product/' . $product->slug);
+            return redirect('/product/view/' . $product->slug);
         }
         else
             redirect ('/')->withErrors('You have not sufficient permissions');

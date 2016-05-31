@@ -64,7 +64,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('comment/delete/{id}','CommentController@delete');
 		Route::get('comment/edit/{id}','CommentController@edit');
 		Route::post('comment/update','CommentController@update');
-		Route::get('finish-cart','CartController@finish');
+		Route::get('finish-cafinish-cart','CartController@finish');
 		Route::get('/order-history','CartController@history');
 		Route::get('/edit-profile','UserController@edit_profile');
 		Route::get('/user-profile','UserController@profile');
@@ -72,9 +72,6 @@ Route::group(['middleware' => ['web']], function () {
 
 		Route::get('order-details/{id}','CartController@order_details');
 		Route::get('/to-cart/{id}','CartController@add')->where('id', '[0-9]+');
-
-		Route::get('/championship/{id}', 'ChampionshipController@show');
-
 
 		Route::get('/product/like/{id}','ProductController@like');
 		Route::get('/product/dislike/{id}','ProductController@dislike');
@@ -108,10 +105,9 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::get('/class/edit/{id}', 'HeroesTypesController@edit');
 	Route::get('/class/delete/{id}', 'HeroesTypesController@destroy');
 
-	Route::get('/championship/create', 'ChampionshipController@create');
 	Route::post('/championship/store', 'ChampionshipController@store');
-	Route::get('/championship/{id}', 'ChampionshipController@show');
 	Route::get('/championship/create', 'ChampionshipController@create');
+	Route::get('/championship/view/{id}', 'ChampionshipController@show');
 	Route::get('/championship/destroy/{id}', 'ChampionshipController@destroy');
 
 	Route::get('/backend/classes', 'BackendController@classes');
