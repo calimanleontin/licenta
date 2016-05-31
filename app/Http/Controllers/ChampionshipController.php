@@ -17,7 +17,9 @@ class ChampionshipController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$championships = Championships::where('active', 1);
+		return view('championship.index')
+			->with('championships', $championships);
 	}
 
 	/**
