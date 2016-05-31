@@ -164,7 +164,6 @@ class CartController extends Controller
         {
             $order_id = $last_order->order_id + 1;
         }
-        $sum = 0;
         foreach($cart->getCart() as $product_id => $quantity) {
             $product = Products::where('id', $product_id)->first();
             if ($product->quantity < $quantity) {
@@ -194,21 +193,23 @@ class CartController extends Controller
                         ->withErrors('We are sorry, the product ' . $product->name . ' is not consumable so cannot be bought many times' );
             }
         }
+        $sum = 0;
+        /**
+         * @var $user User
+         */
+        $user = Auth::user();
+
         foreach($cart->getCart() as $product_id => $quantity) {
             $product = Products::where('id', $product_id)->first();
-            /**
-             * @var $user User
-             */
-            $user = Auth::user();
+
 
             $user->products()->attach($product->id);
-            {
-                $product->quantity -= $quantity;
-                if($product->quantity == 0)
-                    $product->active = 0;
-                $product->save();
+            $product->quantity -= $quantity;
+            $sum += $product->price * $quantity;
+            if($product->quantity == 0)
+                $product->active = 0;
+            $product->save();
 
-            }
             $order = new Orders();
             $order->order_id = $order_id;
             $order->product_id = $product_id;
@@ -216,9 +217,12 @@ class CartController extends Controller
             $order->author_id = $request->user()->id;
             $order->sum = $product->price;
             $order->save();
-            Session::forget('cart');
-            Session::put('cart', new Cart());
+
         }
+        $user->money -= $sum;
+        $user->save();
+        Session::forget('cart');
+        Session::put('cart', new Cart());
 
         return redirect('/')->withMessage('Order processed successfully');
     }

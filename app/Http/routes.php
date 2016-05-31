@@ -60,11 +60,10 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/cart/decrease/{id}','CartController@decrease');
 		Route::get('/cart/delete/{id}','CartController@delete');
 		Route::post('/comment/store','CommentController@store');
-		Route::post('/finish-order','CartController@finish');
 		Route::get('comment/delete/{id}','CommentController@delete');
 		Route::get('comment/edit/{id}','CommentController@edit');
 		Route::post('comment/update','CommentController@update');
-		Route::get('finish-cafinish-cart','CartController@finish');
+		Route::get('finish-cart','CartController@finish');
 		Route::get('/order-history','CartController@history');
 		Route::get('/edit-profile','UserController@edit_profile');
 		Route::get('/user-profile','UserController@profile');
