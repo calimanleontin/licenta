@@ -75,13 +75,16 @@ class BattleManagement extends Command {
             if($championship->level == 1)
             {
                 $championship->active = 1;
+                /**
+                 * @var $heroes Hero
+                 */
                 $heroes = $championship->heroes;
                 foreach($heroes as $hero)
                 {
                     $hero->busy = 0;
                     $hero->location = null;
+                    $hero->getPrize($championship->experience/10, 0);
                     $hero->save();
-
                 }
             }
             $championship->save();
