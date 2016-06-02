@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>jOrgChart - A jQuery OrgChart Plugin</title>
+    <title>Championship Chart</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/jquery.jOrgChart.css"/>
     <link rel="stylesheet" href="/css/custom.css"/>
@@ -18,7 +18,7 @@
         jQuery(document).ready(function() {
             $("#org").jOrgChart({
                 chartElement : '#chart',
-                dragAndDrop  : true
+                dragAndDrop  : false
             });
         });
     </script>
