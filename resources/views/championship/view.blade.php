@@ -56,7 +56,7 @@
                     @elseif(!Auth::guest() and Auth::user()->hero->busy == 1)
                 <h6>You are busy so can't attend right now </h6>
                     @else
-                <h6>No more palces </h6>
+                <h6>No more places </h6>
                 @endif
                     <a href="/tree/{{ $championship->id }}"><btn class="btn btn-danger">View Battle</btn></a>
 
