@@ -54,6 +54,8 @@
                 @else
                     <h6>We are sorry, you have not the required level to attend </h6>
             @endif
+                    <a href="/tree/{{ $championship->id }}"><btn class="btn btn-danger">View Battle</btn></a>
+
         </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12">

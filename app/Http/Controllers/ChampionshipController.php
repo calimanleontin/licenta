@@ -126,6 +126,10 @@ class ChampionshipController extends Controller {
 		}
 	}
 
+	/**
+	 * @param $id
+	 * @return $this
+	 */
 	public function attend($id)
 	{
 		$championship = Championships::find($id);
@@ -149,6 +153,26 @@ class ChampionshipController extends Controller {
 		$championship->save();
 		return redirect('/championship/view/'.$championship->id)
 			->withMessage('200');
+	}
+
+	public function tree($id)
+	{
+		$championship = Championships::find($id);
+		if(!$championship)
+			return view('/')
+				->withErrors('404');
+		$user = Auth::user();
+
+		$round_four = $championship->round_four;
+		$round_three = $championship->round_three;
+		$round_two = $championship->round_two;
+		$round_one = $championship->round_one;
+
+		return view('championship.tree')
+			->with('round_four', $round_four)
+			->with('round_three', $round_three)
+			->with('round_two', $round_two)
+			->with('round_one', $round_one);
 	}
 
 }
