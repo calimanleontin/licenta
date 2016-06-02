@@ -65,4 +65,43 @@ class Hero extends Model {
     {
         return $this->hasMany('App\Products');
     }
+
+    /**
+     * @return int|mixed
+     */
+    public function attributes_sum()
+    {
+        $sum = 0;
+        $sum += $this->strenght;
+        $sum += $this->perception;
+        $sum += $this->endurane;
+        $sum += $this->charisma;
+        $sum += $this->intelligence;
+        $sum += $this->luck;
+        return $sum;
+    }
+
+    /**
+     * @param $exp
+     * @param $money
+     */
+    public function getPrize($exp, $money)
+    {
+        $user = $this->user;
+        $user->money += $money;
+        $level = Levels::find($user->level);
+        $exp = ($exp+$user->experience) % $level->max_experience;
+        $next_level = ($exp+$user->experience) / $level->max_experience;
+
+        if($next_level == 0)
+        {
+            $user->experience = $exp;
+        }
+        else
+        {
+            $user->experience = $exp;
+            $user->level = $user->level + 1;
+        }
+        $user->save();
+    }
 }

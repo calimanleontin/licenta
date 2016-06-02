@@ -149,4 +149,17 @@ class HeroController extends Controller {
 		//
 	}
 
+	public static function fight($id1, $id2)
+	{
+		$hero1 = Hero::find($id1);
+		$hero2 = Hero::find($id2);
+
+		$sum1 = $hero1->attributes_sum();
+		$sum2 = $hero2->attributes_sum();
+
+		if($sum1 < $sum2)
+			return $hero1;
+		return $hero2;
+	}
+
 }
