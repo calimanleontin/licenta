@@ -1,4 +1,4 @@
-@extends('app-shop')
+@extends('app-game')
 @section('title')
     <div class="text-capitalize text-center">
         {{$championship->name}} Championship
@@ -49,11 +49,15 @@
 
 
         <div class="col-md-12 col-sm-12 col-xs-12">
-                @if(!Auth::guest() and Auth::user()->hero->level >= $championship->level_required)
+                @if(!Auth::guest() and Auth::user()->hero->level >= $championship->level_required and Auth::user()->hero->busy == 0 and $championship->max_places != 0)
                     <a href="/attend/{{ $championship->id }}"><btn class="btn btn-success">Attend</btn></a>
-                @else
+                @elseif(!Auth::guest() and Auth::user()->hero->level <= $championship->level_required)
                     <h6>We are sorry, you have not the required level to attend </h6>
-            @endif
+                    @elseif(!Auth::guest() and Auth::user()->hero->busy == 1)
+                <h6>You are busy so can't attend right now </h6>
+                    @else
+                <h6>No more palces </h6>
+                @endif
                     <a href="/tree/{{ $championship->id }}"><btn class="btn btn-danger">View Battle</btn></a>
 
         </div>
@@ -61,24 +65,6 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             @if(!Auth::guest() and Auth::user()->hero->level >= $championship->level_required)
 
-                @if(count($championship->heroes) > 0)
-                <div class="">
-                    Heroes:
-                </div>
-                    <div class="">
-                        <ul>>
-                        @foreach($championship->heroes as $hero)
-                            <li>
-                                {{ $hero->name }}
-                            </li>
-                        @endforeach
-                        </ul>
-                    </div>
-                    @else
-                    <div class="title">
-                        Be the first one to join the battle!
-                    </div>
-                @endif
             @endif
         </div>
     </div>

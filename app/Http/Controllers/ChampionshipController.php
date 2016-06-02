@@ -4,6 +4,7 @@ use App\Championships;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Hero;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -134,18 +135,33 @@ class ChampionshipController extends Controller {
 	{
 		$championship = Championships::find($id);
 		if(!$championship)
-			return view('/')
+			return redirect('/')
 				->withErrors('404');
+
 		$user = Auth::user();
 		if($user->hero->level < $championship->level_required)
-			return redirect('/championship/view'.$championship->id)
+			return redirect('/championship/view/'.$championship->id)
 				->withErrors('403');
 
+		$hero = $user->hero;
+
+		if($hero->busy == 1)
+		{
+			return redirect('/championship/view/'.$championship->id)
+				->withErrors('Hero is busy');
+		}
+
+		if($championship->max_places == 0)
+		{
+			return redirect('/championship/view/'.$championship->id)
+				->withErrors('No more places');
+		}
+		$hero->busy = 1;
+		$hero->location = 'championship';
 		//todo: check if places available
 		//todo: check if hero is busy
 		//todo: update hero status
 		//todo: let hero go from tournament
-		$hero = $user->hero;
 		$hero->championship_id = $championship->id;
 		$championship->max_places -= 1;
 
@@ -153,6 +169,21 @@ class ChampionshipController extends Controller {
 		$championship->save();
 		return redirect('/championship/view/'.$championship->id)
 			->withMessage('200');
+	}
+
+	public function dismiss($id)
+	{
+		$championship = Championships::find($id);
+		if(!$championship)
+			return view('/')
+				->withErrors('404');
+
+		$user = Auth::user();
+		if($user->hero->level < $championship->level_required)
+			return redirect('/championship/view/'.$championship->id)
+				->withErrors('403');
+		$hero = $user->hero;
+
 	}
 
 	public function tree($id)
