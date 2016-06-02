@@ -34,39 +34,105 @@
 
 <ul id="org" style="display:none">
     <li>
-        Food
+        @if(!empty($champion))
+            {{ $champion }}
+        @else
+            First Place
+        @endif
         <ul>
-            <li id="beer">Beer</li>
-            <li>Vegetables
-                <a href="http://wesnolte.com" target="_blank">Click me</a>
+            <li>
+
+                @if(!empty($semifinalist1))
+                    {{ $semifinalist1 }}
+                @else
+                    Semifinalist1
+                @endif
                 <ul>
-                    <li>Pumpkin</li>
                     <li>
-                        <a href="http://tquila.com" target="_blank">Aubergine</a>
-                        <p>A link and paragraph is all we need.</p>
+                        Quarter1
+                        <ul>
+                            <li>
+                                @if(!empty($nr1))
+                                    {{ $nr1 }}
+                                @else
+                                    Nr1
+                                @endif
+                            </li>
+                            <li>
+                                @if(!empty($nr2))
+                                    {{ $nr2 }}
+                                @else
+                                    Nr2
+                                @endif
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Quarter 2
+                        <ul>
+                            <li>
+                                @if(!empty($nr3))
+                                    {{ $nr3 }}
+                                @else
+                                    Nr3
+                                @endif
+                            </li>
+                            <li>
+                                @if(!empty($nr4))
+                                    {{ $nr4 }}
+                                @else
+                                    Nr4
+                                @endif
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
-            <li class="fruit">Fruit
+            <li>
+                @if(!empty($semifinalist2))
+                    {{ $semifinalist2 }}
+                @else
+                    Semifinalist2
+                @endif
                 <ul>
-                    <li>Apple
+                    <li>
+                        Quarter3
                         <ul>
-                            <li>Granny Smith</li>
+                            <li>
+                                @if(!empty($nr1))
+                                    {{ $nr5 }}
+                                @else
+                                    Nr5
+                                @endif
+                            </li>
+                            <li>
+                                @if(!empty($nr6))
+                                    {{ $nr6 }}
+                                @else
+                                    Nr6
+                                @endif
+                            </li>
                         </ul>
                     </li>
-                    <li>Berries
+                    <li>
+                        Quarter4
                         <ul>
-                            <li>Blueberry</li>
-                            <li>Cucumber</li>
+                            <li>
+                                @if(!empty($nr7))
+                                    {{ $nr7 }}
+                                @else
+                                    Nr7
+                                @endif
+                            </li>
+                            <li>
+                                @if(!empty($nr8))
+                                    {{ $nr8 }}
+                                @else
+                                    Nr8
+                                @endif
+                            </li>
                         </ul>
                     </li>
-                </ul>
-            </li>
-            <li>Bread</li>
-            <li class="collapsed">Chocolate
-                <ul>
-                    <li>Topdeck</li>
-                    <li>Reese's Cups</li>
                 </ul>
             </li>
         </ul>

@@ -41,6 +41,8 @@ class ChampionshipScheduler extends Command {
         }
 
         \Log::info('I was here' . date('Y-m-d H:m:s'));
+        $this->info("Champ updated!");
+
     }
 
 }

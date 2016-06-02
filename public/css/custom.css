@@ -90,3 +90,9 @@ a:hover{
 		line-height 	: 11px;
 		padding 		: 2px;
 	}
+
+	#chart{
+		width:900px;
+		margin:auto;
+
+	}
