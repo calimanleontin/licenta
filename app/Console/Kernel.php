@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel {
 	protected $commands = [
 		'App\Console\Commands\Inspire',
 		'App\Console\Commands\ChampionshipScheduler',
+		'App\Console\Commands\BattleManagement',
 	];
 
 	/**
@@ -27,6 +28,8 @@ class Kernel extends ConsoleKernel {
 				 ->hourly();
 		$schedule->command('start_battles')
 			->everyFiveMinutes();
+		$schedule->command('fight')
+			->dailyAt('12:00');
 	}
 
 }

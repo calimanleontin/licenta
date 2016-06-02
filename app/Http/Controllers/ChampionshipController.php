@@ -158,10 +158,6 @@ class ChampionshipController extends Controller {
 		}
 		$hero->busy = 1;
 		$hero->location = 'championship';
-		//todo: check if places available
-		//todo: check if hero is busy
-		//todo: update hero status
-		//todo: let hero go from tournament
 		$hero->championship_id = $championship->id;
 		$championship->max_places -= 1;
 

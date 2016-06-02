@@ -27,9 +27,11 @@ class ChampionshipScheduler extends Command {
      */
     public function handle()
     {
-        $championships = Championships::where('active', 1)->where('started', 0)->get();
+        $championships = Championships::where('active', 1)->where('started', 0)->where('start_date', date('Y-m-d'))->get();
         foreach($championships as $championship)
         {
+            $championship->started = 1;
+            $championship->round = 4;
             $heroes = $championship->heroes;
             $level_four = [];
             foreach($heroes as $hero)
