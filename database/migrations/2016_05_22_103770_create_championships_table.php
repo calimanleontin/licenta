@@ -18,10 +18,10 @@ class CreateChampionshipsTable extends Migration {
 			$table->string('name');
 			$table->integer('reward');
 			$table->integer('level_required')->unsigned()->default(1);
-			$table->string('round_one');
-			$table->string('round_two');
-			$table->string('round_three');
-			$table->string('round_four');
+			$table->string('level_one');
+			$table->string('level_two');
+			$table->string('level_three');
+			$table->string('level_four');
 			$table->integer('round');
 			//if it begun
 			$table->integer('started');

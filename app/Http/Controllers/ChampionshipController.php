@@ -163,16 +163,16 @@ class ChampionshipController extends Controller {
 				->withErrors('404');
 		$user = Auth::user();
 
-		$round_four = $championship->round_four;
-		$round_three = $championship->round_three;
-		$round_two = $championship->round_two;
-		$round_one = $championship->round_one;
+		$level_four = $championship->level_four;
+		$level_three = $championship->level_three;
+		$level_two = $championship->level_two;
+		$level_one = $championship->level_one;
 
 		return view('championship.tree')
-			->with('round_four', $round_four)
-			->with('round_three', $round_three)
-			->with('round_two', $round_two)
-			->with('round_one', $round_one);
+			->with('level_four', $level_four)
+			->with('level_three', $level_three)
+			->with('level_two', $level_two)
+			->with('level_one', $level_one);
 	}
 
 }
