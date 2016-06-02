@@ -3,7 +3,7 @@
 use App\Championships;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Hero;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -161,18 +161,66 @@ class ChampionshipController extends Controller {
 		if(!$championship)
 			return view('/')
 				->withErrors('404');
-		$user = Auth::user();
 
-		$level_four = $championship->level_four;
-		$level_three = $championship->level_three;
-		$level_two = $championship->level_two;
-		$level_one = $championship->level_one;
+		$champion = null;
+		$semifinalist1 = null;
+		$semifinalist2 = null;
+		$quarter1 = null;
+		$quarter2 = null;
+		$quarter3 = null;
+		$quarter4 = null;
+		$nr1 = null;
+		$nr2 = null;
+		$nr3 = null;
+		$nr4 = null;
+		$nr5 = null;
+		$nr6 = null;
+		$nr7 = null;
+		$nr8 = null;
+		if((json_decode($championship->level_one)))
+		{
+			$champion = json_decode($championship->level_one);
+		}
+		if(!empty(json_decode($championship->level_two)))
+		{
+			$semifinalist1 = json_decode($championship->level_two[0]);
+			$semifinalist2 = json_decode($championship->level_two[1]);
+		}
+		if(!empty(json_decode($championship->level_three)))
+		{
+			$quarter1 = json_decode($championship->level_three[0]);
+			$quarter2 = json_decode($championship->level_three[1]);
+			$quarter3 = json_decode($championship->level_three[2]);
+			$quarter4 = json_decode($championship->level_three[3]);
+		}
+		if(!empty(json_decode($championship->level_four)))
+		{
+			$nr1 = json_decode($championship->level_four[0]);
+			$nr2 = json_decode($championship->level_four[1]);
+			$nr3 = json_decode($championship->level_four[2]);
+			$nr4 = json_decode($championship->level_four[3]);
+			$nr5 = json_decode($championship->level_four[4]);
+			$nr6 = json_decode($championship->level_four[5]);
+			$nr7 = json_decode($championship->level_four[6]);
+			$nr8 = json_decode($championship->level_four[7]);
+		}
 
 		return view('championship.tree')
-			->with('level_four', $level_four)
-			->with('level_three', $level_three)
-			->with('level_two', $level_two)
-			->with('level_one', $level_one);
+			->with('champion', $champion )
+			->with('semifinalist1', $semifinalist1)
+			->with('semifinalist2', $semifinalist2)
+			->with('quarter1', $quarter1)
+			->with('quarter2', $quarter2)
+			->with('quarter3', $quarter3)
+			->with('quarter4', $quarter4)
+			->with('nr1', $nr1)
+			->with('nr1', $nr2)
+			->with('nr1', $nr3)
+			->with('nr1', $nr4)
+			->with('nr1', $nr5)
+			->with('nr1', $nr6)
+			->with('nr1', $nr7)
+			->with('nr1', $nr8);
 	}
 
 }

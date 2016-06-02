@@ -23,6 +23,7 @@ class CreateChampionshipsTable extends Migration {
 			$table->string('level_three');
 			$table->string('level_four');
 			$table->integer('round');
+			$table->integer('user_id');
 			//if it begun
 			$table->integer('started');
 
