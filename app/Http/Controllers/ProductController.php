@@ -165,7 +165,7 @@ class ProductController extends Controller
     {
         $term = $request->get('q');
         $categories = Categories::all();
-        $products = Products::where('name','like','%'.$term.'%')->paginate(9);
+        $products = Products::where('name','like','%'.$term.'%')->where('active', 1)->paginate(9);
         return view('home-shop')->withProducts($products)
             ->withCategories($categories)
             ->withTerm($term);
