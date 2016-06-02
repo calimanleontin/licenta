@@ -42,7 +42,7 @@
 
                             <br/>
                             <div class="form-group">
-                                {!! Form::label('Product Image') !!}
+                                {!! Form::label('Avatar') !!}
                                 {!! Form::file('image') !!}
                             </div>
 
