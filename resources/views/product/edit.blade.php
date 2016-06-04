@@ -30,20 +30,14 @@
         {!! Form::label('description','Description') !!}
         {!! Form::textarea('description',$product->description,['class' => 'form-control']) !!}
     </div>
-    <p>
-        The actual categories are:
-        <ul>
-        @foreach($product->categories as $category)
-            <li>
-            {{$category->title}}
-            </li>
-        @endforeach
-    </ul>
-    </p>
-
+  Categories:
     @foreach($categories as $category)
         <div class="form-group">
+            @if(in_array($category->id, $ids))
+            <label>{!!  Form::checkbox("category[]",$category->title, true) !!} {{$category->title}} </label>
+                @else
             <label>{!!  Form::checkbox("category[]",$category->title, false) !!} {{$category->title}} </label>
+            @endif
         </div>
     @endforeach
 

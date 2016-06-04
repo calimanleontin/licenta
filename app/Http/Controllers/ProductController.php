@@ -160,7 +160,11 @@ class ProductController extends Controller
         if($user->id != $product->author_id and $user->is_admin() == false and $user->is_moderator() == false)
             return redirect('/')->withErrors('You have not sufficient permissions ');
         $categories = Categories::all();
-        return view('product.edit')->withProduct($product)->withCategories($categories);
+        $categories_ids = $product->categories->lists('id');
+        return view('product.edit')
+            ->withProduct($product)
+            ->withCategories($categories)
+            ->with('ids', $categories_ids);
     }
 
     public function update(Request $request, $id)
