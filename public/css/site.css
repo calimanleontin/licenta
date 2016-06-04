@@ -86,6 +86,7 @@
 
 .hero-avatar{
     max-width:200px;
+    border-radius: 7px;
 }
 
 .product-image{
@@ -133,4 +134,16 @@
 }
 .championship-title:hover{
     cursor: pointer;
+}
+
+.hero{
+    border-style: ridge;
+    border-color: #00b3ee;
+    border-radius: 10px;
+    width:206px;
+}
+
+.hero-stats {
+    border-top:ridge black;
+    height: 300px;
 }
