@@ -64,5 +64,13 @@ class Products extends Model
         return $this->belongsToMany('App\User');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function view()
+    {
+        return $this->hasOne('App\ProductView');
+    }
+
 
 }

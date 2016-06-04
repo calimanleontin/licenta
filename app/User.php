@@ -116,4 +116,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\Hero');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function views()
+    {
+        return $this->hasOne('App\ProductView');
+    }
+
 }
