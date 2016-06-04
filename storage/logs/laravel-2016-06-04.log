@@ -1,0 +1,1015 @@
+[2016-06-04 17:14:30] local.ERROR: exception 'ErrorException' with message 'file_put_contents(/home/leontin/work/licenta/storage/framework/services.json): failed to open stream: Permission denied' in /home/leontin/work/licenta/vendor/compiled.php:6440
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/home/leontin/w...', 6440, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(6440): file_put_contents('/home/leontin/w...', '{?    "provider...', 0)
+#2 /home/leontin/work/licenta/vendor/compiled.php(6732): Illuminate\Filesystem\Filesystem->put('/home/leontin/w...', '{?    "provider...')
+#3 /home/leontin/work/licenta/vendor/compiled.php(6713): Illuminate\Foundation\ProviderRepository->writeManifest(Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(6679): Illuminate\Foundation\ProviderRepository->compileManifest(Array)
+#5 /home/leontin/work/licenta/vendor/compiled.php(1471): Illuminate\Foundation\ProviderRepository->load(Array)
+#6 /home/leontin/work/licenta/vendor/compiled.php(1874): Illuminate\Foundation\Application->registerConfiguredProviders()
+#7 /home/leontin/work/licenta/vendor/compiled.php(1356): Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#8 /home/leontin/work/licenta/vendor/compiled.php(2033): Illuminate\Foundation\Application->bootstrapWith(Array)
+#9 /home/leontin/work/licenta/vendor/compiled.php(1995): Illuminate\Foundation\Http\Kernel->bootstrap()
+#10 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#12 {main}  
+[2016-06-04 17:15:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:16:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:16:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:16:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:16:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:16:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:17:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:17:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:18:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:18:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:18:25] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:19:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:20:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:20:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:20:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:22:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:22:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:22:28] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:65
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:23:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:24:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:24:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:24:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:24:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:24:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:28] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:52] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:28:53] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:31:55] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5(9): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/home/leontin/w...', 9, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14154): include('/home/leontin/w...')
+#2 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#6 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#7 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#38 /home/leontin/work/licenta/server.php(21): require_once('/home/leontin/w...')
+#39 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /home/leontin/work/licenta/resources/views/home-game.blade.php)' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/compiled.php(14156): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#2 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#4 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#6 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#18 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/server.php(21): require_once('/home/leontin/w...')
+#38 {main}  
+[2016-06-04 17:31:57] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5(9): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/home/leontin/w...', 9, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14154): include('/home/leontin/w...')
+#2 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#6 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#7 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#38 /home/leontin/work/licenta/server.php(21): require_once('/home/leontin/w...')
+#39 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /home/leontin/work/licenta/resources/views/home-game.blade.php)' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/compiled.php(14156): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#2 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#4 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#6 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#18 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/server.php(21): require_once('/home/leontin/w...')
+#38 {main}  
+[2016-06-04 17:32:00] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5(9): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/home/leontin/w...', 9, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14154): include('/home/leontin/w...')
+#2 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#6 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#7 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#38 /home/leontin/work/licenta/server.php(21): require_once('/home/leontin/w...')
+#39 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /home/leontin/work/licenta/resources/views/home-game.blade.php)' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/compiled.php(14156): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#2 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#4 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#6 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#18 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/server.php(21): require_once('/home/leontin/w...')
+#38 {main}  
+[2016-06-04 17:32:06] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:34:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:35:46] local.ERROR: exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'calimanleontin@gmail.com' for key 'users_email_unique'' in /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php:362
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(362): PDOStatement->execute(Array)
+#1 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(616): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'insert into `us...', Array)
+#2 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(580): Illuminate\Database\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#3 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(363): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#4 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(320): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#5 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#6 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1725): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#7 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(933): call_user_func_array(Array, Array)
+#9 /home/leontin/work/licenta/vendor/compiled.php(10095): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#10 /home/leontin/work/licenta/vendor/compiled.php(10095): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#11 /home/leontin/work/licenta/vendor/compiled.php(10085): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#12 /home/leontin/work/licenta/vendor/compiled.php(10042): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder), Array)
+#13 /home/leontin/work/licenta/app/Http/Controllers/UserController.php(69): Illuminate\Database\Eloquent\Model->save()
+#14 [internal function]: App\Http\Controllers\UserController->postRegister(Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(8558): call_user_func_array(Array, Array)
+#16 /home/leontin/work/licenta/vendor/compiled.php(8626): Illuminate\Routing\Controller->callAction('postRegister', Array)
+#17 /home/leontin/work/licenta/vendor/compiled.php(8605): Illuminate\Routing\ControllerDispatcher->call(Object(App\Http\Controllers\UserController), Object(Illuminate\Routing\Route), 'postRegister')
+#18 [internal function]: Illuminate\Routing\ControllerDispatcher->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#22 /home/leontin/work/licenta/vendor/compiled.php(8606): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(8592): Illuminate\Routing\ControllerDispatcher->callWithinStack(Object(App\Http\Controllers\UserController), Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'postRegister')
+#24 /home/leontin/work/licenta/vendor/compiled.php(7583): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'App\Http\Contro...', 'postRegister')
+#25 /home/leontin/work/licenta/vendor/compiled.php(7554): Illuminate\Routing\Route->runWithCustomDispatcher(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#27 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#38 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#39 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#40 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#41 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#42 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#43 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#44 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#45 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#46 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#47 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#49 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#50 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#51 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#52 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#53 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#54 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#55 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#56 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#57 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#58 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#59 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#60 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#61 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#62 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#63 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#64 {main}
+
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'calimanleontin@gmail.com' for key 'users_email_unique' (SQL: insert into `users` (`name`, `email`, `password`, `updated_at`, `created_at`) values (calimanleontin@gmail.com, calimanleontin@gmail.com, yhUhepE1ORpMDWGfQ.IFuufILonJwwSwdSx3bgnPXXxNPd8w3ufTO, 2016-06-04 17:35:46, 2016-06-04 17:35:46))' in /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php:624
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(580): Illuminate\Database\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#1 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(363): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Connection.php(320): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1725): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 /home/leontin/work/licenta/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(933): call_user_func_array(Array, Array)
+#7 /home/leontin/work/licenta/vendor/compiled.php(10095): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 /home/leontin/work/licenta/vendor/compiled.php(10095): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 /home/leontin/work/licenta/vendor/compiled.php(10085): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 /home/leontin/work/licenta/vendor/compiled.php(10042): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder), Array)
+#11 /home/leontin/work/licenta/app/Http/Controllers/UserController.php(69): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: App\Http\Controllers\UserController->postRegister(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(8558): call_user_func_array(Array, Array)
+#14 /home/leontin/work/licenta/vendor/compiled.php(8626): Illuminate\Routing\Controller->callAction('postRegister', Array)
+#15 /home/leontin/work/licenta/vendor/compiled.php(8605): Illuminate\Routing\ControllerDispatcher->call(Object(App\Http\Controllers\UserController), Object(Illuminate\Routing\Route), 'postRegister')
+#16 [internal function]: Illuminate\Routing\ControllerDispatcher->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(8606): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(8592): Illuminate\Routing\ControllerDispatcher->callWithinStack(Object(App\Http\Controllers\UserController), Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'postRegister')
+#22 /home/leontin/work/licenta/vendor/compiled.php(7583): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'App\Http\Contro...', 'postRegister')
+#23 /home/leontin/work/licenta/vendor/compiled.php(7554): Illuminate\Routing\Route->runWithCustomDispatcher(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#25 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#36 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#38 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#39 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#40 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#41 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#42 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#43 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#44 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#45 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#47 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#48 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#49 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#50 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#51 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#52 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#53 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#54 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#55 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#56 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#57 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#58 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#59 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#60 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#61 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#62 {main}  
+[2016-06-04 17:36:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:36:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:37:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:37:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:37:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:25] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:27] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:27] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:38:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:39:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:39:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:39:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:40:03] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5(9): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/home/leontin/w...', 9, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14154): include('/home/leontin/w...')
+#2 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#6 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#7 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#38 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /home/leontin/work/licenta/resources/views/home-game.blade.php)' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/compiled.php(14156): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#2 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#4 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#6 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#18 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#37 {main}  
+[2016-06-04 17:40:18] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5(9): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/home/leontin/w...', 9, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14154): include('/home/leontin/w...')
+#2 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#6 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#7 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#38 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /home/leontin/work/licenta/resources/views/home-game.blade.php)' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/compiled.php(14156): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#2 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#4 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#6 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#18 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#37 {main}  
+[2016-06-04 17:40:18] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5(9): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/home/leontin/w...', 9, Array)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14154): include('/home/leontin/w...')
+#2 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#4 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#6 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#7 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#12 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#30 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#36 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#37 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#38 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: /home/leontin/work/licenta/resources/views/home-game.blade.php)' in /home/leontin/work/licenta/storage/framework/views/0dbc1418a9e14de470d0b82682e430a5:9
+Stack trace:
+#0 /home/leontin/work/licenta/vendor/compiled.php(14156): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /home/leontin/work/licenta/vendor/compiled.php(14188): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/leontin/w...', Array)
+#2 /home/leontin/work/licenta/vendor/compiled.php(14025): Illuminate\View\Engines\CompilerEngine->get('/home/leontin/w...', Array)
+#3 /home/leontin/work/licenta/vendor/compiled.php(14012): Illuminate\View\View->getContents()
+#4 /home/leontin/work/licenta/vendor/compiled.php(13999): Illuminate\View\View->renderContents()
+#5 /home/leontin/work/licenta/vendor/compiled.php(15108): Illuminate\View\View->render()
+#6 /home/leontin/work/licenta/vendor/compiled.php(14634): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/leontin/work/licenta/vendor/compiled.php(7419): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /home/leontin/work/licenta/vendor/compiled.php(7219): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#13 /home/leontin/work/licenta/vendor/compiled.php(7220): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 /home/leontin/work/licenta/vendor/compiled.php(7209): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#15 /home/leontin/work/licenta/vendor/compiled.php(7194): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /home/leontin/work/licenta/vendor/compiled.php(2040): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#18 /home/leontin/work/licenta/vendor/compiled.php(9244): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#19 /home/leontin/work/licenta/vendor/compiled.php(2548): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /home/leontin/work/licenta/app/Http/Middleware/VerifyCsrfToken.php(17): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /home/leontin/work/licenta/vendor/compiled.php(9236): App\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /home/leontin/work/licenta/vendor/compiled.php(12416): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /home/leontin/work/licenta/vendor/compiled.php(11106): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /home/leontin/work/licenta/vendor/compiled.php(12118): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /home/leontin/work/licenta/vendor/compiled.php(12066): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /home/leontin/work/licenta/vendor/compiled.php(2589): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 /home/leontin/work/licenta/vendor/compiled.php(9236): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 /home/leontin/work/licenta/vendor/compiled.php(9227): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#34 /home/leontin/work/licenta/vendor/compiled.php(1996): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#37 {main}  
+[2016-06-04 17:40:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:41:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:41:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:42:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:43:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:43:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:44:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:44:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:44:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'else' (T_ELSE)' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:5
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'else' (T_ELSE)' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:5
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:69
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:69
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'else' (T_ELSE)' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:4
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:68
+Stack trace:
+#0 {main}  
+[2016-06-04 17:45:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:46:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:46:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:46:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:46:59] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:46:59] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:66
+Stack trace:
+#0 {main}  
+[2016-06-04 17:48:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:48:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:48:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  
+[2016-06-04 17:48:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:63
+Stack trace:
+#0 {main}  
+[2016-06-04 17:48:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:63
+Stack trace:
+#0 {main}  
+[2016-06-04 17:48:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in /home/leontin/work/licenta/storage/framework/views/d03057896922e5e38afa9dc50ee36b40:67
+Stack trace:
+#0 {main}  

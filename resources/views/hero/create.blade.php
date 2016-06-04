@@ -23,30 +23,22 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Sex:</label>
                                 <div class="col-md-6">
-                                @if(!isset($sex) and !empty($sex))
-                                        <select required name = 'sex' class="form-control">
-                                            <option value="0">Sex</option>
-                                            <option value="masc" <?php if($sex == 'masc'): ?> selected <?endif;?>>Masc</option>
-                                            <option value="fem" <?php if($sex == 'fem'): ?> selected <?endif;?>>Fem</option>
-                                        </select>
-                                    @else
                                         <select required name="sex" class="form-control">
                                             <option value="0">Sex</option>
                                             <option value="masc">Masc</option>
                                             <option value="fem">Fem</option>
                                         </select>
-                                    @endif
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Class:</label>
                                 <div class="col-md-6">
-                                        <select required name = 'class' class="form-control">
-                                            @foreach($classes as $class)
-                                                <option value="{{ $class->id }}" >{{$class->name}}</option>
-                                            @endforeach
-                                        </select>
+                                    <select required name = 'class' class="form-control">
+                                        @foreach($classes as $class)
+                                            <option value="{{ $class->id }}" >{{$class->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
