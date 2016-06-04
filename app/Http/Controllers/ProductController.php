@@ -92,12 +92,12 @@ class ProductController extends Controller
             }
 
         $stats = new Stats();
-        $stats->perception = 0;
-        $stats->strength = 0;
-        $stats->charisma= 0;
-        $stats->endurance= 0;
-        $stats->intelligence= 0;
-        $stats->luck = 0;
+        $stats->perception = Input::get('perception');
+        $stats->strength = Input::get('strength');
+        $stats->charisma= Input::get('charisma');
+        $stats->endurance= Input::get('endurance');
+        $stats->intelligence= Input::get('intelligence');
+        $stats->luck = Input::get('luck');
         $stats->save();
         $product->stats_id = $stats->id;
         $product->save();
