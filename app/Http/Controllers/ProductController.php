@@ -6,6 +6,7 @@ use App\Categories;
 use App\Comments;
 use App\Orders;
 use App\ProductsLikes;
+use App\ProductView;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -100,8 +101,24 @@ class ProductController extends Controller
         $product = Products::where('slug',$slug)->first();
         if($product == NULL)
             return redirect('/')->withErrors('Requested url does not exist');
-      $comments = Comments::where('on_product',$product->id)->orderBy('created_at','asc')->paginate(5);
+        $comments = Comments::where('on_product',$product->id)->orderBy('created_at','asc')->paginate(5);
         $categories = Categories::all();
+
+        $user = Auth::user();
+        if(!empty($user))
+        {
+            $product_views = ProductView::where('user_id', $user->id)->where('product_id', $product->id)->first();
+            if(empty($product_views))
+            {
+                $product_views = new ProductView();
+                $product_views->user_id = $user->id;
+                $product_views->product_id = $product->id;
+                $product_views->view_number = 0;
+            }
+            $product_views->view_number += 1;
+            $product_views->save();
+
+        }
         return view('product.show')
             ->withProduct($product)
             ->withCategories($categories)
