@@ -178,12 +178,12 @@
 a.left.carousel-control{
     max-height:300px;
     margin-left:16px;
-    margin-top:161px;
+    margin-top:231px;
     width:20px;
 }
 
 a.right.carousel-control {
-    margin-top:161px;
+    margin-top:231px;
     margin-bottom:19px;
     height:300px;
     margin-right:16px;
@@ -206,4 +206,8 @@ a.right.carousel-control {
     width:100%;
     display: block;
     margin:auto;
+}
+
+.list-down{
+    margin-bottom:-10px;
 }

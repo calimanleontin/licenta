@@ -9585,3 +9585,21 @@ Stack trace:
 #35 /home/leontin/work/licenta/vendor/compiled.php(1983): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #36 /home/leontin/work/licenta/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #37 {main}  
+[2016-06-04 22:01:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /home/leontin/work/licenta/storage/framework/views/9ee659492a31e24d383716ebeb9e1112:39
+Stack trace:
+#0 {main}  
+[2016-06-04 22:01:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /home/leontin/work/licenta/storage/framework/views/9ee659492a31e24d383716ebeb9e1112:39
+Stack trace:
+#0 {main}  
+[2016-06-04 22:01:28] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /home/leontin/work/licenta/storage/framework/views/9ee659492a31e24d383716ebeb9e1112:39
+Stack trace:
+#0 {main}  
+[2016-06-04 22:01:28] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /home/leontin/work/licenta/storage/framework/views/9ee659492a31e24d383716ebeb9e1112:39
+Stack trace:
+#0 {main}  
+[2016-06-04 22:01:29] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /home/leontin/work/licenta/storage/framework/views/9ee659492a31e24d383716ebeb9e1112:39
+Stack trace:
+#0 {main}  
+[2016-06-04 22:01:29] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /home/leontin/work/licenta/storage/framework/views/9ee659492a31e24d383716ebeb9e1112:39
+Stack trace:
+#0 {main}  

@@ -45,7 +45,6 @@ class ProductController extends Controller
         }
         if($nr != 0)
             $organizer[] = $group;
-        ($organizer);
         $categories = Categories::all();
         return view('home-shop')
             ->withOrganizer($organizer)
@@ -225,12 +224,28 @@ class ProductController extends Controller
     {
         $criterion = $request->get('criterion');
         $order = $request->get('order');
-        $categories = Categories::all();
         $products = Products::where('active',1)->orderBy($criterion,$order)->paginate(9);
+        $organizer = [];
+        $group = [];
+        $nr = 0;
+        foreach ($products as $product){
+            $group[] = $product;
+            $nr ++ ;
+            if($nr == 3)
+            {
+                $organizer[] = $group;
+                $group = [];
+                $nr = 0;
+            }
+        }
+        if($nr != 0)
+            $organizer[] = $group;
+        $categories = Categories::all();
         return view('home-shop')->withProducts($products)
             ->withTitle('Sort results')
             ->withCategories($categories)
             ->withOrder($order)
+            ->withOrganizer($organizer)
             ->withCriterion($criterion);
     }
 
