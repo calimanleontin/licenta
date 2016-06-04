@@ -32,6 +32,12 @@ class Products extends Migration
             $table->bigInteger('noComments')->unsigned()->default(0);
             $table->string('image');
 
+            $table->integer('stats_id')->unsigned()->nullable();
+            $table->foreign('stats_id')
+                ->references('id')
+                ->on('stats')
+                ->onDelete('cascade');
+
             $table->integer('hero_id')->unsigned()->nullable();
             $table->foreign('hero_id')
                 ->references('id')

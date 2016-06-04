@@ -92,7 +92,7 @@
                                 @foreach($category->products as $product)
                                     @if(in_array($product->id, $products))
                                     <div class="form-group">
-                                        <option value="{{ $product->name }}" class="form-control">{{ $product->name }}</option>
+                                        <option value="{{ $product->id }}" class="form-control">{{ $product->name }}</option>
                                     </div>
                                     @endif
                                 @endforeach

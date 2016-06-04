@@ -80,6 +80,8 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/lists/championships', 'ChampionshipController@index');
 		Route::get('/attend/{id}', 'ChampionshipController@attend');
 		Route::get('/tree/{id}', 'ChampionshipController@tree');
+		
+		Route::post('/set-products', 'HeroController@setProducts');
 	});
 
 });

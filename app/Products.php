@@ -72,5 +72,9 @@ class Products extends Model
         return $this->hasOne('App\ProductView');
     }
 
+    public function stats()
+    {
+        return $this->belongsTo('App\Stats');
+    }
 
 }

@@ -13,4 +13,9 @@ class Stats extends Model {
     {
         return $this->hasOne('App\Hero');
     }
+    
+    public function product()
+    {
+        return $this->belongsTo('App\Products');
+    }
 }

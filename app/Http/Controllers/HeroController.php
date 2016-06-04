@@ -1,8 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\Categories;
 use App\HeroesTypes;
 use App\Http\Requests;
 use App\Hero;
+use App\Products;
 use App\Stats;
 use App\Http\Controllers\Controller;
 use App\StatsCost;
@@ -160,6 +162,41 @@ class HeroController extends Controller {
 		if($sum1 < $sum2)
 			return $hero1;
 		return $hero2;
+	}
+	
+	public function setProducts()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+		
+		foreach ($hero->products as $product)
+		{
+			$product->hero_id = null;
+			$product->save();
+		}
+
+		$stats = $hero->stats;
+		foreach(Categories::all() as $category)
+		{
+			$product_id = Input::get($category->title);
+			if($product_id != 0)
+			{
+				$product = Products::find($product_id);
+				$product->hero_id = $hero->id;
+				$product->save();
+				$product_stats = $product->stats;
+				$stats->final_strength = $stats->strenth + $product_stats->strength;
+				$stats->final_pereception = $stats->perception + $product_stats->perception;
+				$stats->final_endurance = $stats->endurace + $product_stats->endurance;
+				$stats->final_charisma = $stats->charisma + $product_stats->charisma;
+				$stats->final_intelligence = $stats->intelligence + $product_stats->intelligence;
+				$stats->final_luck = $stats->luck + $product_stats->luck;
+				$stats->save();
+			}
+		}
+
+		return redirect("/")
+			->withMessage('200');
 	}
 
 }
