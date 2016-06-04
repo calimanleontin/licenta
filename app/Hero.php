@@ -23,7 +23,7 @@ class Hero extends Model {
      */
     public function stats()
     {
-        return $this->hasOne('App\Stats');
+        return $this->belongsTo('App\Stats');
     }
 
     /**

@@ -141,9 +141,25 @@
     border-color: #00b3ee;
     border-radius: 10px;
     width:206px;
+    margin-right:20px;
 }
 
 .hero-stats {
     border-top:ridge black;
-    height: 300px;
+    height: 250px;
+}
+
+.stat-title{
+    text-align: center;
+}
+
+.stat-value{
+    text-align: center;
+}
+
+.places{
+    border:solid #00b3ee;
+    border-radius:10px;
+    height:376px;
+    margin-right:90px;
 }

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Categories;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
@@ -31,9 +32,11 @@ class HomeController extends Controller {
 		if(Auth::guest())
 			return view('auth.register');
 		$user = Auth::user();
+		$categories = Categories::all();
 		return view('home-game')
 			->with('user', $user)
-			->with('hero', $user->hero);
+			->with('hero', $user->hero)
+			->with('categories', $categories);
 	}
 
 	public function notFound()
