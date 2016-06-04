@@ -80,9 +80,12 @@ class Products extends Model
         return $this->belongsTo('App\Stats');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function set()
     {
-        return $this->belongsTo('App\Sets');
+        return $this->belongsTo('App\Sets', 'set_id');
     }
 
 }

@@ -112,6 +112,11 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::get('/class/edit/{id}', 'HeroesTypesController@edit');
 	Route::get('/class/delete/{id}', 'HeroesTypesController@destroy');
 
+	Route::get('/set/create', 'SetsController@create');
+	Route::post('/set/store', 'SetsController@store');
+	Route::get('/set/edit/{id}', 'SetsController@edit');
+	Route::get('/set/delete/{id}', 'SetsController@destroy');
+
 	Route::post('/championship/store', 'ChampionshipController@store');
 	Route::get('/championship/create', 'ChampionshipController@create');
 	Route::get('/championship/view/{id}', 'ChampionshipController@show');

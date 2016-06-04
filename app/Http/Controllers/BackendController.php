@@ -6,6 +6,7 @@ use App\Hero;
 use App\HeroesTypes;
 use App\Http\Requests;
 use App\Products;
+use App\Sets;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -73,6 +74,9 @@ class BackendController extends Controller {
 	
 	public function sets()
 	{
+		$sets = Sets::all();
+			return view('backend.sets')
+				->with('sets', $sets);
 	}
 
 	public function create()
