@@ -7,6 +7,7 @@ use App\Comments;
 use App\Orders;
 use App\ProductsLikes;
 use App\ProductView;
+use App\Stats;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -89,6 +90,17 @@ class ProductController extends Controller
                 $category = Categories::where('title',$category)->first();
                 $product->categories()->attach($category->id);
             }
+
+        $stats = new Stats();
+        $stats->perception = 0;
+        $stats->strength = 0;
+        $stats->charisma= 0;
+        $stats->endurance= 0;
+        $stats->intelligence= 0;
+        $stats->luck = 0;
+        $stats->save();
+        $product->stats_id = $stats->id;
+        $product->save();
         return redirect('/backend/products')->withMessage('New product created');
     }
 

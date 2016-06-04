@@ -186,12 +186,13 @@ class HeroController extends Controller {
 				$product->save();
 				$product_stats = $product->stats;
 				$stats->final_strength = $stats->strenth + $product_stats->strength;
-				$stats->final_pereception = $stats->perception + $product_stats->perception;
+				$stats->final_perception = $stats->perception + $product_stats->perception;
 				$stats->final_endurance = $stats->endurace + $product_stats->endurance;
 				$stats->final_charisma = $stats->charisma + $product_stats->charisma;
 				$stats->final_intelligence = $stats->intelligence + $product_stats->intelligence;
 				$stats->final_luck = $stats->luck + $product_stats->luck;
 				$stats->save();
+
 			}
 		}
 
