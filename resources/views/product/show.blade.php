@@ -6,12 +6,39 @@
 <script>tinymce.init({ selector:'textarea' });</script>
 
 @section('content')
+    <div class="col-md-6">
         @if($product->image)
             <img src="/images/catalog/{{$product->image}}" alt="Smiley face" class = 'img-responsive product-image'>
             @else
             <img src="/images/catalog/product.jpg" alt="Smiley face" class = 'img-responsive product-image'>
         @endif
-            &nbsp
+    </div>
+    <div class="col-md-6">
+       <div class="col-md-12 ">
+           Stats
+       </div>
+        <div class="col-md-12">
+            Strength: {{ $product->stats->strength }}
+        </div>
+        <div class="col-md-12">
+            Perception: {{ $product->stats->perception }}
+        </div>
+        <div class="col-md-12">
+            Endurance: {{ $product->stats->endurance }}
+        </div>
+        <div class="col-md-12">
+            Charisma: {{ $product->stats->charisma }}
+        </div>
+        <div class="col-md-12">
+            Intelligence: {{ $product->stats->intelligence }}
+        </div>
+        <div class="col-md-12">
+            Luck: {{ $product->stats->luck }}
+        </div>
+    </div>
+
+<div class="col-md-12">
+    &nbsp
 
         <br>
         @if(!Auth::guest())
@@ -126,6 +153,7 @@
             @endforeach
         </ul>
     @endif
+</div>
 
 
 @endsection

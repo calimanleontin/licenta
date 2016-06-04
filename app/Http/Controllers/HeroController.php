@@ -168,14 +168,21 @@ class HeroController extends Controller {
 	{
 		$user = Auth::user();
 		$hero = $user->hero;
-		
+		$stats = $hero->stats;
+
 		foreach ($hero->products as $product)
 		{
 			$product->hero_id = null;
 			$product->save();
+			$stats->final_strength = $stats->strenth;
+			$stats->final_perception = $stats->perception;
+			$stats->final_endurance = $stats->endurace;
+			$stats->final_charisma = $stats->charisma;
+			$stats->final_intelligence = $stats->intelligence;
+			$stats->final_luck = $stats->luck;
+			$stats->save();
 		}
 
-		$stats = $hero->stats;
 		foreach(Categories::all() as $category)
 		{
 			$product_id = Input::get($category->title);
