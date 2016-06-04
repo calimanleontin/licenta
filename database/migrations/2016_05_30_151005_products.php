@@ -38,6 +38,11 @@ class Products extends Migration
                 ->on('stats')
                 ->onDelete('cascade');
 
+            $table->integer('set_id')->unsigned()->nullable();
+            $table->foreign('set_id')
+                ->references('id')
+                ->on('sets');
+
             $table->integer('hero_id')->unsigned()->nullable();
             $table->foreign('hero_id')
                 ->references('id')

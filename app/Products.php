@@ -72,9 +72,17 @@ class Products extends Model
         return $this->hasOne('App\ProductView');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function stats()
     {
         return $this->belongsTo('App\Stats');
+    }
+
+    public function set()
+    {
+        return $this->belongsTo('App\Sets');
     }
 
 }

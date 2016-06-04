@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
+use App\HeroesTypes;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateHeroesTypesTable extends Migration {
@@ -32,6 +33,18 @@ class CreateHeroesTypesTable extends Migration {
 				->on('users');
 			$table->timestamps();
 		});
+
+		$class = new HeroesTypes();
+
+		$class->name = 'ceva';
+		$class->strength = 3;
+		$class->perception = 3;
+		$class->endurance = 3;
+		$class->charisma = 3;
+		$class->intelligence = 3;
+		$class->agility = 3;
+		$class->intelligence = 3;
+		$class->save();
 	}
 
 	/**

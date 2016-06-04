@@ -61,11 +61,18 @@ class BackendController extends Controller {
 			->with('classes', $classes);
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function championships()
 	{
 		$championships = Championships::paginate(20);
 		return view('backend.championships')
 			->with('championships', $championships);
+	}
+	
+	public function sets()
+	{
 	}
 
 	public function create()

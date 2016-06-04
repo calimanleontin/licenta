@@ -118,6 +118,7 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::get('/championship/destroy/{id}', 'ChampionshipController@destroy');
 
 	Route::get('/backend/classes', 'BackendController@classes');
+	Route::get('/backend/sets', 'BackendController@sets');
 
 	Route::get('/category/delete/{id}', 'CategoryController@delete');
 	Route::get('/create-hero', 'HeroController@index');
