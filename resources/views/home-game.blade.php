@@ -77,9 +77,32 @@
                 Equip
             </div>
             <div class="products">
+                <form class="form" action="/set-products" method="post">
+
                 @foreach($categories as $category)
-                    {{ $category->name }}
+                    <div class="category-maine-page text-center">
+                        {{ $category->title }}
+                    </div>
+                    <div class="choose">
+                            <select name="{{$category->title}}" class="form-control ">
+                                <div class="form-group">
+                                    <option value="0" class="form-control">Nimic</option>
+                                </div>
+                                @foreach($category->products as $product)
+                                    @if(in_array($product->id, $products))
+                                    <div class="form-group">
+                                        <option value="{{ $product->name }}" class="form-control">{{ $product->name }}</option>
+                                    </div>
+                                    @endif
+                                @endforeach
+                            </select>
+
+                    </div>
                 @endforeach
+                    <button type="submit" class="btn btn-default update-hero">Assign</button>
+
+                </form>
+
             </div>
         </div>
 @endsection

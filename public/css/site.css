@@ -163,3 +163,11 @@
     height:376px;
     margin-right:90px;
 }
+
+.update-hero{
+    width:100px;
+
+    margin:auto;
+    margin-top:30px;
+    display:block
+}

@@ -32,11 +32,13 @@ class HomeController extends Controller {
 		if(Auth::guest())
 			return view('auth.register');
 		$user = Auth::user();
+		$products = $user->products->lists('id');
 		$categories = Categories::all();
 		return view('home-game')
 			->with('user', $user)
 			->with('hero', $user->hero)
-			->with('categories', $categories);
+			->with('categories', $categories)
+			->with('products', $products);
 	}
 
 	public function notFound()
