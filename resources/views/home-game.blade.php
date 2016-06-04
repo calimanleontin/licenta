@@ -78,6 +78,7 @@
             </div>
             <div class="products">
                 <form class="form" action="/set-products" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 @foreach($categories as $category)
                     <div class="category-maine-page text-center">

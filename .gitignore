@@ -3,3 +3,4 @@
 .env
 /.idea
 /storage/framework/views
+/storage/logs/
