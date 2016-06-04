@@ -1,6 +1,7 @@
 @extends('app-shop')
 @section('title')
-    <span>
+    <span xmlns="http://www.w3.org/1999/html">
+
     @if(!empty($title))
         {{$title}}
         @else
@@ -26,8 +27,26 @@
 
     @endsection
 @section('content')
-    @if(!empty($products))
-        @foreach($products as $product)
+    @if(!empty($organizer))
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+
+            @foreach($organizer as $key => $item)
+                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" class="<?php if($key == 0): ?> active <?php endif; ?> "> </li>
+            @endforeach
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+
+        @foreach($organizer as $key => $item)
+            @if($key == 0)
+            <div class="item active">
+                @else
+            <div class="item">
+            @endif
+
+            @foreach($item as $product)
             <div class='center-block'>
                 <div class="col-md-3 product text-center" xmlns:max-height="http://www.w3.org/1999/xhtml">
                     <div class="panel-title  title">
@@ -66,6 +85,21 @@
                 </div>
             </div>
         @endforeach
+            </div>
+
+        @endforeach
+            </div>
+
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
         @if(!empty($order))
             <?php echo $products->appends(['order' => $order,'criterion'=>$criterion])->render(); ?>
 

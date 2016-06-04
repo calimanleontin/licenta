@@ -30,8 +30,25 @@ class ProductController extends Controller
     public function index()
     {
         $products = Products::where('active',1)->paginate(9);
+        $organizer = [];
+        $group = [];
+        $nr = 0;
+        foreach ($products as $product){
+            $group[] = $product;
+            $nr ++ ;
+            if($nr == 3)
+            {
+                $organizer[] = $group;
+                $group = [];
+                $nr = 0;
+            }
+        }
+        if($nr != 0)
+            $organizer[] = $group;
+        ($organizer);
         $categories = Categories::all();
         return view('home-shop')
+            ->withOrganizer($organizer)
             ->withProducts($products)
             ->withCategories($categories);
     }

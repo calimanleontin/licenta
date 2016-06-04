@@ -21,9 +21,6 @@
 .little{
     margin-top:9px;
 }
-.left{
-    float:left;
-}
 .left-title{
 }
 .left-search
@@ -173,4 +170,40 @@
 
 .high{
     min-height: 900px;
+}
+
+.left{
+    float:left;
+}
+a.left.carousel-control{
+    max-height:300px;
+    margin-left:16px;
+    margin-top:161px;
+    width:20px;
+}
+
+a.right.carousel-control {
+    margin-top:161px;
+    margin-bottom:19px;
+    height:300px;
+    margin-right:16px;
+    width:20px;
+
+}
+.carousel-inner{
+    height:346px;
+}
+.item.active.right{
+    height:346px;
+    margin:0px;
+}
+.item{
+    margin:0px;
+    height:346px;
+}
+
+.item.active{
+    width:100%;
+    display: block;
+    margin:auto;
 }
