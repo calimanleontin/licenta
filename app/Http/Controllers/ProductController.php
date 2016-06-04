@@ -7,6 +7,7 @@ use App\Comments;
 use App\Orders;
 use App\ProductsLikes;
 use App\ProductView;
+use App\Sets;
 use App\Stats;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -160,11 +161,21 @@ class ProductController extends Controller
         if($user->id != $product->author_id and $user->is_admin() == false and $user->is_moderator() == false)
             return redirect('/')->withErrors('You have not sufficient permissions ');
         $categories = Categories::all();
-        $categories_ids = $product->categories->lists('id');
+        $category_ids = $product->categories->lists('id');
+        $set_ids = Sets::find($product->sets_id);
+        if ($set_ids)
+        {
+            $set_ids = Sets::find($product->sets_id)->lists('id');
+        }
+        else
+        {
+            $set_ids = [];
+        }
         return view('product.edit')
             ->withProduct($product)
             ->withCategories($categories)
-            ->with('ids', $categories_ids);
+            ->with('category_ids', $category_ids)
+            ->with('set_ids', $set_ids);
     }
 
     public function update(Request $request, $id)
@@ -178,6 +189,7 @@ class ProductController extends Controller
         $description = $request->input('description');
         $image = Input::file('image');
         $categories = $request->input('category');
+        $set = Input::get('set');
         $duplicate = Products::where('name',$name)->first();
         if($duplicate != null and $duplicate->id != $product->id)
             return redirect('/edit/product'.$product->id)->withErrors('The name is already in use');
@@ -201,6 +213,14 @@ class ProductController extends Controller
                 $category = Categories::where('title',$category)->first();
                 $product->categories()->attach($category->id);
             }
+        }
+        if($set != null)
+        {
+            if($product->sets_id)
+            {
+                $product->sets_id = null;
+            }
+            $product->sets_id = $set[0];
         }
         $product->save();
         return redirect('/product/view/'.$product->slug)->withMessage('Product updated successfully');

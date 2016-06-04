@@ -64,16 +64,28 @@
             {!! Form::label('description','Description') !!}
             {!! Form::textarea('description','',['class' => 'form-control']) !!}
         </div>
-
+    <div class="col-md-6">
+        Categories:
     @foreach($categories as $category)
         <div class="form-group">
-            <label>{!!  Form::checkbox("category[]",$category->title, false) !!} {{$category->title}} </label>
+            <label>{!!  Form::radio("category[]",$category->title, false) !!} {{$category->title}} </label>
         </div>
     @endforeach
+    </div>
 
+    <div class="col-md-6">
+    Sets:
+    @foreach(\App\Sets::all() as $set)
+        <div class="form-group">
+            <label>{!!  Form::radio("set[]",$set->name, false) !!} {{$set->name}} </label>
+        </div>
+    @endforeach
+    </div>
+    <div class="col-md-12">
         <div class="form-group">
             {!!  Form::submit('Create',['class'=> 'btn btn-default'])!!}
         </div>
+    </div>
 
     {!! Form::close() !!}
 

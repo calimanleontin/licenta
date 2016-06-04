@@ -11,7 +11,7 @@ class Sets extends Model {
      */
     public function products()
     {
-        return $this->hasMany('App\Products', 'set_id');
+        return $this->hasMany('App\Products');
     }
 
 }

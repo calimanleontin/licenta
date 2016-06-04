@@ -30,16 +30,31 @@
         {!! Form::label('description','Description') !!}
         {!! Form::textarea('description',$product->description,['class' => 'form-control']) !!}
     </div>
+    <div class="col-md-6">
   Categories:
     @foreach($categories as $category)
         <div class="form-group">
-            @if(in_array($category->id, $ids))
-            <label>{!!  Form::checkbox("category[]",$category->title, true) !!} {{$category->title}} </label>
+            @if(in_array($category->id, $category_ids))
+            <label>{!!  Form::radio("category[]",$category->title, true) !!} {{$category->title}} </label>
                 @else
-            <label>{!!  Form::checkbox("category[]",$category->title, false) !!} {{$category->title}} </label>
+            <label>{!!  Form::radio("category[]",$category->title) !!} {{$category->title}} </label>
             @endif
         </div>
     @endforeach
+    </div>
+
+    <div class="col-md-6">
+        Sets:
+        @foreach(\App\Sets::all() as $set)
+            <div class="form-group">
+                @if(in_array($set->id, $set_ids))
+                    <label>{!!  Form::radio("set[]",$set->id, true) !!} {{$set->name}} </label>
+                @else
+                    <label>{!!  Form::radio("set[]",$set->id, false) !!} {{$set->name}} </label>
+                @endif
+            </div>
+        @endforeach
+    </div>
 
     <div class="form-group">
         {!!  Form::submit('Update',['class'=> 'btn btn-primary'])!!}
