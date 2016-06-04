@@ -199,10 +199,9 @@ class CartController extends Controller
          */
         $user = Auth::user();
 
-        foreach($cart->getCart() as $product_id => $quantity) {
+        foreach($cart->getCart() as $product_id => $quantity)
+        {
             $product = Products::where('id', $product_id)->first();
-
-
             $user->products()->attach($product->id);
             $product->quantity -= $quantity;
             $sum += $product->price * $quantity;
