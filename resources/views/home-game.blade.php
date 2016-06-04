@@ -19,7 +19,7 @@
                         Strength
                     </div>
                     <div class="stat-value">
-                        {{ $hero->stats->strength }}
+                        {{ $hero->stats->final_strength }}
                     </div>
                 </div>
                 <div class="stat">
@@ -27,7 +27,7 @@
                         Perception
                     </div>
                     <div class="stat-value">
-                        {{ $hero->stats->perception }}
+                        {{ $hero->stats->final_perception }}
                     </div>
                 </div>
                 <div class="stat">
@@ -35,7 +35,7 @@
                         Endurance
                     </div>
                     <div class="stat-value">
-                        {{ $hero->stats->endurance }}
+                        {{ $hero->stats->final_endurance }}
                     </div>
                 </div>
                 <div class="stat">
@@ -43,7 +43,7 @@
                         Charisma
                     </div>
                     <div class="stat-value">
-                    {{ $hero->stats->charisma }}
+                    {{ $hero->stats->final_charisma }}
                     </div>
                 </div>
                 <div class="stat">
@@ -51,7 +51,7 @@
                         Intelligence
                     </div>
                     <div class="stat-value">
-                        {{ $hero->stats->intelligence }}
+                        {{ $hero->stats->final_intelligence }}
                     </div>
                     </div>
                 <div class="stat">
@@ -59,7 +59,7 @@
                         Luck
                     </div>
                     <div class="stat-value">
-                        {{ $hero->stats->luck }}
+                        {{ $hero->stats->final_luck }}
                     </div>
                 </div>
             </div>
