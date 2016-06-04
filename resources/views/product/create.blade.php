@@ -15,15 +15,45 @@
             {!! Form::text('name','',['class' => 'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6 ">
             {!! Form::label('price','Price') !!}
             {!! Form::number('price','',['class' => 'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
             {!! Form::label('quantity','Quantity') !!}
             {!! Form::number('quantity','',['class' => 'form-control']) !!}
         </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('strength','Strength') !!}
+        {!! Form::number('strength','0',['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('perception','Perception') !!}
+        {!! Form::number('perception','0',['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('endurance','Endurance') !!}
+        {!! Form::number('endurance','0',['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('charisma','Charisma') !!}
+        {!! Form::number('charisma','0',['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('intelligence','Intelligence') !!}
+        {!! Form::number('intelligence','0',['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('luck','Luck') !!}
+        {!! Form::number('luck','0',['class' => 'form-control']) !!}
+    </div>
 
         <div class="form-group">
             {!! Form::label('Product Image') !!}
@@ -42,7 +72,7 @@
     @endforeach
 
         <div class="form-group">
-            {!!  Form::submit('Create',['class'=> ''])!!}
+            {!!  Form::submit('Create',['class'=> 'btn btn-default'])!!}
         </div>
 
     {!! Form::close() !!}
