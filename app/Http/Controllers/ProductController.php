@@ -45,7 +45,30 @@ class ProductController extends Controller
             ->orderBy('view_number', 'desc')
             ->lists('product_id');
 
-        $recommend_id = array_merge($liked, $viewed);
+        $user_products_ids = $user->products->lists('sets_id');
+        $count = [];
+        foreach($user->products as $product)
+        {
+            if(empty($count[$product->id]))
+            {
+                $count[$product->id] = 0;
+            }
+            else
+            {
+                $count[$product->id] += 1;
+            }
+        }
+        $sets_id = [];
+        foreach ($count as $key => $item)
+        {
+            if($count[$key] >= 2)
+            {
+                $sets_id[] = $item;
+            }
+        }
+//        dd($sets_id);
+
+        $recommend_id = array_merge($liked, $viewed, $sets_id);
         $products = Products::where('active',1)->whereIn('id', $recommend_id)->get();
 
         $organizer = [];
