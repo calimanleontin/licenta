@@ -211,3 +211,12 @@ a.right.carousel-control {
 .list-down{
     margin-bottom:-10px;
 }
+
+.place-avatar{
+    max-width:300px;
+}
+
+.places-go{
+    width:200px;
+    margin:30px;
+}

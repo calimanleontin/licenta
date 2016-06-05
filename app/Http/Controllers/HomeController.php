@@ -53,6 +53,7 @@ class HomeController extends Controller {
 		$hero = $user->hero;
 		$cost = StatCost::where('level', $hero->level + 1);
 		return view('hero.training')
-			->with('cost', $cost);
+			->with('cost', $cost)
+			->with('hero', $hero);
 	}
 }

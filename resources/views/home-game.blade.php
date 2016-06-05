@@ -104,6 +104,22 @@
             <div class="places-title text-center">
                 GO TO
             </div>
+
+            <div class="places-title text-center">
+                <a href="/training"><button class="btn btn-default places-go">Go to trainer</button></a>
+            </div>
+
+            <div class="places-title text-center">
+                <div class="places-title text-center">
+                    <a href="/work"><button class="btn btn-default places-go">Go to work</button></a>
+                </div>
+            </div>
+
+            <div class="places-title text-center">
+                <div class="places-title text-center">
+                    <a href="/outside"><button class="btn btn-default places-go">Go to wasteland</button></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-3 col-sm-4 col-xs-2 places left">
