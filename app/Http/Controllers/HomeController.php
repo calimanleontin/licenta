@@ -78,7 +78,7 @@ class HomeController extends Controller {
 		$user = Auth::user();
 		$hero = $user->hero;
 		if($hero->busy != 0)
-			return redirect('/work')
+			return redirect('/training')
 				->withErrors('Hero already busy');
 
 		$stats = $hero->stats;
@@ -125,6 +125,9 @@ class HomeController extends Controller {
 			->with('hero', $hero);
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function work()
 	{
 		$user = Auth::user();
@@ -148,6 +151,30 @@ class HomeController extends Controller {
 		$hero->save();
 		return redirect('/work')
 			->withMessage('Success');
+	}
 
+	public function leave()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+		if($hero->busy != 0)
+			return redirect('/outside')
+				->withErrors('Hero already busy');
+
+		$place = $_GET['type'];
+
+		$out = ExternalPlaces::where('name', $place)->first();
+		if(!$out)
+			return redirect('/work')
+				->withErrors('404');
+
+		$hero->busy = 1;
+		$hero->started_at = Carbon::now()->addHours($out->time_spent);
+		$hero->ended_at = Carbon::now()->addHours($out->time_spent);
+		$hero->location = 'work';
+		$hero->outside_places_id = $out->id;
+		$hero->save();
+		return redirect('/outside')
+			->withMessage('Success');
 	}
 }

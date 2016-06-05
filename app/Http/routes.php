@@ -90,6 +90,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/increase', 'HomeController@increase');
 
 		Route::get('/work-at', 'HomeController@work');
+		Route::get('/go-to', 'HomeController@leave');
 
 	});
 
