@@ -80,6 +80,14 @@ class HeroController extends Controller {
 			$stats->intelligence = $class->intelligence;
 			$stats->agility = $class->agility;
 			$stats->luck = $class->luck;
+
+			$stats->final_strength = $class->strength;
+			$stats->final_perception = $class->perception;
+			$stats->final_endurance = $class->endurance;
+			$stats->final_charisma = $class->charisma;
+			$stats->final_intelligence = $class->intelligence;
+			$stats->final_agility = $class->agility;
+			$stats->final_luck = $class->luck;
 			$stats->save();
 
 			$stats_cost= new StatsCost();
@@ -163,7 +171,7 @@ class HeroController extends Controller {
 			return $hero1;
 		return $hero2;
 	}
-	
+
 	public function setProducts()
 	{
 		$user = Auth::user();
