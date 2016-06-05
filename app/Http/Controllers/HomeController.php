@@ -5,6 +5,7 @@ use App\ExternalPlaces;
 use App\Http\Requests\Request;
 use App\StatCost;
 use App\Work;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
@@ -76,6 +77,10 @@ class HomeController extends Controller {
 	{
 		$user = Auth::user();
 		$hero = $user->hero;
+		if($hero->busy != 0)
+			return redirect('/work')
+				->withErrors('Hero already busy');
+
 		$stats = $hero->stats;
 		$stat = $_GET['type'];
 		$stats_cost = StatCost::where('id', $hero->stats->{$stat} + 1)->first();
@@ -105,6 +110,9 @@ class HomeController extends Controller {
 			->with('hero', $hero);
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function outsidePlaces()
 	{
 		$user = Auth::user();
@@ -115,5 +123,31 @@ class HomeController extends Controller {
 		return view('hero.outside')
 			->with('places', $places)
 			->with('hero', $hero);
+	}
+
+	public function work()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+		if($hero->busy != 0)
+			return redirect('/work')
+				->withErrors('Hero already busy');
+
+		$place = $_GET['type'];
+
+		$work = Work::where('name', $place)->first();
+		if(!$work)
+			return redirect('/work')
+				->withErrors('404');
+
+		$hero->busy = 1;
+		$hero->started_at = Carbon::now()->addHours($work->time_spent);
+		$hero->ended_at = Carbon::now()->addHours($work->time_spent);
+		$hero->location = 'work';
+		$hero->works_id = $work->id;
+		$hero->save();
+		return redirect('/work')
+			->withMessage('Success');
+
 	}
 }

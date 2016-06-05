@@ -22,6 +22,8 @@ class Hero extends Migration {
 			$table->string('location');
 			$table->string('name');
 			$table->string('sex');
+			$table->date('started_at')->nullable();
+			$table->date('ended_at')->nullable();
 			$table->string('image');
 			$table->integer('class_id');
 			$table->integer('user_id')->unsigned()->nullable();

@@ -89,6 +89,8 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/outside', 'HomeController@outsidePlaces');
 		Route::get('/increase', 'HomeController@increase');
 
+		Route::get('/work-at', 'HomeController@work');
+
 	});
 
 });
