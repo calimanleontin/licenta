@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Categories;
+use App\ExternalPlaces;
 use App\Http\Requests\Request;
 use App\StatCost;
 use App\Work;
@@ -90,6 +91,9 @@ class HomeController extends Controller {
 			->withMessage('Success');
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function workPlaces()
 	{
 		$user = Auth::user();
@@ -97,6 +101,18 @@ class HomeController extends Controller {
 		
 		$hero = $user->hero;
 		return view('hero.work')
+			->with('places', $places)
+			->with('hero', $hero);
+	}
+
+	public function outsidePlaces()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+
+		$places = ExternalPlaces::all();
+
+		return view('hero.outside')
 			->with('places', $places)
 			->with('hero', $hero);
 	}

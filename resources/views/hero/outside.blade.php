@@ -1,13 +1,14 @@
 @extends('app-game')
 
 @section('title')
-    Work
+    Go places
 @endsection
 
 @section('content')
+
     <div class="col-md-3">
         <div class="place-avatar">
-            <img src="/images/users/BcaErdjdi.png" class="place-avatar">
+            <img src="/images/users/petit-aventurier-couv-copie.jpg" class="place-avatar">
         </div>
     </div>
 
@@ -15,7 +16,7 @@
         @foreach($places as $place)
             <div class="place">
                 <div class=" col-md-12 go-down">
-                    <a href="/work-at?type={{ $place->name }}" class="go-down"><button class="btn btn-default create-button">{{ $place->name }}</button></a>
+                    <a href="/go-to?type={{ $place->name }}" class="go-down"><button class="btn btn-default create-button">{{ $place->name }}</button></a>
                 </div>
                 <div class="col-md-12 go-little-down">
                     <div class="col-md-2"></div>
