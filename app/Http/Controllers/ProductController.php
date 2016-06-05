@@ -30,7 +30,24 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Products::where('active',1)->paginate(9);
+        $user = Auth::user();
+
+        $liked = ProductsLikes::where('user_id', $user->id)
+            ->where('likes', 1)
+            ->where('dislikes', 0)
+            ->limit(3)
+            ->orderBy('updated_at', 'desc')
+            ->lists('product_id');
+
+
+        $viewed = ProductView::where('user_id', $user->id)
+            ->limit(3)
+            ->orderBy('view_number', 'desc')
+            ->lists('product_id');
+
+        $recommend_id = array_merge($liked, $viewed);
+        $products = Products::where('active',1)->whereIn('id', $recommend_id)->get();
+
         $organizer = [];
         $group = [];
         $nr = 0;
@@ -47,6 +64,8 @@ class ProductController extends Controller
         if($nr != 0)
             $organizer[] = $group;
         $categories = Categories::all();
+        $products = Products::where('active',1)->paginate(9);
+
         return view('home-shop')
             ->withOrganizer($organizer)
             ->withProducts($products)
