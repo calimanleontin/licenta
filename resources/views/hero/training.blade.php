@@ -27,7 +27,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{$hero->stats->final_strength * 10}}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_strength * 10}}%">
                                 {{ $hero->stats->final_strength }}
                             </div>
-                            <p class="move-right">Price:{{$cost->perception_cost}}</p>
+                            <p class="move-right">Price:{{$cost1->strength_cost}}</p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow={!! $hero->stats->final_perception * 10  !!}aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_perception* 10}}%">
                                 {{ $hero->stats->final_perception }}
                             </div>
-                            <p class="move-right">Price:{{$cost->perception_cost}}</p>
+                            <p class="move-right">Price:{{$cost2->perception_cost}}</p>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{$hero->stats->final_endurance * 10}}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_endurance * 10}}%">
                                 {{ $hero->stats->final_endurance }}
                             </div>
-                            <p class="move-right">Price:{{$cost->endurance_cost}}</p>
+                            <p class="move-right">Price:{{$cost3->endurance_cost}}</p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{$hero->stats->final_charisma * 10}}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_charisma * 10}}%">
                                 {{ $hero->stats->final_charisma }}
                             </div>
-                            <p class="move-right">Price:{{$cost->charisma_cost}}</p>
+                            <p class="move-right">Price:{{$cost4->charisma_cost}}</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{$hero->stats->final_intelligence * 10}}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_intelligence * 10}}%">
                                 {{ $hero->stats->final_intelligence }}
                             </div>
-                            <p class="move-right">Price:{{$cost->intelligence_cost}}</p>
+                            <p class="move-right">Price:{{$cost5->intelligence_cost}}</p>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{$hero->stats->final_agility * 10}}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_agility * 10}}%">
                                 {{ $hero->stats->final_agility }}
                             </div>
-                            <p class="move-right">Price:{{$cost->agility_cost}}</p>
+                            <p class="move-right">Price:{{$cost6->agility_cost}}</p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{$hero->stats->final_luck * 10}}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $hero->stats->final_luck * 10}}%">
                                 {{ $hero->stats->final_luck }}
                             </div>
-                            <p class="move-right">Price:{{$cost->luck_cost}}</p>
+                            <p class="move-right">Price:{{$cost7->luck_cost}}</p>
                         </div>
                     </div>
                 </div>

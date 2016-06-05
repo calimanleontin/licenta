@@ -104,4 +104,10 @@ class Hero extends Model {
         }
         $user->save();
     }
+
+    public function increaseStat($stat, $value)
+    {
+        $this->stats->attributes[$stat] += $value;
+
+    }
 }

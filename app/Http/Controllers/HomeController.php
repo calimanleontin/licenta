@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Categories;
+use App\Http\Requests\Request;
 use App\StatCost;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,9 +52,41 @@ class HomeController extends Controller {
 	{
 		$user = Auth::user();
 		$hero = $user->hero;
-		$cost = StatCost::where('level', $hero->level + 1)->first();
+		$cost1 = StatCost::where('id', $hero->stats->strength + 1)->first();
+		$cost2 = StatCost::where('id', $hero->stats->perception + 1)->first();
+		$cost3 = StatCost::where('id', $hero->stats->endurance + 1)->first();
+		$cost4 = StatCost::where('id', $hero->stats->charisma + 1)->first();
+		$cost5 = StatCost::where('id', $hero->stats->intelligence + 1)->first();
+		$cost6 = StatCost::where('id', $hero->stats->agility + 1)->first();
+		$cost7 = StatCost::where('id', $hero->stats->luck + 1)->first();
 		return view('hero.training')
-			->with('cost', $cost)
+			->with('cost1', $cost1)
+			->with('cost2', $cost2)
+			->with('cost3', $cost3)
+			->with('cost4', $cost4)
+			->with('cost5', $cost5)
+			->with('cost6', $cost6)
+			->with('cost7', $cost7)
 			->with('hero', $hero);
+	}
+
+	public function increase()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+		$stats = $hero->stats;
+		$stat = $_GET['type'];
+		$stats_cost = StatCost::where('id', $hero->stats->{$stat} + 1)->first();
+		if($stats_cost[$stat.'_cost'] > $user->money)
+			return redirect('/training')
+				->withErrors('Insufficient founds');
+		$user->money -= $stats_cost[$stat.'_cost'];
+		$user->save();
+		$stats->{$stat} += 1;
+		$stats->{'final_'.$stat } += 1;
+		$stats->save();
+		return redirect('/training')
+			->withMessage('Success');
+
 	}
 }
