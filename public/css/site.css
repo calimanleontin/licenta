@@ -225,3 +225,25 @@ a.right.carousel-control {
     float:right;
     margin-right:20px;
 }
+
+.create-button{
+    width:200px;
+    display:block;
+    margin:0 auto;
+    margin-top:10px;
+}
+.place{
+    width:100%;
+    margin-top: 20px;
+    height:100px;
+    border:solid #00b3ee;
+    border-radius:10px;
+}
+
+.go-down{
+    margin-bottom:-20px;
+}
+
+.go-little-down{
+    margin-top:40px;
+}

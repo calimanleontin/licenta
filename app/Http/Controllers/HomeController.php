@@ -3,6 +3,7 @@
 use App\Categories;
 use App\Http\Requests\Request;
 use App\StatCost;
+use App\Work;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
@@ -87,6 +88,16 @@ class HomeController extends Controller {
 		$stats->save();
 		return redirect('/training')
 			->withMessage('Success');
+	}
 
+	public function workPlaces()
+	{
+		$user = Auth::user();
+		$places = Work::all();
+		
+		$hero = $user->hero;
+		return view('hero.work')
+			->with('places', $places)
+			->with('hero', $hero);
 	}
 }
