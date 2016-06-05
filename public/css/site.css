@@ -247,3 +247,13 @@ a.right.carousel-control {
 .go-little-down{
     margin-top:40px;
 }
+
+.footer{
+    width:100%;
+    position: absolute;
+    /*bottom:0px;*/
+    display: block;
+    background-color: lightblue ;
+    height:45px;
+    margin-top:20px;
+}
