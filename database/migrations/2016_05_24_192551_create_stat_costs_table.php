@@ -20,6 +20,7 @@ class CreateStatCostsTable extends Migration {
 			$table->integer('endurance_cost')->unsigned()->default(10);
 			$table->integer('charisma_cost')->unsigned()->default(10);
 			$table->integer('intelligence_cost')->unsigned()->default(10);
+			$table->integer('agility_cost')->unsigned()->default(10);
 			$table->integer('luck_cost')->unsigned()->default(10);
 			$table->integer('level');
 			$table->timestamps();
@@ -33,6 +34,7 @@ class CreateStatCostsTable extends Migration {
 			$cost->endurance_cost = rand($i, $i * 10) * rand(1, $i);
 			$cost->charisma_cost = rand($i, $i * 10) * rand(1, $i);
 			$cost->intelligence_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->agility_cost = rand($i, $i * 10) * rand(1, $i);
 			$cost->luck_cost = rand($i, $i * 10) * rand(1, $i);
 			$cost->level = $i;
 			$cost->save();

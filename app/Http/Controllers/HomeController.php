@@ -51,7 +51,7 @@ class HomeController extends Controller {
 	{
 		$user = Auth::user();
 		$hero = $user->hero;
-		$cost = StatCost::where('level', $hero->level + 1);
+		$cost = StatCost::where('level', $hero->level + 1)->first();
 		return view('hero.training')
 			->with('cost', $cost)
 			->with('hero', $hero);

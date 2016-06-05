@@ -59,7 +59,7 @@ class CreateWorksTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('work');
+		Schema::drop('works');
 	}
 
 }
