@@ -51,10 +51,10 @@ class Hero extends Migration {
 				->references('id')
 				->on('championship');
 
-			$table->integer('work_id')->unsigned()->nullable();
-			$table->foreign('work_id')
+			$table->integer('works_id')->unsigned()->nullable();
+			$table->foreign('works_id')
 				->references('id')
-				->on('work');
+				->on('works');
 
 			$table->timestamps();
 

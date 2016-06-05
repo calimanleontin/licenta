@@ -24,6 +24,19 @@ class CreateStatCostsTable extends Migration {
 			$table->integer('level');
 			$table->timestamps();
 		});
+
+		for($i=1; $i<=100 ; $i++)
+		{
+			$cost = new \App\StatCost();
+			$cost->strength_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->perception_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->endurance_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->charisma_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->intelligence_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->luck_cost = rand($i, $i * 10) * rand(1, $i);
+			$cost->level = $i;
+			$cost->save();
+		}
 	}
 
 	/**

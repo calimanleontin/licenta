@@ -12,7 +12,7 @@ class CreateWorksTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('work', function(Blueprint $table)
+		Schema::create('works', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
@@ -36,7 +36,7 @@ class CreateWorksTable extends Migration {
 		$work = new \App\Work();
 		$work->name = 'Sea';
 		$work->time_spent = 8;
-		$work->started_on = \Carbon\Carbon::now();
+			$work->started_on = \Carbon\Carbon::now();
 		$work->ends_on = \Carbon\Carbon::now()->addHours($work->time_spent);
 		$work->experience = 80;
 		$work->reward = 5000;

@@ -82,6 +82,12 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/tree/{id}', 'ChampionshipController@tree');
 		
 		Route::post('/set-products', 'HeroController@setProducts');
+
+
+		Route::get('/training', 'HomeController@trainingPlaces');
+		Route::get('/work', 'HomeController@workPlaces');
+		Route::get('/outside', 'HomeController@outsidePlaces');
+
 	});
 
 });
@@ -129,13 +135,6 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::get('/create-hero', 'HeroController@index');
 	Route::post('/hero/create', 'HeroController@create');
 
-
-	//todo: delete after use
-
-	Route::get('/training', 'TrainingController@createTrainingPlaces');
-	Route::get('/work', 'TrainingController@createWorkPlaces');
-	Route::get('/inside', 'TrainingController@createInsidePlaces');
-	Route::get('/outside', 'TrainingController@createOutsidePlaces');
 
 	//todo: better hard-code them on a routes or artisan, something
 });

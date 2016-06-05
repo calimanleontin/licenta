@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Categories;
+use App\StatCost;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
@@ -44,5 +45,14 @@ class HomeController extends Controller {
 	public function notFound()
 	{
 		return view('auth.404');
+	}
+
+	public function trainingPlaces()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+		$cost = StatCost::where('level', $hero->level + 1);
+		return view('hero.training')
+			->with('cost', $cost);
 	}
 }

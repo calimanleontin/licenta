@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class StatCost extends Model {
 
-	protected $table = 'stats_cost';
+	protected $table = 'stats_costs';
 
 	public function stat()
 	{
