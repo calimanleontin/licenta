@@ -172,6 +172,11 @@
     min-height: 900px;
 }
 
+.center{
+    display: block;
+    margin:0 auto;
+}
+
 .left{
     float:left;
 }
@@ -256,4 +261,11 @@ a.right.carousel-control {
     background-color: lightblue ;
     height:45px;
     margin-top:20px;
+}
+.space-up{
+    height:21px;
+}
+
+.hide1{
+    display:none;
 }

@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Exemplu</title>
+    <script type = "text/javascript"
+            src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type = "text/javascript" language = "javascript">
+        $(document).ready(function() {
+            $("#button").click(function(event){
+                var nume = $("#nume").val();
+                $("#stage").load('/jquery/result.php', {"nume":nume} );
+            });
+        });
+    </script>
+</head>
+<body>
+<p>Scrie-ți numele apoi fă-i click pe buton.</p>
+<input type = "text" id = "nume" size = "40" /><br />
+<div id = "stage" style = "background-color:red;">
+
+</div>
+<input type = "button" id = "button" value = "Show Result" />
+</body>
+</html>
