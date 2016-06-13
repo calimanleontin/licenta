@@ -132,6 +132,7 @@ class HomeController extends Controller {
 	{
 		$user = Auth::user();
 		$hero = $user->hero;
+		$hero->checkIfAvailable();
 		if($hero->busy != 0)
 			return redirect('/work')
 				->withErrors('Hero already busy');
@@ -157,6 +158,8 @@ class HomeController extends Controller {
 	{
 		$user = Auth::user();
 		$hero = $user->hero;
+		$hero->checkIfAvailable();
+
 		if($hero->busy != 0)
 			return redirect('/outside')
 				->withErrors('Hero already busy');

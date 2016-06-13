@@ -144,6 +144,7 @@ class ChampionshipController extends Controller {
 				->withErrors('403');
 
 		$hero = $user->hero;
+		$hero->checkIfAvailable();
 
 		if($hero->busy == 1)
 		{
