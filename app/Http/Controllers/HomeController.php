@@ -171,7 +171,7 @@ class HomeController extends Controller {
 		$hero->busy = 1;
 		$hero->started_at = Carbon::now()->addHours($out->time_spent);
 		$hero->ended_at = Carbon::now()->addHours($out->time_spent);
-		$hero->location = 'work';
+		$hero->location = 'wasteland';
 		$hero->outside_places_id = $out->id;
 		$hero->save();
 		return redirect('/outside')

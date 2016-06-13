@@ -26,6 +26,7 @@ class Hero extends Migration {
 			$table->date('ended_at')->nullable();
 			$table->string('image');
 			$table->integer('class_id');
+			
 			$table->integer('user_id')->unsigned()->nullable();
 			$table->foreign('user_id')
 				->references('id')

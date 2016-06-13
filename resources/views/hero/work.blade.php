@@ -32,4 +32,12 @@
             </div>
         @endforeach
     </div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+
 @endsection

@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Hero extends Model {
@@ -67,6 +68,14 @@ class Hero extends Model {
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function work()
+    {
+        return $this->belongsTo('App\Work');
+    }
+
+    /**
      * @return int|mixed
      */
     public function attributes_sum()
@@ -95,19 +104,67 @@ class Hero extends Model {
 
         if($next_level == 0)
         {
-            $user->experience = $exp;
+            $this->experience = $exp;
         }
         else
         {
-            $user->experience = $exp;
-            $user->level = $user->level + 1;
+            $this->experience = $exp;
+            $this->level = $user->level + 1;
         }
         $user->save();
+        $this->save();
     }
 
+    /**
+     * @param $stat
+     * @param $value
+     */
     public function increaseStat($stat, $value)
     {
         $this->stats->attributes[$stat] += $value;
 
+    }
+
+    /**
+     * @return bool
+     */
+    public function checkIfAvailable()
+    {
+        if($this->busy == 1)
+        {
+            if($this->ended_at <= Carbon::now())
+            {
+                $this->ended_at = null;
+                $this->started_at = null;
+                if($this->location == 'work')
+                {
+                    $work = $this->work;
+                    $this->getPrize($work->experience, $work->reward);
+                    $this->works_id = null;
+                }
+
+                if($this->location == 'championship')
+                {
+                    $championship = $this->championship;
+                    $this->getPrize($championship->max_experience, $championship->reward);
+                    $this->championship_id = null;
+                }
+
+                if($this->location == 'wasteland')
+                {
+                    $wasteland = $this->external_places;
+                    $this->getPrize($wasteland->experience, $wasteland->reward);
+                    $this->outside_places_id = null;
+                }
+
+                $this->location = 'home';
+                $this->save();
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
