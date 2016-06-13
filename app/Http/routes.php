@@ -70,6 +70,8 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/user-profile','UserController@profile');
 		Route::post('/profile/update','UserController@update_profile');
 		Route::get('/tops', 'HomeController@tops');
+		Route::get('/challenge/{id}', 'HomeController@challenge');
+		Route::get('/fight/{id1}/{id2}', 'HomeController')
 
 		Route::get('order-details/{id}','CartController@order_details');
 		Route::get('/to-cart/{id}','CartController@add')->where('id', '[0-9]+');

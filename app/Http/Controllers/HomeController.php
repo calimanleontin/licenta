@@ -190,6 +190,8 @@ class HomeController extends Controller {
 		$level_max = $hero->level;
 		$nr = 0;
 		$heroes = null;
+		$first_ten = Hero::orderBy('level', 'desc')->limit(10)->get();
+		$last_ten = Hero::orderBy('level', 'asc')->limit(10)->get()	;
 		while(true)
 		{
 			$heroes = Hero::where('level','<=' , $level_max)->where('level', '>=', $level_min)->get();
@@ -199,7 +201,21 @@ class HomeController extends Controller {
 		}
 		return view('championship.top')
 			->with('heroes', $heroes)
+			->with('first_ten', $first_ten)
+			->with('last_ten', $last_ten)
 			->with('champ', $hero);
 
+	}
+
+	public function challenge($id)
+	{
+		$challenger = Auth::user()->hero;
+		$challenged = Hero::find($id);
+		if($challenged == null)
+			return redirect('/tops')
+				->withErrors('No hero found');
+		return view('championship.fight')
+			->with('challenger', $challenger)
+			->with('challenged', $challenged);
 	}
 }

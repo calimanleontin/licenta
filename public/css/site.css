@@ -20,6 +20,7 @@
 }
 .little{
     margin-top:9px;
+    width:50px;
 }
 .left-title{
 }
@@ -272,4 +273,11 @@ a.right.carousel-control {
 
 .trophy{
     height:200px;
+}
+
+.red >text{
+    color: red;
+}
+.hero-avatar-fight{
+    width:400px;
 }
