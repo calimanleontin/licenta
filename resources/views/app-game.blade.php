@@ -49,6 +49,9 @@
                 <li>
                     <a href="{{ url('/lists/championships') }}">Tournaments</a>
                 </li>
+                <li>
+                    <a href="{{ url('/tops') }}">Tops</a>
+                </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right list-inline">

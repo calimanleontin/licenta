@@ -2,6 +2,7 @@
 
 use App\Categories;
 use App\ExternalPlaces;
+use App\Hero;
 use App\Http\Requests\Request;
 use App\StatCost;
 use App\Work;
@@ -179,5 +180,26 @@ class HomeController extends Controller {
 		$hero->save();
 		return redirect('/outside')
 			->withMessage('Success');
+	}
+
+	public function tops()
+	{
+		$user = Auth::user();
+		$hero = $user->hero;
+		$level_min = $hero->level;
+		$level_max = $hero->level;
+		$nr = 0;
+		$heroes = null;
+		while(true)
+		{
+			$heroes = Hero::where('level','<=' , $level_max)->where('level', '>=', $level_min)->get();
+			if(count($heroes) >= 10 or $nr == 10)
+				break;
+			$nr ++;
+		}
+		return view('championship.top')
+			->with('heroes', $heroes)
+			->with('champ', $hero);
+
 	}
 }
