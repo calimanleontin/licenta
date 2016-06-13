@@ -11,7 +11,8 @@
         <div class="second-place col-md-4 col-sm-12">
             <div class="panel">
                 <div class="panel-heading text-center text-capitalize">
-                    Second place
+                    <img src="/images/catalog/second.png" class="trophy center">
+                    <div class="center">Second place</div>
                 </div>
                 <div class="panel-body">
                     <div class="prize-image">
@@ -24,7 +25,8 @@
         <div class="first-place col-md-4 col-sm-12">
             <div class="panel">
                 <div class="panel-heading text-capitalize text-center">
-                    First place
+                    <img src="/images/catalog/first.jpg" class="trophy center">
+                    <div class="center">First place</div>
                 </div>
                 <div class="panel-body">
                     <div class="prize-image">
@@ -37,7 +39,8 @@
         <div class="third-place col-md-4 col-sm-12 text-center text-capitalize">
             <div class="panel">
                 <div class="panel-heading">
-                    Third place
+                    <img src="/images/catalog/third.jpg" class="trophy center">
+                    <div class="center">Third place</div>
                 </div>
                 <div class="panel-body">
                     <div class="prize-image">
@@ -68,5 +71,12 @@
             @endif
         </div>
     </div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
 
 @endsection

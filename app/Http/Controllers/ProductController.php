@@ -68,7 +68,7 @@ class ProductController extends Controller
         }
 //        dd($sets_id);
 
-        $recommend_id = array_merge($liked, $viewed, $sets_id);
+        $recommend_id = array_unique(array_merge($liked, $viewed, $sets_id));
         $products = Products::where('active',1)->whereIn('id', $recommend_id)->get();
 
         $organizer = [];
