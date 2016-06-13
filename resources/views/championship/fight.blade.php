@@ -109,7 +109,7 @@
             </div>
         </div>
         <div class="col-md-2">
-            <a href="/fight" class="center little"><btn class="btn btn-danger">FIGHT</btn></a>
+            <a href="/fight/{{ $challenger->id }}/{{ $challenged->id }}" class="center little"><btn class="btn btn-danger">FIGHT</btn></a>
         </div>
         <div class="col-md-5">
             <div class="panel panel-default">

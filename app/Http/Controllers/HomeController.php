@@ -155,6 +155,9 @@ class HomeController extends Controller {
 			->withMessage('Success');
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function leave()
 	{
 		$user = Auth::user();
@@ -182,6 +185,9 @@ class HomeController extends Controller {
 			->withMessage('Success');
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function tops()
 	{
 		$user = Auth::user();
@@ -207,6 +213,10 @@ class HomeController extends Controller {
 
 	}
 
+	/**
+	 * @param $id
+	 * @return $this
+	 */
 	public function challenge($id)
 	{
 		$challenger = Auth::user()->hero;
@@ -217,5 +227,26 @@ class HomeController extends Controller {
 		return view('championship.fight')
 			->with('challenger', $challenger)
 			->with('challenged', $challenged);
+	}
+
+	public function fight($id1, $id2)
+	{
+		/**
+ 		 * @var $hero Hero
+		 */
+		$hero = Auth::user()->hero;
+		$hero->checkIfAvailable();
+		/**
+		 * @var $champion Hero
+		 */
+		$champion = HeroController::fight($id1, $id2);
+		$champion->getPrize(200, 200);
+		if($champion->id == $hero->id)
+			return redirect('/tops')
+				->withMessage('YOU WON');
+		else
+			return redirect('/tops')
+				->withErrors('YOU LOSE');
+
 	}
 }
