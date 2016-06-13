@@ -262,10 +262,9 @@ class HomeController extends Controller {
 			$stats[] = $intelligence>0?$intelligence:null;
 			$stats[] = $agility>0?$agility:null;
 			$stats[] = $luck>0?$luck:null;
-			dd($stats);
 			return redirect('/tops')
-				->withErrors('YOU LOSE')
-				->with('stats', $stats);
+				->withStats($stats)
+				->withErrors('YOU LOSE');
 		}
 
 	}

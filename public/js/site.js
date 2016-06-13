@@ -22,4 +22,11 @@ $(document).ready(function() {
         var hero = '#hero' + value;
         $(hero).show();
     });
+
+    $('#stats').hover(function () {
+        $('#stats').css('cursor','pointer');
+    });
+    $('#stats').on('click', function() {
+        $('#recommend_form').submit();
+    });
 });

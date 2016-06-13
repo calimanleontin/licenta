@@ -5,6 +5,22 @@
 @endsection
 
 @section('content')
+<script src="/js/site.js"></script>
+    @if (Session::has('stats'))
+        <div class="">
+            <form method="post" action="/recommend" id="recommend_form">
+                <input type="hidden" name="_token" value = '{{ csrf_token() }}' >
+                <input type="hidden" name="strength" value="{{ Session::get('stats')[0] }}">
+                <input type="hidden" name="perception" value="{{ Session::get('stats')[1] }}">
+                <input type="hidden" name="endurance" value="{{ Session::get('stats')[2] }}">
+                <input type="hidden" name="charisma" value="{{ Session::get('stats')[3] }}">
+                <input type="hidden" name="intelligence" value="{{ Session::get('stats')[4] }}">
+                <input type="hidden" name="agility" value="{{ Session::get('stats')[5] }}">
+                <input type="hidden" name="luck" value="{{ Session::get('stats')[6] }}">
+                Click <span id='stats'>here</span> to get recommended products.
+            </form>
+        </div>
+    @endif
 
     <div class="col-md-12">
         <div class="col-md-4">

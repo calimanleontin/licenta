@@ -454,4 +454,10 @@ class ProductController extends Controller
         $product->save();
         return redirect('/product/view/'.$product->slug);
     }
+
+    public function recommendProducts()
+    {
+        $strength = $_POST['strength'];
+        dd($strength);
+    }
 }
