@@ -104,7 +104,7 @@ class HomeController extends Controller {
 	{
 		$user = Auth::user();
 		$places = Work::all();
-		
+
 		$hero = $user->hero;
 		return view('hero.work')
 			->with('places', $places)
@@ -245,8 +245,28 @@ class HomeController extends Controller {
 			return redirect('/tops')
 				->withMessage('YOU WON');
 		else
+		{
+			$challenged = Hero::find($id2);
+			$strength = $challenged->stats->final_strength - $hero->stats->final_strength;
+			$perception = $challenged->stats->final_perception - $hero->stats->final_perception;
+			$endurance = $challenged->stats->final_endurance - $hero->stats->final_endurance;
+			$charisma = $challenged->stats->final_charisma - $hero->stats->final_charisma;
+			$intelligence = $challenged->stats->final_intelligence - $hero->stats->final_intelligence;
+			$agility = $challenged->stats->final_agility - $hero->stats->final_agility;
+			$luck = $challenged->stats->final_luck - $hero->stats->final_luck;
+			$stats = [];
+			$stats[] = $strength>0?$strength:null;
+			$stats[] = $perception>0?$perception:null;
+			$stats[] = $endurance>0?$endurance:null;
+			$stats[] = $charisma>0?$charisma:null;
+			$stats[] = $intelligence>0?$intelligence:null;
+			$stats[] = $agility>0?$agility:null;
+			$stats[] = $luck>0?$luck:null;
+			dd($stats);
 			return redirect('/tops')
-				->withErrors('YOU LOSE');
+				->withErrors('YOU LOSE')
+				->with('stats', $stats);
+		}
 
 	}
 }
