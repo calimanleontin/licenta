@@ -12,7 +12,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">class</label>
+                                <label class="col-md-4 control-label">Hero name:</label>
                                 <div class="col-md-6">
                                     @if(!empty($name))
                                         <input type="text" class="form-control" name="name" value="{{$name}}">

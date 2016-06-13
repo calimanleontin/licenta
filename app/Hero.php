@@ -72,7 +72,7 @@ class Hero extends Model {
      */
     public function work()
     {
-        return $this->belongsTo('App\Work');
+        return $this->belongsTo('App\Work', 'works_id');
     }
 
     /**
@@ -98,7 +98,7 @@ class Hero extends Model {
     {
         $user = $this->user;
         $user->money += $money;
-        $level = Levels::find($user->level);
+        $level = Levels::find($user->hero->level);
         $exp = ($exp+$user->experience) % $level->max_experience;
         $next_level = ($exp+$user->experience) / $level->max_experience;
 
@@ -132,10 +132,11 @@ class Hero extends Model {
     {
         if($this->busy == 1)
         {
-            if($this->ended_at <= Carbon::now())
+            if(new \DateTime($this->ended_at) <= Carbon::now())
             {
                 $this->ended_at = null;
                 $this->started_at = null;
+                $this->busy = 0;
                 if($this->location == 'work')
                 {
                     $work = $this->work;
