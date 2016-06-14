@@ -35,13 +35,13 @@ class ProductController extends Controller
         $liked = ProductsLikes::where('user_id', $user->id)
             ->where('likes', 1)
             ->where('dislikes', 0)
-            ->limit(3)
+            ->limit(5)
             ->orderBy('updated_at', 'desc')
             ->lists('product_id');
 
 
         $viewed = ProductView::where('user_id', $user->id)
-            ->limit(3)
+            ->limit(5)
             ->orderBy('view_number', 'desc')
             ->lists('product_id');
 

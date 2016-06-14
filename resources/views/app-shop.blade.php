@@ -49,6 +49,9 @@
                     <a href="{{ url('/lists/championships') }}">Tournaments</a>
                 </li>
                 <li>
+                    <a href="{{ url('/tops') }}">Tops</a>
+                </li>
+                <li>
                     <form action="/search" method = 'get' class="form-group form form-inline down-search">
                         <input type="text" name="q" placeholder="Products..." class="form-control">
                         <input type="submit" class='form-control left-search' value="Search">

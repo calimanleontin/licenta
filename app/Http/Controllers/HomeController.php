@@ -236,6 +236,11 @@ class HomeController extends Controller {
 		 */
 		$hero = Auth::user()->hero;
 		$hero->checkIfAvailable();
+		if($hero->busy == 1)
+		{
+			return redirect('/tops')
+				->withErrors('Hero busy');
+		}
 		/**
 		 * @var $champion Hero
 		 */
