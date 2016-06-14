@@ -281,3 +281,8 @@ a.right.carousel-control {
 .hero-avatar-fight{
     width:400px;
 }
+
+#stats{
+    text-decoration: underline;
+    color:cornflowerblue;
+}

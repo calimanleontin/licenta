@@ -458,6 +458,136 @@ class ProductController extends Controller
     public function recommendProducts()
     {
         $strength = $_POST['strength'];
-        dd($strength);
+        $perception = $_POST['perception'];
+        $endurance = $_POST['endurance'];
+        $charisma = $_POST['charisma'];
+        $intelligence = $_POST['intelligence'];
+        $agility = $_POST['agility'];
+        $luck = $_POST['luck'];
+        $ids = [];
+        $products_ids = null;
+
+        if(!empty($strength) and $strength > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+
+                    $query->where('strength', '>', 0);
+            });
+        }
+
+
+        if(!empty($products_ids))
+        {
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+        $products_ids = null;
+
+        if(!empty($perception) and $perception > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+                    $query->where('perception', '>', 0);
+            });
+        }
+
+        if(!empty($products_ids))
+        {
+            dd($products_ids);
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+
+        if(!empty($endurance) and $endurance > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+
+                    $query->where('endurance', '>', 0);
+            });
+        }
+        $products_ids = null;
+
+
+        if(!empty($products_ids))
+        {
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+
+        $products_ids = null;
+
+        if(!empty($charisma) and $charisma > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+
+                    $query->where('charisma', '>', 0);
+            });
+        }
+
+
+        if(!empty($products_ids))
+        {
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+
+        $products_ids = null;
+
+        if(!empty($intelligence) and $intelligence > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+                    $query->where('intelligence', '>', 0);
+            });
+        }
+
+        if(!empty($products_ids))
+        {
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+        $products_ids = null;
+
+        if(!empty($agility) and $agility > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+
+                    $query->where('agility', '>', 0);
+            });
+        }
+
+
+        if(!empty($products_ids))
+        {
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+
+        $products_ids = null;
+
+
+        if(!empty($luck) and $luck > 0)
+        {
+            $products_ids = Products::whereHas('stats', function($query)
+            use ($strength, $perception, $endurance,$charisma, $agility, $intelligence, $luck) {
+
+                    $query->where('luck', '>', 0);
+            });
+        }
+
+        if(!empty($products_ids))
+        {
+            $products_ids = $products_ids->lists('id');
+            $ids = array_unique(array_merge($ids, $products_ids));
+        }
+
+        $products = Products::whereIn('id', $ids)->paginate(9);
+        return view('home-shop')
+            ->with('products', $products)
+            ->with('title', 'We recommend this ');
     }
 }

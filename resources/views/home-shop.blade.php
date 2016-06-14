@@ -108,7 +108,11 @@
 
     <div class="col-md-12">
             <div class="text-center">
-                <h1>All the products</h1>
+                @if(empty($title))
+                    <h1>All the products</h1>
+                @else
+                <h1> {{ $title }}</h1>
+                @endif
             </div>
         </div>
         <div class="col-md-12">
