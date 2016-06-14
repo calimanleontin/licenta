@@ -81,12 +81,12 @@ class Hero extends Model {
     public function attributes_sum()
     {
         $sum = 0;
-        $sum += $this->final_strenght;
-        $sum += $this->final_perception;
-        $sum += $this->final_endurane;
-        $sum += $this->final_charisma;
-        $sum += $this->final_intelligence;
-        $sum += $this->final_luck;
+        $sum += $this->stats->final_strength;
+        $sum += $this->stats->final_perception;
+        $sum += $this->stats->final_endurance;
+        $sum += $this->stats->final_charisma;
+        $sum += $this->stats->final_intelligence;
+        $sum += $this->stats->final_luck;
         return $sum;
     }
 

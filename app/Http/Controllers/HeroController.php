@@ -167,7 +167,7 @@ class HeroController extends Controller {
 		$sum1 = $hero1->attributes_sum();
 		$sum2 = $hero2->attributes_sum();
 
-		if($sum1 < $sum2)
+		if($sum1 > $sum2)
 			return $hero1;
 		return $hero2;
 	}
@@ -182,9 +182,9 @@ class HeroController extends Controller {
 		{
 			$product->hero_id = null;
 			$product->save();
-			$stats->final_strength = $stats->strenth;
+			$stats->final_strength = $stats->strength;
 			$stats->final_perception = $stats->perception;
-			$stats->final_endurance = $stats->endurace;
+			$stats->final_endurance = $stats->endurance;
 			$stats->final_charisma = $stats->charisma;
 			$stats->final_intelligence = $stats->intelligence;
 			$stats->final_luck = $stats->luck;
@@ -193,16 +193,16 @@ class HeroController extends Controller {
 
 		foreach(Categories::all() as $category)
 		{
-			$product_id = Input::get($category->title);
+			$product_id = \Input::get(str_replace(' ', '_', $category->title));
 			if($product_id != 0)
 			{
 				$product = Products::find($product_id);
 				$product->hero_id = $hero->id;
 				$product->save();
 				$product_stats = $product->stats;
-				$stats->final_strength = $stats->strenth + $product_stats->strength;
+				$stats->final_strength = $stats->strength + $product_stats->strength;
 				$stats->final_perception = $stats->perception + $product_stats->perception;
-				$stats->final_endurance = $stats->endurace + $product_stats->endurance;
+				$stats->final_endurance = $stats->endurance + $product_stats->endurance;
 				$stats->final_charisma = $stats->charisma + $product_stats->charisma;
 				$stats->final_intelligence = $stats->intelligence + $product_stats->intelligence;
 				$stats->final_luck = $stats->luck + $product_stats->luck;
