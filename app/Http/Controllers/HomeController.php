@@ -229,6 +229,11 @@ class HomeController extends Controller {
 			->with('challenged', $challenged);
 	}
 
+	/**
+	 * @param $id1
+	 * @param $id2
+	 * @return $this
+	 */
 	public function fight($id1, $id2)
 	{
 		/**

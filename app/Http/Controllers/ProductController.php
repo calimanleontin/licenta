@@ -494,7 +494,6 @@ class ProductController extends Controller
 
         if(!empty($products_ids))
         {
-            dd($products_ids);
             $products_ids = $products_ids->lists('id');
             $ids = array_unique(array_merge($ids, $products_ids));
         }
@@ -507,7 +506,6 @@ class ProductController extends Controller
                     $query->where('endurance', '>', 0);
             });
         }
-        $products_ids = null;
 
 
         if(!empty($products_ids))

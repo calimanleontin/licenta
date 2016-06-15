@@ -23,7 +23,6 @@
 |
 */
 
-Route::get('/shop',['as' => 'shop', 'uses' => 'ProductController@index']);
 Route::get('/',['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('/home',['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('/404', 'HomeController@notFound');
@@ -55,6 +54,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function()
 	{
+		Route::get('/shop',['as' => 'shop', 'uses' => 'ProductController@index']);
 
 		Route::get('/cart/index','CartController@index');
 		Route::get('/cart/increase/{id}','CartController@increase');

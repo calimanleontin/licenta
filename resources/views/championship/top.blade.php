@@ -197,5 +197,11 @@
             </div>
             </div>
         </div>
-    </div>
+<div class="space-up"></div>
+<div class="space-up"></div>
+<div class="space-up"></div>
+<div class="space-up"></div>
+<div class="space-up"></div>
+<div class="space-up"></div>
+<div class="space-up"></div>
 @endsection

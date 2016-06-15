@@ -1,7 +1,10 @@
 <?php namespace App\Http\Middleware;
 
+use App\HeroesTypes;
+use App\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Auth;
 
 class Authenticate {
 
@@ -42,6 +45,12 @@ class Authenticate {
 			{
 				return redirect()->guest('auth/login');
 			}
+		}
+		if($this->auth->user()->hero == null)
+		{
+			$user = User::find($this->auth->user()->id);
+			$user->delete();
+			return redirect('/');
 		}
 
 		return $next($request);

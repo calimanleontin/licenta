@@ -45,8 +45,7 @@ class Admin {
             }
         }
         if($this->admin->user()->is_admin() == false)
-            return redirect('/')
-                ->withErrors('403');
+            return redirect('/');
 
         return $next($request);
     }
