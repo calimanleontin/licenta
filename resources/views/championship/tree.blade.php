@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Championship Chart</title>
+    <title>Championship</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/jquery.jOrgChart.css"/>
     <link rel="stylesheet" href="/css/custom.css"/>
@@ -11,6 +11,10 @@
     <!-- jQuery includes -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
     <script src="/js/jquery.jOrgChart.js"></script>
 
@@ -25,6 +29,69 @@
 </head>
 
 <body onload="prettyPrint();">
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="{{ url('/') }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ url('/shop') }}">Shop</a>
+                </li>
+                <li>
+                    <a href="{{ url('/lists/championships') }}">Tournaments</a>
+                </li>
+                <li>
+                    <a href="{{ url('/tops') }}">Tops</a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right list-inline">
+                @if (Auth::guest())
+                    <li>
+                        <a href="{{ url('/auth/login') }}" class="l">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/auth/register') }}">Register</a>
+                    </li>
+            </ul>
+
+            @else
+
+                <li>
+                    <div class="mini">
+                        <div class="btn btn-default dropdown-toggle " type="button" id="menu1" data-toggle="dropdown">{{Auth::user()->name}}
+                            <span class="caret"></span></div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/user-profile">User Profile</a> </li>
+                            <li>
+                                <a href="{{ url('/auth/logout') }}" >Logout</a>
+                            </li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/cart/index">My cart</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/order-history">Order History</a> </li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/user-profile">User Profile</a> </li>
+
+                        </ul>
+                    </div>
+                </li>
+                </ul>
+
+
+            @endif
+        </div>
+    </div>
+</nav>
+
 <div class="topbar">
     <div class="topbar-inner">
         <div class="container">
@@ -52,17 +119,17 @@
                         Quarter1
                         <ul>
                             <li>
-                                @if(!empty($nr1))
-                                    {{ $nr1 }}
+                                @if(!empty($Hero1))
+                                    {{ $Hero1 }}
                                 @else
-                                    Nr1
+                                    Hero1
                                 @endif
                             </li>
                             <li>
-                                @if(!empty($nr2))
-                                    {{ $nr2 }}
+                                @if(!empty($Hero2))
+                                    {{ $Hero2 }}
                                 @else
-                                    Nr2
+                                    Hero2
                                 @endif
                             </li>
                         </ul>
@@ -71,17 +138,17 @@
                         Quarter 2
                         <ul>
                             <li>
-                                @if(!empty($nr3))
-                                    {{ $nr3 }}
+                                @if(!empty($Hero3))
+                                    {{ $Hero3 }}
                                 @else
-                                    Nr3
+                                    Hero3
                                 @endif
                             </li>
                             <li>
-                                @if(!empty($nr4))
-                                    {{ $nr4 }}
+                                @if(!empty($Hero4))
+                                    {{ $Hero4 }}
                                 @else
-                                    Nr4
+                                    Hero4
                                 @endif
                             </li>
                         </ul>
@@ -99,17 +166,17 @@
                         Quarter3
                         <ul>
                             <li>
-                                @if(!empty($nr1))
-                                    {{ $nr5 }}
+                                @if(!empty($Hero1))
+                                    {{ $Hero5 }}
                                 @else
-                                    Nr5
+                                    Hero5
                                 @endif
                             </li>
                             <li>
-                                @if(!empty($nr6))
-                                    {{ $nr6 }}
+                                @if(!empty($Hero6))
+                                    {{ $Hero6 }}
                                 @else
-                                    Nr6
+                                    Hero6
                                 @endif
                             </li>
                         </ul>
@@ -118,17 +185,17 @@
                         Quarter4
                         <ul>
                             <li>
-                                @if(!empty($nr7))
-                                    {{ $nr7 }}
+                                @if(!empty($Hero7))
+                                    {{ $Hero7 }}
                                 @else
-                                    Nr7
+                                    Hero7
                                 @endif
                             </li>
                             <li>
-                                @if(!empty($nr8))
-                                    {{ $nr8 }}
+                                @if(!empty($Hero8))
+                                    {{ $Hero8 }}
                                 @else
-                                    Nr8
+                                    Hero8
                                 @endif
                             </li>
                         </ul>

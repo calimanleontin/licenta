@@ -49,13 +49,20 @@ class ProductController extends Controller
         $count = [];
         foreach($user->products as $product)
         {
-            if(empty($count[$product->id]))
+            if(!empty($product->sets_id))
             {
-                $count[$product->id] = 0;
-            }
-            else
-            {
-                $count[$product->id] += 1;
+                $set = Sets::find($product->sets_id);
+                if(!empty($set))
+                {
+                    if(empty($count[$product->set->id]))
+                    {
+                        $count[$product->set->id] = 0;
+                    }
+                    else
+                    {
+                        $count[$product->set->id] += 1;
+                    }
+                }
             }
         }
         $sets_id = [];
@@ -66,7 +73,6 @@ class ProductController extends Controller
                 $sets_id[] = $item;
             }
         }
-//        dd($sets_id);
 
         $recommend_id = array_unique(array_merge($liked, $viewed, $sets_id));
         $products = Products::where('active',1)->whereIn('id', $recommend_id)->get();
@@ -227,8 +233,14 @@ class ProductController extends Controller
         if($user->id != $product->author_id and $user->is_admin() == false and $user->is_moderator() == false)
             return redirect('/')->witheErrors('You have not sufficient permissions ');
         $name = $request->input('name');
+        if(empty($name))
+            return redirect ('/edit/product/'.$product->id)
+                ->with('errors', 'Name cannot be empty');
+        $product->name = $name;
         $quantity = $request->input('quantity');
         $description = $request->input('description');
+        $product->quantity = $quantity;
+        $product->description = $description;
         $image = Input::file('image');
         $categories = $request->input('category');
         $set = Input::get('set');

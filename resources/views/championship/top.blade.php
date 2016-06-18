@@ -26,7 +26,7 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Top ten
+                    Top ten heroes
                 </div>
                 <div class="panel-body">
                     <table class="table table-responsive">
@@ -142,7 +142,7 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Last ten
+                    Last ten heroes
                 </div>
                 <div class="panel-body">
                     <table class="table table-responsive">

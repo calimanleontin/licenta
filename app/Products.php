@@ -85,7 +85,7 @@ class Products extends Model
      */
     public function set()
     {
-        return $this->belongsTo('App\Sets');
+        return $this->belongsTo('App\Sets', 'sets_id');
     }
 
 }
