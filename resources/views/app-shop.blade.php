@@ -28,8 +28,18 @@
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script> <!-- load angular -->
+
+    {{--angular--}}
+
+    <script src="/js/controllers/mainCtrl.js"></script> <!-- load our controller -->
+    <script src="/js/services/tagService.js"></script> <!-- load our tag service -->
+    <script src="/js/services/commentService.js"></script> <!-- load our comment service -->
+    <script src="/js/app.js"></script> <!-- load our application -->
+
 </head>
-<body>
+<body ng-app="app" ng-controller="mainController">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
