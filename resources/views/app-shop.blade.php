@@ -19,7 +19,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/site.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/site.js') }}"></script>
 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <title>MAGAZIN</title>
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -53,7 +56,7 @@
                 </li>
                 <li>
                     <form action="/search" method = 'get' class="form-group form form-inline down-search">
-                        <input type="text" name="q" placeholder="Products..." class="form-control">
+                        <input type="text" name="q" id='search'  placeholder="Products..." class="form-control">
                         <input type="submit" class='form-control left-search' value="Search">
                     </form>
                 </li>

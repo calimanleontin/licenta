@@ -10,6 +10,8 @@ use App\ProductView;
 use App\Sets;
 use App\Stats;
 use Illuminate\Http\Request;
+use \Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
@@ -599,5 +601,13 @@ class ProductController extends Controller
         return view('home-shop')
             ->with('products', $products)
             ->with('title', 'We recommend this ');
+    }
+
+    public function autoComplete()
+    {
+        $term = Input::get('term');
+        $products = DB::table('products')->where('name', 'like', '%' . $term . '%')->lists('name');
+        return Response::json($products);
+
     }
 }

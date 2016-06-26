@@ -54,6 +54,8 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function()
 	{
+		Route::get('/api/auto-complete', 'ProductController@autoComplete');
+		
 		Route::get('/shop',['as' => 'shop', 'uses' => 'ProductController@index']);
 
 		Route::get('/cart/index','CartController@index');

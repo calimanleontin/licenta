@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     
     $( window ).load(function() {
 
@@ -28,5 +29,15 @@ $(document).ready(function() {
     });
     $('#stats').on('click', function() {
         $('#recommend_form').submit();
+    });
+});
+
+
+
+$(function() {
+    $("#search").autocomplete({
+        autoFocus: true,
+        source: "/api/auto-complete",
+        minLength: 1
     });
 });
