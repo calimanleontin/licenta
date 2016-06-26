@@ -196,12 +196,12 @@ class HomeController extends Controller {
 		$level_max = $hero->level;
 		$nr = 0;
 		$heroes = null;
-		$first_ten = Hero::orderBy('level', 'desc')->limit(10)->get();
-		$last_ten = Hero::orderBy('level', 'asc')->limit(10)->get()	;
+		$first_ten = Hero::orderBy('level', 'desc')->limit(5)->get();
+		$last_ten = Hero::orderBy('level', 'asc')->limit(5)->get()	;
 		while(true)
 		{
 			$heroes = Hero::where('level','<=' , $level_max)->where('level', '>=', $level_min)->get();
-			if(count($heroes) >= 10 or $nr == 10)
+			if(count($heroes) >= 5 or $nr == 5)
 				break;
 			$nr ++;
 		}

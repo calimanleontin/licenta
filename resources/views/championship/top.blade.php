@@ -70,7 +70,9 @@
                                         {{ $hero->victories }}
                                     </td>
                                     <td>
-                                        <a href = '/challenge/{{ $hero->id }}'><button class="btn-default btn">Fight</button></a>
+                                        @if($hero->level > $champ->level)
+                                            <a href = '/challenge/{{ $hero->id }}'><button class="btn-default btn">Fight</button></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endif
@@ -100,7 +102,7 @@
                         <th>
                             Challenge
                         </th>
-                        @foreach($first_ten as $hero)
+                        @foreach($heroes as $hero)
                             @if($hero->id == $champ->id)
                             <tr>
                                 <td class="red">
@@ -128,7 +130,9 @@
                                     {{ $hero->victories }}
                                 </td>
                                 <td>
-                                    <a href = '/challenge/{{ $hero->id }}'><button class="btn-default btn">Fight</button></a>
+                                    @if($hero->level > $champ->level)
+                                        <a href = '/challenge/{{ $hero->id }}'><button class="btn-default btn">Fight</button></a>
+                                    @endif
                                 </td>
                             </tr>
                             @endif
@@ -158,7 +162,7 @@
                         <th>
                             Challenge
                         </th>
-                        @foreach($first_ten as $hero)
+                        @foreach($last_ten as $hero)
                             @if($hero->id == $champ->id)
                                 <tr>
                                     <td class="red">
@@ -186,7 +190,9 @@
                                         {{ $hero->victories }}
                                     </td>
                                     <td>
+                                        @if($hero->level > $champ->level)
                                         <a href = '/challenge/{{ $hero->id }}'><button class="btn-default btn">Fight</button></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endif

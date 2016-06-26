@@ -16,6 +16,15 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
+    <style>
+        /*.navbar.navbar-default{*/
+            /*margin-top:-40px;*/
+            /*position: absolut e;*/
+            /*top:0px;*/
+/**/
+        /*}*/
+    </style>
+
     <script src="/js/jquery.jOrgChart.js"></script>
 
     <script>
