@@ -232,6 +232,44 @@ class ChampionshipController extends Controller {
 			$nr7 = json_decode($championship->level_four[6]);
 			$nr8 = json_decode($championship->level_four[7]);
 		}
+		if($id == 1)
+		{
+			return view('championship.tree1')
+				->with('champion', $champion )
+				->with('semifinalist1', $semifinalist1)
+				->with('semifinalist2', $semifinalist2)
+				->with('quarter1', $quarter1)
+				->with('quarter2', $quarter2)
+				->with('quarter3', $quarter3)
+				->with('quarter4', $quarter4)
+				->with('nr1', $nr1)
+				->with('nr1', $nr2)
+				->with('nr1', $nr3)
+				->with('nr1', $nr4)
+				->with('nr1', $nr5)
+				->with('nr1', $nr6)
+				->with('nr1', $nr7)
+				->with('nr1', $nr8);
+		}
+		if($id == 2)
+		{
+			return view('championship.tree2')
+				->with('champion', $champion )
+				->with('semifinalist1', $semifinalist1)
+				->with('semifinalist2', $semifinalist2)
+				->with('quarter1', $quarter1)
+				->with('quarter2', $quarter2)
+				->with('quarter3', $quarter3)
+				->with('quarter4', $quarter4)
+				->with('nr1', $nr1)
+				->with('nr1', $nr2)
+				->with('nr1', $nr3)
+				->with('nr1', $nr4)
+				->with('nr1', $nr5)
+				->with('nr1', $nr6)
+				->with('nr1', $nr7)
+				->with('nr1', $nr8);
+		}
 
 		return view('championship.tree')
 			->with('champion', $champion )

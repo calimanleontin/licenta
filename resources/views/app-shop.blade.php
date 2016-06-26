@@ -42,7 +42,7 @@
 </head>
 <body ng-app="app" ng-controller="mainController">
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container-fluid header">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle Navigation</span>

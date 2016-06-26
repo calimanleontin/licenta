@@ -47,10 +47,10 @@
         Sets:
         @foreach(\App\Sets::all() as $set)
             <div class="form-group">
-                @if(in_array($set->id, $set_ids))
+                @if($product->set->id == $set->id)
                     <label>{!!  Form::radio("set[]",$set->id, true) !!} {{$set->name}} </label>
                 @else
-                    <label>{!!  Form::radio("set[]",$set->id, false) !!} {{$set->name}} </label>
+                    <label>{!!  Form::radio("set[]",$set->id) !!} {{$set->name}} </label>
                 @endif
             </div>
         @endforeach

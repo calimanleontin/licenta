@@ -60,6 +60,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/api/comments/{product_slug}', 'ProductController@getComments');
 		Route::get('/api/getUser', 'UserController@getUser');
 		Route::post('/api/comments/save/{product_slug}', 'ProductController@saveApiComment');
+		Route::get('/set/view/{id}', 'ProductController@viewSet');
 
 		Route::get('/cart/index','CartController@index');
 		Route::get('/cart/increase/{id}','CartController@increase');
@@ -110,6 +111,7 @@ Route::group(['middleware' => ['admin']], function() {
 	Route::get('/edit/product/{id}','ProductController@edit');
 	Route::get('/product/delete/{id}', 'ProductController@delete');
 	Route::post('/update/product/{id}','ProductController@update');
+	Route::Get('/hero/{id}', 'HeroController@viewHero');
 
 	Route::get('category/create','CategoryController@create');
 	Route::get('/product/create','ProductController@create');

@@ -257,7 +257,6 @@ a.right.carousel-control {
 .footer{
     width:100%;
     position: absolute;
-    /*bottom:0px;*/
     display: block;
     background-color: darkblue ;
     height:45px;
@@ -288,10 +287,8 @@ a.right.carousel-control {
     color:cornflowerblue;
 }
 
-.container-fluid{
+.container-fluid.header{
     background-color:dodgerblue ;
-    text-color:white; !important;
-    color:white; !important;
 }
 
 .panel-heading{
@@ -307,6 +304,11 @@ a.right.carousel-control {
 }
 
 .input.form-control.left-search{
+    background-color:dodgerblue; !important;
+
+}
+
+.panel-default > .panel-heading{
     background-color:dodgerblue; !important;
 
 }

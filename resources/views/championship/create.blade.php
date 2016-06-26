@@ -92,12 +92,6 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('Product Image') !!}
-        {!! Form::file('image') !!}
-    </div>
-
-
-    <div class="form-group">
         {!!  Form::submit('Create',['class'=> 'btn btn-success'])!!}
     </div>
 

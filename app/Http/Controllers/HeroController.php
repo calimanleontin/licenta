@@ -8,6 +8,7 @@ use App\Products;
 use App\Stats;
 use App\Http\Controllers\Controller;
 use App\StatsCost;
+use App\User;
 use \Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -213,6 +214,20 @@ class HeroController extends Controller {
 
 		return redirect("/")
 			->withMessage('200');
+	}
+
+	public function viewHero($id)
+	{
+		$hero = Hero::find($id);
+		$user = User::find($hero->user_id);
+
+		$products = $user->products->lists('id');
+		$categories = Categories::all();
+		return view('hero.view')
+			->with('user', $user)
+			->with('hero', $hero)
+			->with('categories', $categories)
+			->with('products', $products);
 	}
 
 }

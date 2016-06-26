@@ -49,7 +49,11 @@
                                         {{ $hero->level }}
                                     </td>
                                     <td class="red">
-                                        {{ $hero->name }}
+                                        @if($champ->id != $hero->id)
+                                            <a href="/hero/{{$hero->id}}">{{ $hero->name }}</a>
+                                        @else
+                                            {{$hero->name}}
+                                        @endif
                                     </td>
                                     <td class="red">
                                         {{ $hero->victories }}
@@ -64,7 +68,11 @@
                                         {{ $hero->level }}
                                     </td>
                                     <td >
-                                        {{ $hero->name }}
+                                        @if($champ->id != $hero->id)
+                                            <a href="/hero/{{$hero->id}}">{{ $hero->name }}</a>
+                                        @else
+                                            {{$hero->name}}
+                                        @endif
                                     </td>
                                     <td>
                                         {{ $hero->victories }}
@@ -109,7 +117,11 @@
                                     {{ $hero->level }}
                                 </td>
                                 <td class="red">
-                                    {{ $hero->name }}
+                                    @if($champ->id != $hero->id)
+                                        <a href="/hero/{{$hero->id}}">{{ $hero->name }}</a>
+                                    @else
+                                        {{$hero->name}}
+                                    @endif
                                 </td>
                                 <td class="red">
                                     {{ $hero->victories }}
@@ -124,7 +136,11 @@
                                     {{ $hero->level }}
                                 </td>
                                 <td >
-                                    {{ $hero->name }}
+                                    @if($champ->id != $hero->id)
+                                        <a href="/hero/{{$hero->id}}">{{ $hero->name }}</a>
+                                    @else
+                                        {{$hero->name}}
+                                    @endif
                                 </td>
                                 <td>
                                     {{ $hero->victories }}
@@ -169,7 +185,11 @@
                                         {{ $hero->level }}
                                     </td>
                                     <td class="red">
-                                        {{ $hero->name }}
+                                        @if($champ->id != $hero->id)
+                                            <a href="/hero/{{$hero->id}}">{{ $hero->name }}</a>
+                                        @else
+                                            {{$hero->name}}
+                                        @endif
                                     </td>
                                     <td class="red">
                                         {{ $hero->victories }}
@@ -184,7 +204,11 @@
                                         {{ $hero->level }}
                                     </td>
                                     <td >
-                                        {{ $hero->name }}
+                                        @if($champ->id != $hero->id)
+                                            <a href="/hero/{{$hero->id}}">{{ $hero->name }}</a>
+                                        @else
+                                            {{$hero->name}}
+                                        @endif
                                     </td>
                                     <td>
                                         {{ $hero->victories }}

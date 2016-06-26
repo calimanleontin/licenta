@@ -135,12 +135,20 @@
                     <div class="choose">
                             <select name="{{$category->title}}" class="form-control ">
                                 <div class="form-group">
-                                    <option value="0" class="form-control">Nimic</option>
+                                    <option value="0" class="form-control">Choose</option>
                                 </div>
                                 @foreach($category->products as $product)
                                     @if(in_array($product->id, $products))
                                     <div class="form-group">
+                                        <?php
+                                            $hero_products = \App\Products::where('hero_id', $hero->id)->lists('id');
+                                        ?>
+                                        @if(in_array($product->id, $hero_products))
+                                                <option value="{{ $product->id }}" class="form-control" selected>{{ $product->name }}</option>
+
+                                            @else
                                         <option value="{{ $product->id }}" class="form-control">{{ $product->name }}</option>
+                                        @endif
                                     </div>
                                     @endif
                                 @endforeach

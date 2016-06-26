@@ -59,7 +59,7 @@
                     <td>
 
                         <a href="/set/edit/{{$set->id}}"><div>edit</div></a>
-                        <a href="/set/view/{{$set->slug}}"><div>view</div></a>
+                        <a href="/set/view/{{$set->id}}"><div>view</div></a>
                         <a href="/set/delete/{{$set->id}}"><div>delete</div></a>
                     </td>
                 </tr>

@@ -56,9 +56,9 @@
                         <a href="/product/view/{{$product->slug}}">{{$product->name}} </a>
                         <a href ='/product/view/{{$product->slug}}'>
                             @if(!empty($product->image))
-                            <img src="../images/catalog/{{$product->image}}"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
+                            <img src="/images/catalog/{{$product->image}}"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
                             @else
-                                <img src="../images/catalog/product.jpg"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
+                                <img src="/images/catalog/product.jpg"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
                             @endif
                         </a>
                         <div class="down">
@@ -123,9 +123,9 @@
                             <a href="/product/view/{{$product->slug}}">{{$product->name}} </a>
                             <a href ='/product/view/{{$product->slug}}'>
                                 @if(!empty($product->image))
-                                    <img src="../images/catalog/{{$product->image}}"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
+                                    <img src="/images/catalog/{{$product->image}}"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
                                 @else
-                                    <img src="../images/catalog/product.jpg"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
+                                    <img src="/images/catalog/product.jpg"  style="max-height: 200px; max-width: 120px;"  alt="Product Image" class = 'img-responsive center-block'>
                                 @endif
                             </a>
                             <div class="down">

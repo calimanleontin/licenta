@@ -90,7 +90,8 @@ class CategoryController extends Controller
          * @var $products Products
          */
         $products = $category->products()->paginate(9);
-        return view('home-shop')->withProducts($products)
+        return view('home-shop')
+            ->withProducts($products)
             ->withCategories($categories)
             ->withTitle('Products from the  category '.$category->title);
     }

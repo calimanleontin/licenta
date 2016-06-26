@@ -10,10 +10,11 @@ angular.module('mainCtrl', [])
         var number = href.length;
         var product_route = (href[number-2]);
         var product_slug = (href[number-1]);
+        var first = (href[number-3]);
 
         $scope.loading = true;
 
-        if(product_route == 'view')
+        if(product_route == 'view' && first == 'product')
         {
             
             Comment.get(product_slug)

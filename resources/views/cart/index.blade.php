@@ -38,4 +38,3 @@
     You have nothing in the cart!
     @endif
 @endsection
-

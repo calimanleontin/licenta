@@ -194,23 +194,23 @@ class HomeController extends Controller {
 		$hero = $user->hero;
 		$level_min = $hero->level;
 		$level_max = $hero->level;
-		$nr = 0;
 		$heroes = null;
-		$first_ten = Hero::orderBy('level', 'desc')->limit(5)->get();
-		$last_ten = Hero::orderBy('level', 'asc')->limit(5)->get()	;
-		while(true)
+		$first_ten = Hero::orderBy('level', 'desc')->limit(10)->get();
+		$last_ten = Hero::orderBy('level', 'asc')->limit(10)->get()	;
+		$heroes1 = Hero::where('level','<=' , $level_max)->orderBy('level', 'asc')->limit(4)->get()->all();
+		$heroes1_ids = Hero::where('level','<=' , $level_max)->orderBy('level', 'asc')->limit(4)->lists('id');
+		$heroes2 = Hero::where('level', '>=', $level_min)->orderBy('level', 'desc')->limit(5)->get()->all();
+		if(!in_array($hero->id, $heroes1_ids))
 		{
-			$heroes = Hero::where('level','<=' , $level_max)->where('level', '>=', $level_min)->get();
-			if(count($heroes) >= 5 or $nr == 5)
-				break;
-			$nr ++;
+			$heroes1[] = $hero;
 		}
+		$heroes = array_merge($heroes1, $heroes2);
+
 		return view('championship.top')
 			->with('heroes', $heroes)
 			->with('first_ten', $first_ten)
 			->with('last_ten', $last_ten)
 			->with('champ', $hero);
-
 	}
 
 	/**

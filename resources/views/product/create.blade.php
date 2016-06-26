@@ -68,7 +68,7 @@
         Categories:
     @foreach($categories as $category)
         <div class="form-group">
-            <label>{!!  Form::radio("category[]",$category->title, false) !!} {{$category->title}} </label>
+            <label>{!!  Form::radio("category[]",$category->title, true) !!} {{$category->title}} </label>
         </div>
     @endforeach
     </div>

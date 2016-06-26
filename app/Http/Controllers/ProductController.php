@@ -136,6 +136,7 @@ class ProductController extends Controller
         $product->quantity = $request->input('quantity');
         $product->author_id = $user_id;
         $product->likes = 0;
+//        var_dump($_POST);die();
         $product->slug = str_slug($request->input('name'));
         $product->active = 1;
 
@@ -157,8 +158,14 @@ class ProductController extends Controller
             {
                 $category = Categories::where('title',$category)->first();
                 $product->categories()->attach($category->id);
+                $product->category_id = $category->id;
             }
-
+        if(isset($_POST['set']))
+        {
+            $set = $_POST['set'];
+            $set = Sets::where('name', $set)->first();
+            $product->sets_id = $set->id;
+        }
         $stats = new Stats();
         $stats->perception = Input::get('perception');
         $stats->strength = Input::get('strength');
@@ -273,11 +280,8 @@ class ProductController extends Controller
         }
         if($set != null)
         {
-            if($product->sets_id)
-            {
-                $product->sets_id = null;
-            }
-            $product->sets_id = $set[0];
+            $set = Sets::where('id', $set)->first();
+            $product->sets_id = $set->id;
         }
         $product->save();
         return redirect('/product/view/'.$product->slug)->withMessage('Product updated successfully');
@@ -627,5 +631,17 @@ class ProductController extends Controller
         $comment->author_name = Auth::user()->name;
         $comment->save();
         return \Response::json(true);
+    }
+
+    public function viewSet($id)
+    {
+        $set = Sets::find($id);
+        $products = Products::where('active', 1)->where('sets_id', $id)->paginate(9);
+
+        $title = 'Products from set '.$set->name;
+
+        return view('home-shop')
+            ->withProducts($products)
+            ->withTitle($title);
     }
 }
