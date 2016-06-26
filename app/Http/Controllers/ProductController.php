@@ -10,6 +10,7 @@ use App\ProductView;
 use App\Sets;
 use App\Stats;
 use Illuminate\Http\Request;
+use PhpParser\Comment;
 use \Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -608,6 +609,22 @@ class ProductController extends Controller
         $term = Input::get('term');
         $products = DB::table('products')->where('name', 'like', '%' . $term . '%')->lists('name');
         return Response::json($products);
+    }
 
+    public function getComments($product_slug)
+    {
+        $product = Products::where('slug', $product_slug)->first();
+        $comments = $product->comments;
+        return \Response::json($comments);
+    }
+    
+    public function saveApiComment($product_slug)
+    {
+        $product = Products::where('slug', $product_slug)->first();
+        $comment = new Comments();
+        $comment->content = Input::get('content');
+        $comment->on_product = $product->id;
+        $comment->save();
+        return \Response::json(true);
     }
 }

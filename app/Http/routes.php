@@ -31,7 +31,6 @@ Route::get('/404', 'HomeController@notFound');
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/sort','ProductController@sort');
 
-
 	Route::get('auth/login', 'UserController@getLogin');
 	Route::post('auth/login', 'UserController@postLogin');
 	Route::get('auth/logout', 'UserController@getLogout');
@@ -57,6 +56,10 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/api/auto-complete', 'ProductController@autoComplete');
 		
 		Route::get('/shop',['as' => 'shop', 'uses' => 'ProductController@index']);
+		
+		Route::get('/api/comments/{product_slug}', 'ProductController@getComments');
+		Route::get('/api/getUser', 'UserController@getUser');
+		Route::post('/api/comments/save/{product_slug}', 'ProductController@saveApiComment');
 
 		Route::get('/cart/index','CartController@index');
 		Route::get('/cart/increase/{id}','CartController@increase');

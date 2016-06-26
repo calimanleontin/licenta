@@ -57,11 +57,7 @@
                 @foreach($classes as $class)
                     <div class="hero center hide1" id = 'hero{{ $class->id }}'>
                         <div class= "hero-avatar">
-                            @if(empty($class->image))
-                                <img src="../images/champions/darius.jpg" class="hero-avatar">
-                            @else
                                 <img src="../images/champions/riven.jpg" class="hero-avatar">
-                            @endif
                         </div>
                         <?php
                             $stats = \App\HeroesTypes::find($class->id);

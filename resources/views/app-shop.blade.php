@@ -36,6 +36,7 @@
     <script src="/js/controllers/mainCtrl.js"></script> <!-- load our controller -->
     <script src="/js/services/tagService.js"></script> <!-- load our tag service -->
     <script src="/js/services/commentService.js"></script> <!-- load our comment service -->
+    <script src="/js/services/sanitizeModule.js"></script> <!-- load our comment service -->
     <script src="/js/app.js"></script> <!-- load our application -->
 
 </head>

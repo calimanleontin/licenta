@@ -2,8 +2,8 @@
 @section('title')
     {{$product->name}}
 @endsection
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+{{--<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>--}}
+{{--<script>tinymce.init({ selector:'textarea' });</script>--}}
 
 @section('content')
     <div class="col-md-6">
@@ -93,67 +93,92 @@
 
     @if(!Auth::guest())
     Add a comment:
-    <form method="post" action="/comment/store" class="form-group">
-        <input type = 'hidden' name = '_token' value = "{{csrf_token()}}" >
-        <input type="hidden" name = "product_id" value="{{$product->id}}">
-        <textarea name ='content' class="form-control" placeholder="Comment"></textarea>
-        <div class="form-group">
-            <br>
-        <input type="submit" value="Add Comment" class ='form-control-static btn btn-success' >
-        </div>
-    </form>
+    {{--<form method="post" action="/comment/store" class="form-group">--}}
+        {{--<input type = 'hidden' name = '_token' value = "{{csrf_token()}}" >--}}
+        {{--<input type="hidden" name = "product_id" value="{{$product->id}}">--}}
+        {{--<textarea name ='content' class="form-control" placeholder="Comment"></textarea>--}}
+        {{--<div class="form-group">--}}
+            {{--<br>--}}
+        {{--<input type="submit" value="Add Comment" class ='form-control-static btn btn-success' >--}}
+        {{--</div>--}}
+    {{--</form>--}}
+
+        <form method="post" ng-submit = 'submitComment("{{ $product->slug }} ")'  class="form-group">
+            <input type = 'hidden' name = '_token' value = "{{csrf_token()}}" >
+            <input type="hidden" name = "product_id" value="{{$product->id}}">
+            <textarea name ='content' class="form-control" ng-model="commentData.content" placeholder="Comment"></textarea>
+            <div class="form-group">
+                <br>
+                <input type="submit" value="Add Comment" class ='form-control-static btn btn-success' >
+            </div>
+        </form>
         @else
         You have to be logged in to comment. Log in <a href ='/auth/login'>here</a>.
     @endif
 
 
-    <div>
-        @if(!empty($comments))
-            <ul style="list-style: none; padding: 0">
-                @foreach($comments as $comment)
-                    <li class="panel-body">
-                        <div class="list-group">
-                            <div class="list-group-item">
-                                <p> <strong>{{ $comment->author_name }} </strong> on
-                                {{ $comment->created_at->format('M d,Y \a\t h:i a') }} <br/>
-                                updated at
-                                {{$comment->updated_at->format('M d,Y \a\t h:i a') }}
-                                </p>
-                            </div>
-                            <div class="list-group-item">
-                                <p>{!! $comment->content !!} </p>
+    {{--<div>--}}
+        {{--@if(!empty($comments))--}}
+            {{--<ul style="list-style: none; padding: 0">--}}
+                {{--@foreach($comments as $comment)--}}
+                    {{--<li class="panel-body">--}}
+                        {{--<div class="list-group">--}}
+                            {{--<div class="list-group-item">--}}
+                                {{--<p> <strong>{{ $comment->author_name }} </strong> on--}}
+                                {{--{{ $comment->created_at->format('M d,Y \a\t h:i a') }} <br/>--}}
+                                {{--updated at--}}
+                                {{--{{$comment->updated_at->format('M d,Y \a\t h:i a') }}--}}
+                                {{--</p>--}}
+                            {{--</div>--}}
+                            {{--<div class="list-group-item">--}}
+                                {{--<p>{!! $comment->content !!} </p>--}}
 
-                            </div>
-                            <div class = 'list-group-item'>
-                                @if(!Auth::guest() && ($comment->from_user == Auth::user()->id || Auth::user()->is_admin() || Auth::user()->is_moderator() ))
-                                    <a href="{{  url('comment/delete/'.$comment->id) }}" class="btn btn-danger">Delete comment</a>
-                                @endif
-                                    @if(!Auth::guest() && ($comment->from_user == Auth::user()->id || Auth::user()->is_admin() || Auth::user()->is_moderator() ))
-                                        <a href="{{  url('comment/edit/'.$comment->id) }}" class="btn btn-warning">Edit comment</a>
-                                    @endif
-                            </div>
-                        </div>
-                    </li>
-                @endforeach
+                            {{--</div>--}}
+                            {{--<div class = 'list-group-item'>--}}
+                                {{--@if(!Auth::guest() && ($comment->from_user == Auth::user()->id || Auth::user()->is_admin() || Auth::user()->is_moderator() ))--}}
+                                    {{--<a href="{{  url('comment/delete/'.$comment->id) }}" class="btn btn-danger">Delete comment</a>--}}
+                                {{--@endif--}}
+                                    {{--@if(!Auth::guest() && ($comment->from_user == Auth::user()->id || Auth::user()->is_admin() || Auth::user()->is_moderator() ))--}}
+                                        {{--<a href="{{  url('comment/edit/'.$comment->id) }}" class="btn btn-warning">Edit comment</a>--}}
+                                    {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</li>--}}
+                {{--@endforeach--}}
 
-                    {!! $comments->render() !!}
-            </ul>
-        @endif
+                    {{--{!! $comments->render() !!}--}}
+            {{--</ul>--}}
+        {{--@endif--}}
+    {{--</div>--}}
+
+    <ul style="list-style: none; padding: 0">
+
+    <div class="" ng-hide="loading" ng-repeat = "comment in comments">
+        <li class="panel-body">
+            <div class="list-group">
+                <div class="list-group-item">
+                    <p> <strong>@{{ comment.author_name }} </strong> on
+                        @{{ comment.created_at}} <br/>
+                        updated at
+                        @{{comment.updated_at}}
+                    </p>
+                </div>
+                <div class="list-group-item">
+                    <p>@{{ comment.content | htmlToPlaintext }} </p>
+
+                </div>
+
+                <div class = 'list-group-item'>
+                <div ng-if="user.id != comment.from_user || user.is_admin == true">
+{{--                    <a href="{{  url('comment/delete/'. @{{comment.id}}) }}" class="btn btn-danger">Delete comment</a>--}}
+                    {{--<a href="{{  url('comment/edit/'.$comment->id) }}" class="btn btn-warning">Edit comment</a>--}}
+
+                </div>
+                </div>
+            </div>
+        </li>
     </div>
-
-@endsection
-@section('category-title')
-    Categories
-@endsection
-@section('category-content')
-    @if(!empty($categories))
-        <ul class="list-group">
-            @foreach($categories as $category)
-                <a href = '/category/view/{{$category->slug}}'><li class="list-group-item">{{$category->title}} </li></a>
-            @endforeach
-        </ul>
-    @endif
+    </ul>
 </div>
-
 
 @endsection

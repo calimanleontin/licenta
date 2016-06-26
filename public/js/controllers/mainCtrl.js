@@ -8,66 +8,35 @@ angular.module('mainCtrl', [])
         var href = window.location.href;
         href = href.split('/');
         var number = href.length;
-        var company_slug = (href[number-1]);
-        var secondVar = (href[number-2]);
+        var product_route = (href[number-2]);
+        var product_slug = (href[number-1]);
 
         $scope.loading = true;
-        if(company_slug == 'edit' && secondVar == 'company')
-        {
-            Tag.get()
-                .success(function(data){
-                    $scope.tags = data;
-                    $scope.loading = false;
-                });
-        }
-        var routes = ['login', 'register', 'update', 'edit'];
 
-        if(secondVar == 'company' && company_slug in  routes == false )
+        if(product_route == 'view')
         {
-            $http.get('/api/grades/' + company_slug)
-                .success(function(data){
-                    $scope.average = data['value'];
-                    $scope.myGrade = data['myValue'];
-                });
-            Comment.get(company_slug)
+            
+            Comment.get(product_slug)
                 .success(function(data){
                     $scope.comments = data;
                     $scope.loading = false;
                 });
+            
+            Comment.user()
+                .success(function (data) {
+                    $scope.user = data;
+                    $scope.loading = false;
+                });
         }
 
-        $scope.submitTag = function(){
+
+
+        $scope.submitComment = function(product_slug){
             $scope.loading = true;
 
-            Tag.assign($scope.tagData)
+            Comment.save($scope.commentData, product_slug)
                 .success(function(data){
-                    Tag.get()
-                        .success(function(getData){
-                            $scope.tags = getData;
-                            $scope.loading = false;
-                        });
-                });
-        };
-
-        $scope.deleteTag = function(tagId){
-            $scope.loading = true;
-
-            Tag.destroy(tagId)
-                .success(function(data){
-                    Tag.get()
-                        .success(function(getData){
-                            $scope.tags = getData;
-                            $scope.loading = false;
-                        });
-                });
-        };
-
-        $scope.submitComment = function(companyId){
-            $scope.loading = true;
-
-            Comment.save($scope.commentData, companyId)
-                .success(function(data){
-                    Comment.get(company_slug)
+                    Comment.get(product_slug)
                         .success(function(getData){
                             $scope.comments = getData;
                             $scope.loading = false;

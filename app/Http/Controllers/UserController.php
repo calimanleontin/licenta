@@ -15,6 +15,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use \Auth;
+use \Response;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 
@@ -177,6 +178,13 @@ class UserController extends Controller
         $profile->save();
         $user->profile()->save($profile);
         return redirect ('/user-profile')->withMessage('Updates made successfully');
+    }
+    
+    public function getUser()
+    {
+        
+        $user = Auth::user();
+        return Response::json($user);
     }
 
 }
