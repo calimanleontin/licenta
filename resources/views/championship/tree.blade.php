@@ -17,12 +17,11 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
     <style>
-        /*.navbar.navbar-default{*/
-            /*margin-top:-40px;*/
-            /*position: absolut e;*/
-            /*top:0px;*/
-/**/
-        /*}*/
+        .navbar.navbar-default{
+            position: absolute;
+            top:0px;
+            width:100%;
+        }
     </style>
 
     <script src="/js/jquery.jOrgChart.js"></script>
@@ -93,7 +92,6 @@
                         </ul>
                     </div>
                 </li>
-                </ul>
 
 
             @endif
@@ -101,12 +99,6 @@
     </div>
 </nav>
 
-<div class="topbar">
-    <div class="topbar-inner">
-        <div class="container">
-        </div>
-    </div>
-</div>
 
 <ul id="org" style="display:none">
     <li>
