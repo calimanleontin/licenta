@@ -259,9 +259,10 @@ a.right.carousel-control {
     position: absolute;
     /*bottom:0px;*/
     display: block;
-    background-color: lightblue ;
+    background-color: darkblue ;
     height:45px;
     margin-top:20px;
+    color:white;
 }
 .space-up{
     height:21px;
@@ -285,4 +286,27 @@ a.right.carousel-control {
 #stats{
     text-decoration: underline;
     color:cornflowerblue;
+}
+
+.container-fluid{
+    background-color:dodgerblue ;
+    text-color:white; !important;
+    color:white; !important;
+}
+
+.panel-heading{
+    background-color:dodgerblue; !important;
+
+}
+.btn{
+    background-color:dodgerblue; !important;
+}
+
+.panel.gray.absolute{
+    margin-top:20px;
+}
+
+.input.form-control.left-search{
+    background-color:dodgerblue; !important;
+
 }

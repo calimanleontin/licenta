@@ -145,6 +145,18 @@
     </div>
     </div>
 
+<div class="footer">
+    <div class="">
+        <ul class="list list-unstyled text-center">
+            <li>        Facebook: <a href="https://www.facebook.com/profile.php?id=100006271487210">Caliman Leontin</a>
+            </li>
 
+            <li>
+                Email:<a href="#"> calimanleontin@gmail.com</a>
+
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
