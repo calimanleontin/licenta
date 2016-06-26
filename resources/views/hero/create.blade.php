@@ -57,7 +57,7 @@
                 @foreach($classes as $class)
                     <div class="hero center hide1" id = 'hero{{ $class->id }}'>
                         <div class= "hero-avatar">
-                                <img src="../images/champions/riven.jpg" class="hero-avatar">
+                                <img src="/images/classes/{{$class->image}}" class="hero-avatar">
                         </div>
                         <?php
                             $stats = \App\HeroesTypes::find($class->id);

@@ -5,13 +5,11 @@
 
         <div class="col-md-3 col-sm-4 col-xs-6">
             <div class="hero">
+                <?php
+                    $class = \App\HeroesTypes::find($hero->class_id)
+                    ?>
                 <div class= hero-avatar">
-                    @if($hero->sex == 'masc')
-                        <img src="../images/champions/darius.jpg" class="hero-avatar">
-                    @else
-                        <img src="../images/champions/riven.jpg" class="hero-avatar">
-
-                    @endif
+                        <img src="../images/classes/{{ $class->image }}" class="hero-avatar">
                 </div>
                 <div class="hero-stats">
                     <div class="stat">

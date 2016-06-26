@@ -607,7 +607,7 @@ class ProductController extends Controller
     public function autoComplete()
     {
         $term = Input::get('term');
-        $products = DB::table('products')->where('name', 'like', '%' . $term . '%')->lists('name');
+        $products = DB::table('products')->where('name', 'like', '%' . $term . '%')->where('active',1)->lists('name');
         return Response::json($products);
     }
 
@@ -624,6 +624,7 @@ class ProductController extends Controller
         $comment = new Comments();
         $comment->content = Input::get('content');
         $comment->on_product = $product->id;
+        $comment->author_name = Auth::user()->name;
         $comment->save();
         return \Response::json(true);
     }
