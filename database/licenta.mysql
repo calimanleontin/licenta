@@ -1,0 +1,771 @@
+-- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: licenta
+-- ------------------------------------------------------
+-- Server version	5.5.49-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `author_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `categories_title_unique` (`title`),
+  UNIQUE KEY `categories_slug_unique` (`slug`),
+  KEY `categories_author_id_foreign` (`author_id`),
+  CONSTRAINT `categories_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Arms','arms','',1,'2016-06-26 14:23:03','2016-06-26 14:23:03'),(2,'Legs','legs','',1,'2016-06-26 14:23:07','2016-06-26 14:23:07'),(3,'Chest','chest','',1,'2016-06-26 14:23:14','2016-06-26 14:23:14'),(4,'Head','head','',1,'2016-06-26 14:23:18','2016-06-26 14:23:18'),(5,'Consumable','consumable','',1,'2016-06-26 14:35:10','2016-06-26 14:35:10'),(6,'Shield','shield','',1,'2016-06-26 14:36:23','2016-06-26 14:36:23');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories_products`
+--
+
+DROP TABLE IF EXISTS `categories_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories_products` (
+  `products_id` int(10) unsigned NOT NULL,
+  `categories_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  KEY `categories_products_products_id_index` (`products_id`),
+  KEY `categories_products_categories_id_index` (`categories_id`),
+  CONSTRAINT `categories_products_categories_id_foreign` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `categories_products_products_id_foreign` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories_products`
+--
+
+LOCK TABLES `categories_products` WRITE;
+/*!40000 ALTER TABLE `categories_products` DISABLE KEYS */;
+INSERT INTO `categories_products` VALUES (2,2,'2016-06-26 14:27:36','2016-06-26 14:27:36'),(3,2,'2016-06-26 14:28:34','2016-06-26 14:28:34'),(5,3,'2016-06-26 14:32:04','2016-06-26 14:32:04'),(6,3,'2016-06-26 14:32:55','2016-06-26 14:32:55'),(7,3,'2016-06-26 14:33:20','2016-06-26 14:33:20'),(8,3,'2016-06-26 14:33:50','2016-06-26 14:33:50'),(9,5,'2016-06-26 14:35:29','2016-06-26 14:35:29'),(10,6,'2016-06-26 14:37:00','2016-06-26 14:37:00'),(11,6,'2016-06-26 14:37:54','2016-06-26 14:37:54'),(12,6,'2016-06-26 14:38:34','2016-06-26 14:38:34'),(13,6,'2016-06-26 14:38:55','2016-06-26 14:38:55'),(14,1,'2016-06-26 14:40:32','2016-06-26 14:40:32'),(15,1,'2016-06-26 14:41:15','2016-06-26 14:41:15'),(16,6,'2016-06-26 14:59:53','2016-06-26 14:59:53'),(4,2,'2016-06-26 15:04:51','2016-06-26 15:04:51'),(17,4,'2016-06-26 15:10:37','2016-06-26 15:10:37'),(18,4,'2016-06-26 15:10:59','2016-06-26 15:10:59'),(19,4,'2016-06-26 15:11:54','2016-06-26 15:11:54'),(20,4,'2016-06-26 15:12:28','2016-06-26 15:12:28');
+/*!40000 ALTER TABLE `categories_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `championship`
+--
+
+DROP TABLE IF EXISTS `championship`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `championship` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `reward` int(11) NOT NULL,
+  `level_required` int(10) unsigned NOT NULL DEFAULT '1',
+  `level_one` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level_two` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level_three` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level_four` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `round` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `started` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  `ticket` int(11) NOT NULL,
+  `start_date` date NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `max_experience` int(10) unsigned NOT NULL,
+  `max_places` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `championship`
+--
+
+LOCK TABLES `championship` WRITE;
+/*!40000 ALTER TABLE `championship` DISABLE KEYS */;
+INSERT INTO `championship` VALUES (1,'World War 1',2000,12,'','','','',0,0,1,0,200,'2016-06-30','',600,8,'2016-06-26 15:17:26','2016-06-26 15:17:26'),(2,'World War 2',500,10,'','','','',0,0,0,1,150,'2016-06-29','',500,8,'2016-06-26 16:35:42','2016-06-26 16:35:42'),(3,'Into the JUNGLE',1000,20,'','','','',0,0,0,1,400,'2016-06-30','',1000,8,'2016-06-26 16:36:13','2016-06-26 16:36:13');
+/*!40000 ALTER TABLE `championship` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `on_product` int(10) unsigned DEFAULT NULL,
+  `author_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `comments_on_product_foreign` (`on_product`),
+  KEY `comments_user_id_foreign` (`user_id`),
+  CONSTRAINT `comments_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `comments_on_product_foreign` FOREIGN KEY (`on_product`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,14,'calimanleontin@gmail.com',NULL,'very good','2016-06-26 14:46:55','2016-06-26 14:46:55');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hero`
+--
+
+DROP TABLE IF EXISTS `hero`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hero` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `level` int(10) unsigned NOT NULL DEFAULT '1',
+  `experience` int(10) unsigned NOT NULL DEFAULT '0',
+  `busy` int(11) DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `sex` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `started_at` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ended_at` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `stats_id` int(10) unsigned DEFAULT NULL,
+  `intern_places_id` int(10) unsigned DEFAULT NULL,
+  `outside_places_id` int(10) unsigned DEFAULT NULL,
+  `championship_id` int(10) unsigned DEFAULT NULL,
+  `works_id` int(10) unsigned DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `hero_user_id_foreign` (`user_id`),
+  KEY `hero_stats_id_foreign` (`stats_id`),
+  KEY `hero_intern_places_id_foreign` (`intern_places_id`),
+  KEY `hero_outside_places_id_foreign` (`outside_places_id`),
+  KEY `hero_championship_id_foreign` (`championship_id`),
+  KEY `hero_works_id_foreign` (`works_id`),
+  CONSTRAINT `hero_works_id_foreign` FOREIGN KEY (`works_id`) REFERENCES `works` (`id`),
+  CONSTRAINT `hero_championship_id_foreign` FOREIGN KEY (`championship_id`) REFERENCES `championship` (`id`),
+  CONSTRAINT `hero_intern_places_id_foreign` FOREIGN KEY (`intern_places_id`) REFERENCES `intern_places` (`id`),
+  CONSTRAINT `hero_outside_places_id_foreign` FOREIGN KEY (`outside_places_id`) REFERENCES `outside_places` (`id`),
+  CONSTRAINT `hero_stats_id_foreign` FOREIGN KEY (`stats_id`) REFERENCES `stats` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `hero_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hero`
+--
+
+LOCK TABLES `hero` WRITE;
+/*!40000 ALTER TABLE `hero` DISABLE KEYS */;
+INSERT INTO `hero` VALUES (1,1,200,0,'home','hero1','masc',NULL,NULL,'',1,1,1,NULL,NULL,NULL,NULL,'2016-06-26 14:15:59','2016-06-26 19:39:49'),(2,2,0,0,'home','test1','masc',NULL,NULL,'',4,2,22,NULL,NULL,NULL,NULL,'2016-06-26 16:52:17','2016-06-26 16:52:17'),(3,3,0,0,'home','test2','masc',NULL,NULL,'',1,3,23,NULL,NULL,NULL,NULL,'2016-06-26 16:52:42','2016-06-26 16:52:42'),(4,4,0,0,'home','champ3','masc',NULL,NULL,'',2,4,24,NULL,NULL,NULL,NULL,'2016-06-26 16:53:04','2016-06-26 16:53:04'),(5,5,0,0,'home','champion4','fem',NULL,NULL,'',2,5,25,NULL,NULL,NULL,NULL,'2016-06-26 16:53:31','2016-06-26 16:53:31'),(6,6,0,0,'home','champion5','fem',NULL,NULL,'',3,6,26,NULL,NULL,NULL,NULL,'2016-06-26 16:54:04','2016-06-26 16:54:04'),(7,7,0,0,'home','champion6','masc',NULL,NULL,'',4,7,27,NULL,NULL,NULL,NULL,'2016-06-26 16:54:42','2016-06-26 16:54:42'),(8,8,0,0,'home','champion7','masc',NULL,NULL,'',2,8,28,NULL,NULL,NULL,NULL,'2016-06-26 16:55:18','2016-06-26 16:55:18'),(9,9,0,0,'home','champion8','masc',NULL,NULL,'',2,9,29,NULL,NULL,NULL,NULL,'2016-06-26 16:55:49','2016-06-26 16:55:49'),(10,10,0,0,'home','champion9','masc',NULL,NULL,'',3,10,30,NULL,NULL,NULL,NULL,'2016-06-26 16:56:17','2016-06-26 16:56:17'),(11,30,0,0,'home','champion10','fem',NULL,NULL,'',3,11,31,NULL,NULL,NULL,NULL,'2016-06-26 16:56:44','2016-06-26 16:56:44'),(12,7,0,0,'home','champ111','masc',NULL,NULL,'',4,12,32,NULL,NULL,NULL,NULL,'2016-06-26 17:07:35','2016-06-26 17:07:35');
+/*!40000 ALTER TABLE `hero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `heroes_types`
+--
+
+DROP TABLE IF EXISTS `heroes_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `heroes_types` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `strength` int(10) unsigned NOT NULL DEFAULT '1',
+  `perception` int(10) unsigned NOT NULL DEFAULT '1',
+  `endurance` int(10) unsigned NOT NULL DEFAULT '1',
+  `charisma` int(10) unsigned NOT NULL DEFAULT '1',
+  `intelligence` int(10) unsigned NOT NULL DEFAULT '1',
+  `agility` int(10) unsigned NOT NULL DEFAULT '1',
+  `luck` int(10) unsigned NOT NULL DEFAULT '1',
+  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `author_id` int(10) unsigned DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `heroes_types_author_id_foreign` (`author_id`),
+  CONSTRAINT `heroes_types_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `heroes_types`
+--
+
+LOCK TABLES `heroes_types` WRITE;
+/*!40000 ALTER TABLE `heroes_types` DISABLE KEYS */;
+INSERT INTO `heroes_types` VALUES (1,'warior','',6,4,2,2,1,3,1,'darius.jpg',NULL,'2016-06-26 14:11:06','2016-06-26 15:16:09'),(2,'healer','',0,0,2,0,3,0,4,'31074.jpg',1,'2016-06-26 15:14:47','2016-06-26 15:14:47'),(3,'archer','',3,3,3,0,0,3,0,'25070.jpg',1,'2016-06-26 15:15:55','2016-06-26 15:15:55'),(4,'mage','',0,0,0,3,5,0,5,'42155.jpg',1,'2016-06-26 15:16:48','2016-06-26 15:16:48');
+/*!40000 ALTER TABLE `heroes_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `intern_places`
+--
+
+DROP TABLE IF EXISTS `intern_places`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `intern_places` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level_required` int(10) unsigned NOT NULL DEFAULT '1',
+  `time_spent` int(10) unsigned NOT NULL,
+  `experience` int(11) NOT NULL,
+  `reward` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `intern_places`
+--
+
+LOCK TABLES `intern_places` WRITE;
+/*!40000 ALTER TABLE `intern_places` DISABLE KEYS */;
+/*!40000 ALTER TABLE `intern_places` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `levels`
+--
+
+DROP TABLE IF EXISTS `levels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `levels` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `number` int(10) unsigned NOT NULL,
+  `max_experience` bigint(20) unsigned NOT NULL,
+  `hero_id` int(10) unsigned DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `levels_hero_id_foreign` (`hero_id`),
+  CONSTRAINT `levels_hero_id_foreign` FOREIGN KEY (`hero_id`) REFERENCES `hero` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `levels`
+--
+
+LOCK TABLES `levels` WRITE;
+/*!40000 ALTER TABLE `levels` DISABLE KEYS */;
+INSERT INTO `levels` VALUES (1,1,1087,NULL,'2016-06-26 14:10:51','2016-06-26 14:10:51'),(2,2,2043,NULL,'2016-06-26 14:10:51','2016-06-26 14:10:51'),(3,3,3299,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(4,4,4240,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(5,5,5113,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(6,6,6360,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(7,7,7639,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(8,8,8646,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(9,9,9691,NULL,'2016-06-26 14:10:52','2016-06-26 14:10:52'),(10,10,10288,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(11,11,11236,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(12,12,12510,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(13,13,13874,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(14,14,15193,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(15,15,16301,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(16,16,16549,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(17,17,18063,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(18,18,18618,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(19,19,20783,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(20,20,20329,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(21,21,21235,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(22,22,23970,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(23,23,23489,NULL,'2016-06-26 14:10:53','2016-06-26 14:10:53'),(24,24,24543,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(25,25,25984,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(26,26,27252,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(27,27,27409,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(28,28,28861,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(29,29,29834,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(30,30,31595,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(31,31,33248,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(32,32,32492,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(33,33,35149,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(34,34,36448,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(35,35,37293,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(36,36,38799,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(37,37,38186,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(38,38,40155,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(39,39,41282,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(40,40,43955,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(41,41,44099,NULL,'2016-06-26 14:10:54','2016-06-26 14:10:54'),(42,42,44939,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(43,43,44781,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(44,44,45884,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(45,45,47483,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(46,46,47293,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(47,47,50156,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(48,48,48849,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(49,49,51572,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(50,50,53047,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(51,51,52233,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(52,52,54793,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(53,53,55676,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(54,54,55915,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(55,55,58650,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(56,56,60471,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(57,57,61198,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(58,58,62149,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(59,59,59625,NULL,'2016-06-26 14:10:55','2016-06-26 14:10:55'),(60,60,65544,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(61,61,62507,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(62,62,66533,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(63,63,69161,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(64,64,69109,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(65,65,67931,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(66,66,70177,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(67,67,70858,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(68,68,72567,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(69,69,70379,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(70,70,71126,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(71,71,75688,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(72,72,78161,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(73,73,78553,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(74,74,81210,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(75,75,77129,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(76,76,78373,NULL,'2016-06-26 14:10:56','2016-06-26 14:10:56'),(77,77,78967,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(78,78,84672,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(79,79,82075,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(80,80,85444,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(81,81,84764,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(82,82,86355,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(83,83,84805,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(84,84,91305,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(85,85,91679,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(86,86,92718,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(87,87,92812,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(88,88,92594,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(89,89,93419,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(90,90,96067,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(91,91,95059,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(92,92,97922,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(93,93,96768,NULL,'2016-06-26 14:10:57','2016-06-26 14:10:57'),(94,94,97984,NULL,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(95,95,99198,NULL,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(96,96,103259,NULL,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(97,97,106281,NULL,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(98,98,106995,NULL,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(99,99,103234,NULL,'2016-06-26 14:10:58','2016-06-26 14:10:58');
+/*!40000 ALTER TABLE `levels` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES ('2014_06_04_221754_create_sets_table',1),('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2016_01_31_190500_categories',1),('2016_01_31_193543_order_history',1),('2016_02_15_114653_profile',1),('2016_05_22_103722_stats',1),('2016_05_22_103768_create_outside_places_table',1),('2016_05_22_103769_create_intern_places_table',1),('2016_05_22_103770_create_championships_table',1),('2016_05_22_103772_create_works_table',1),('2016_05_22_103773_hero',1),('2016_05_22_103774_create_levels_table',1),('2016_05_24_192551_create_stat_costs_table',1),('2016_05_29_103772_create_heroes_types_table',1),('2016_05_30_151005_products',1),('2016_05_30_151006_create_products_likes_table',1),('2016_05_30_160620_users_products',1),('2016_06_04_093401_create_product_views_table',1),('2016_07_02_132654_comments',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `author_id` int(11) NOT NULL,
+  `order_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `sum` bigint(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,1,'1',4,1,1000,'2016-06-26 16:36:58','2016-06-26 16:36:58'),(2,1,'1',14,1,100,'2016-06-26 16:36:58','2016-06-26 16:36:58'),(3,1,'1',2,1,40,'2016-06-26 16:36:58','2016-06-26 16:36:58'),(4,1,'1',8,1,500,'2016-06-26 16:36:58','2016-06-26 16:36:58');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `outside_places`
+--
+
+DROP TABLE IF EXISTS `outside_places`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `outside_places` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `level_required` int(10) unsigned NOT NULL DEFAULT '1',
+  `time_spent` int(10) unsigned NOT NULL,
+  `experience` int(11) NOT NULL,
+  `reward` int(11) NOT NULL,
+  `started_on` date NOT NULL,
+  `ends_on` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `outside_places`
+--
+
+LOCK TABLES `outside_places` WRITE;
+/*!40000 ALTER TABLE `outside_places` DISABLE KEYS */;
+INSERT INTO `outside_places` VALUES (1,'Forrest',10,2,80,100,'2016-06-26','2016-06-26','2016-06-26 14:10:48','2016-06-26 14:10:48'),(2,'Sea',20,7,200,1000,'2016-06-26','2016-06-27','2016-06-26 14:10:48','2016-06-26 14:10:48'),(3,'Mountain',30,20,800,2000,'2016-06-26','2016-06-27','2016-06-26 14:10:48','2016-06-26 14:10:48'),(4,'Volcano',40,30,1600,5000,'2016-06-26','2016-06-27','2016-06-26 14:10:48','2016-06-26 14:10:48'),(5,'Hell',50,48,8000,11000,'2016-06-26','2016-06-28','2016-06-26 14:10:48','2016-06-26 14:10:48');
+/*!40000 ALTER TABLE `outside_places` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  KEY `password_resets_email_index` (`email`),
+  KEY `password_resets_token_index` (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_likes`
+--
+
+DROP TABLE IF EXISTS `product_likes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_likes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `likes` bigint(20) NOT NULL DEFAULT '0',
+  `dislikes` bigint(20) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `product_likes_product_id_foreign` (`product_id`),
+  KEY `product_likes_user_id_foreign` (`user_id`),
+  CONSTRAINT `product_likes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `product_likes_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_likes`
+--
+
+LOCK TABLES `product_likes` WRITE;
+/*!40000 ALTER TABLE `product_likes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product_likes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_views`
+--
+
+DROP TABLE IF EXISTS `product_views`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_views` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `view_number` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `product_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `product_views_product_id_foreign` (`product_id`),
+  KEY `product_views_user_id_foreign` (`user_id`),
+  CONSTRAINT `product_views_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `product_views_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_views`
+--
+
+LOCK TABLES `product_views` WRITE;
+/*!40000 ALTER TABLE `product_views` DISABLE KEYS */;
+INSERT INTO `product_views` VALUES (1,1,14,1,'2016-06-26 14:46:48','2016-06-26 14:46:48'),(2,1,16,1,'2016-06-26 14:59:53','2016-06-26 14:59:53'),(3,6,4,1,'2016-06-26 15:00:47','2016-06-26 15:04:51');
+/*!40000 ALTER TABLE `product_views` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `author_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `price` double(8,2) NOT NULL DEFAULT '0.00',
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `quantity` int(10) unsigned NOT NULL DEFAULT '0',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `views` bigint(20) NOT NULL DEFAULT '0',
+  `likes` bigint(20) NOT NULL DEFAULT '0',
+  `dislikes` bigint(20) NOT NULL DEFAULT '0',
+  `noComments` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stats_id` int(10) unsigned DEFAULT NULL,
+  `sets_id` int(10) unsigned DEFAULT NULL,
+  `hero_id` int(10) unsigned DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `products_name_unique` (`name`),
+  UNIQUE KEY `products_slug_unique` (`slug`),
+  KEY `products_author_id_foreign` (`author_id`),
+  KEY `products_stats_id_foreign` (`stats_id`),
+  KEY `products_sets_id_foreign` (`sets_id`),
+  KEY `products_hero_id_foreign` (`hero_id`),
+  CONSTRAINT `products_hero_id_foreign` FOREIGN KEY (`hero_id`) REFERENCES `hero` (`id`),
+  CONSTRAINT `products_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `products_sets_id_foreign` FOREIGN KEY (`sets_id`) REFERENCES `sets` (`id`),
+  CONSTRAINT `products_stats_id_foreign` FOREIGN KEY (`stats_id`) REFERENCES `stats` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,1,'apple',12.00,'','apple',0,100,1,0,0,0,0,'24398.jpg',2,NULL,NULL,'2016-06-26 14:21:57','2016-06-26 14:21:57'),(2,1,'Leg product1',40.00,'','leg-product1',0,11,1,0,0,0,0,'88524.jpg',3,NULL,NULL,'2016-06-26 14:27:36','2016-06-26 16:36:58'),(3,1,'Leg product2',50.00,'','leg-product2',0,12,1,0,0,0,0,'99899.jpg',4,NULL,NULL,'2016-06-26 14:28:34','2016-06-26 14:28:34'),(4,1,'Leg product3',1000.00,'','leg-product3',0,0,0,0,0,0,0,'19269.png',5,1,NULL,'2016-06-26 14:29:42','2016-06-26 16:36:58'),(5,1,'Chest armour 1 ',200.00,'','chest-armour-1',0,9,1,0,0,0,0,'59873.jpg',6,NULL,NULL,'2016-06-26 14:32:03','2016-06-26 14:32:04'),(6,1,'Chest armour 2',200.00,'','chest-armour-2',0,2,1,0,0,0,0,'17976.jpg',7,NULL,NULL,'2016-06-26 14:32:54','2016-06-26 14:32:55'),(7,1,'Chest armour 3',400.00,'','chest-armour-3',0,4,1,0,0,0,0,'24681.jpg',8,NULL,NULL,'2016-06-26 14:33:19','2016-06-26 14:33:20'),(8,1,'Chest armour 4',500.00,'','chest-armour-4',0,0,0,0,0,0,0,'33440.jpg',9,NULL,1,'2016-06-26 14:33:50','2016-06-26 16:40:21'),(9,1,'Banana',20.00,'','banana',0,21,1,0,0,0,0,'',10,NULL,NULL,'2016-06-26 14:35:29','2016-06-26 14:35:30'),(10,1,'Shield armour 1',100.00,'','shield-armour-1',0,10,1,0,0,0,0,'20910.png',11,NULL,NULL,'2016-06-26 14:36:59','2016-06-26 14:37:00'),(11,1,'Shield armour 2',300.00,'','shield-armour-2',0,4,1,0,0,0,0,'96972.jpg',12,NULL,NULL,'2016-06-26 14:37:54','2016-06-26 14:37:54'),(12,1,'Shield armour 3',500.00,'','shield-armour-3',0,10,1,0,0,0,0,'63703.png',13,NULL,NULL,'2016-06-26 14:38:33','2016-06-26 14:38:34'),(13,1,'Shield armour 4',1000.00,'','shield-armour-4',0,1,1,0,0,0,0,'82487.png',14,NULL,NULL,'2016-06-26 14:38:55','2016-06-26 14:38:56'),(14,1,'Arm armour 1',100.00,'','arm-armour-1',0,9,1,0,0,0,0,'23849.jpg',15,NULL,1,'2016-06-26 14:40:32','2016-06-26 16:40:21'),(15,1,'Arm armour 2',200.00,'','arm-armour-2',0,5,1,0,0,0,0,'64510.png',16,NULL,NULL,'2016-06-26 14:41:15','2016-06-26 14:41:15'),(16,1,'Red fruit',0.00,'','cea',6,0,1,0,0,0,0,'43180.jpg',17,4,NULL,'2016-06-26 14:59:07','2016-06-26 14:59:53'),(17,1,'Crest armour 1',100.00,'','crest-armour-1',4,12,1,0,0,0,0,'79049.jpg',18,4,NULL,'2016-06-26 15:10:37','2016-06-26 15:10:37'),(18,1,'Crest armour 2',200.00,'','crest-armour-2',4,6,1,0,0,0,0,'92461.jpg',19,NULL,NULL,'2016-06-26 15:10:59','2016-06-26 15:10:59'),(19,1,'Crest armour 3',300.00,'','crest-armour-3',4,3,1,0,0,0,0,'93195.png',20,NULL,NULL,'2016-06-26 15:11:54','2016-06-26 15:11:54'),(20,1,'Crest armour 4',400.00,'','crest-armour-4',4,1,1,0,0,0,0,'34591.jpg',21,NULL,NULL,'2016-06-26 15:12:28','2016-06-26 15:12:28');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products_user`
+--
+
+DROP TABLE IF EXISTS `products_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products_user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `products_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `products_user_products_id_foreign` (`products_id`),
+  KEY `products_user_user_id_foreign` (`user_id`),
+  CONSTRAINT `products_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `products_user_products_id_foreign` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products_user`
+--
+
+LOCK TABLES `products_user` WRITE;
+/*!40000 ALTER TABLE `products_user` DISABLE KEYS */;
+INSERT INTO `products_user` VALUES (1,4,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,14,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,2,1,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,8,1,'0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `products_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `profiles`
+--
+
+DROP TABLE IF EXISTS `profiles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `profiles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `firstName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lastName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `birthday` date NOT NULL,
+  `telephoneNumber` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `about` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `profiles_user_id_foreign` (`user_id`),
+  CONSTRAINT `profiles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `profiles`
+--
+
+LOCK TABLES `profiles` WRITE;
+/*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
+INSERT INTO `profiles` VALUES (1,1,'','','0000-00-00','','','','2016-06-26 14:15:50','2016-06-26 14:15:50'),(2,2,'','','0000-00-00','','','','2016-06-26 16:51:59','2016-06-26 16:51:59'),(3,3,'','','0000-00-00','','','','2016-06-26 16:52:35','2016-06-26 16:52:35'),(4,4,'','','0000-00-00','','','','2016-06-26 16:52:56','2016-06-26 16:52:56'),(5,5,'','','0000-00-00','','','','2016-06-26 16:53:20','2016-06-26 16:53:20'),(6,6,'','','0000-00-00','','','','2016-06-26 16:53:55','2016-06-26 16:53:55'),(7,7,'','','0000-00-00','','','','2016-06-26 16:54:27','2016-06-26 16:54:27'),(8,8,'','','0000-00-00','','','','2016-06-26 16:55:03','2016-06-26 16:55:03'),(9,9,'','','0000-00-00','','','','2016-06-26 16:55:42','2016-06-26 16:55:42'),(10,10,'','','0000-00-00','','','','2016-06-26 16:56:08','2016-06-26 16:56:08'),(11,11,'','','0000-00-00','','','','2016-06-26 16:56:37','2016-06-26 16:56:37'),(12,12,'','','0000-00-00','','','','2016-06-26 17:07:29','2016-06-26 17:07:29');
+/*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sets`
+--
+
+DROP TABLE IF EXISTS `sets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sets` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `bonus` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sets`
+--
+
+LOCK TABLES `sets` WRITE;
+/*!40000 ALTER TABLE `sets` DISABLE KEYS */;
+INSERT INTO `sets` VALUES (1,'Light','','',12,'2016-06-26 14:23:40','2016-06-26 14:23:40'),(2,'Dark','','',10,'2016-06-26 14:23:46','2016-06-26 14:23:46'),(3,'Fire','','',20,'2016-06-26 14:23:53','2016-06-26 14:23:53'),(4,'Nature','','',11,'2016-06-26 14:24:00','2016-06-26 14:24:00');
+/*!40000 ALTER TABLE `sets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stats`
+--
+
+DROP TABLE IF EXISTS `stats`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stats` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `final_strength` int(10) unsigned NOT NULL DEFAULT '0',
+  `final_perception` int(10) unsigned NOT NULL DEFAULT '0',
+  `final_endurance` int(10) unsigned NOT NULL DEFAULT '0',
+  `final_charisma` int(10) unsigned NOT NULL DEFAULT '0',
+  `final_intelligence` int(10) unsigned NOT NULL DEFAULT '0',
+  `final_agility` int(10) unsigned NOT NULL DEFAULT '0',
+  `final_luck` int(10) unsigned NOT NULL DEFAULT '0',
+  `strength` int(10) unsigned NOT NULL DEFAULT '0',
+  `perception` int(10) unsigned NOT NULL DEFAULT '0',
+  `endurance` int(10) unsigned NOT NULL DEFAULT '0',
+  `charisma` int(10) unsigned NOT NULL DEFAULT '0',
+  `intelligence` int(10) unsigned NOT NULL DEFAULT '0',
+  `agility` int(10) unsigned NOT NULL DEFAULT '0',
+  `luck` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stats`
+--
+
+LOCK TABLES `stats` WRITE;
+/*!40000 ALTER TABLE `stats` DISABLE KEYS */;
+INSERT INTO `stats` VALUES (1,5,5,3,5,9,3,3,3,3,3,3,3,3,1,'2016-06-26 14:15:59','2016-06-26 16:40:21'),(2,0,0,0,0,0,0,0,1,0,0,0,0,0,0,'2016-06-26 14:21:57','2016-06-26 14:21:57'),(3,0,0,0,0,0,0,0,4,2,0,0,0,0,0,'2016-06-26 14:27:36','2016-06-26 14:27:36'),(4,0,0,0,0,0,0,0,0,0,2,2,0,0,0,'2016-06-26 14:28:34','2016-06-26 14:28:34'),(5,0,0,0,0,0,0,0,8,0,0,0,0,0,6,'2016-06-26 14:29:42','2016-06-26 14:29:42'),(6,0,0,0,0,0,0,0,1,0,1,0,1,0,1,'2016-06-26 14:32:04','2016-06-26 14:32:04'),(7,0,0,0,0,0,0,0,5,0,0,0,0,0,0,'2016-06-26 14:32:55','2016-06-26 14:32:55'),(8,0,0,0,0,0,0,0,0,0,0,4,0,0,3,'2016-06-26 14:33:20','2016-06-26 14:33:20'),(9,0,0,0,0,0,0,0,2,2,0,2,6,0,2,'2016-06-26 14:33:50','2016-06-26 14:33:50'),(10,0,0,0,0,0,0,0,0,0,0,3,0,0,0,'2016-06-26 14:35:29','2016-06-26 14:35:29'),(11,0,0,0,0,0,0,0,0,3,0,0,0,0,0,'2016-06-26 14:37:00','2016-06-26 14:37:00'),(12,0,0,0,0,0,0,0,0,0,4,0,0,0,0,'2016-06-26 14:37:54','2016-06-26 14:37:54'),(13,0,0,0,0,0,0,0,0,0,5,0,0,0,0,'2016-06-26 14:38:34','2016-06-26 14:38:34'),(14,0,0,0,0,0,0,0,0,0,5,0,0,0,0,'2016-06-26 14:38:56','2016-06-26 14:38:56'),(15,0,0,0,0,0,0,0,3,0,0,0,0,0,0,'2016-06-26 14:40:32','2016-06-26 14:40:32'),(16,0,0,0,0,0,0,0,0,0,0,4,0,0,0,'2016-06-26 14:41:15','2016-06-26 14:41:15'),(17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'2016-06-26 14:59:07','2016-06-26 14:59:07'),(18,0,0,0,0,0,0,0,2,2,2,0,0,0,0,'2016-06-26 15:10:37','2016-06-26 15:10:37'),(19,0,0,0,0,0,0,0,3,3,3,0,0,0,0,'2016-06-26 15:10:59','2016-06-26 15:10:59'),(20,0,0,0,0,0,0,0,0,0,0,4,3,0,4,'2016-06-26 15:11:54','2016-06-26 15:11:54'),(21,0,0,0,0,0,0,0,4,0,4,0,4,0,0,'2016-06-26 15:12:28','2016-06-26 15:12:28'),(22,0,0,0,3,5,0,5,0,0,0,3,5,0,5,'2016-06-26 16:52:17','2016-06-26 16:52:17'),(23,6,4,2,2,1,3,1,6,4,2,2,1,3,1,'2016-06-26 16:52:42','2016-06-26 16:52:42'),(24,0,0,2,0,3,0,4,0,0,2,0,3,0,4,'2016-06-26 16:53:04','2016-06-26 16:53:04'),(25,0,0,2,0,3,0,4,0,0,2,0,3,0,4,'2016-06-26 16:53:31','2016-06-26 16:53:31'),(26,3,3,3,0,0,3,0,3,3,3,0,0,3,0,'2016-06-26 16:54:04','2016-06-26 16:54:04'),(27,0,0,0,3,5,0,5,0,0,0,3,5,0,5,'2016-06-26 16:54:42','2016-06-26 16:54:42'),(28,0,0,2,0,3,0,4,0,0,2,0,3,0,4,'2016-06-26 16:55:18','2016-06-26 16:55:18'),(29,0,0,2,0,3,0,4,0,0,2,0,3,0,4,'2016-06-26 16:55:49','2016-06-26 16:55:49'),(30,3,3,3,0,0,3,0,3,3,3,0,0,3,0,'2016-06-26 16:56:16','2016-06-26 16:56:16'),(31,3,3,3,0,0,3,0,3,3,3,0,0,3,0,'2016-06-26 16:56:44','2016-06-26 16:56:44'),(32,0,0,0,3,5,0,5,0,0,0,3,5,0,5,'2016-06-26 17:07:35','2016-06-26 17:07:35');
+/*!40000 ALTER TABLE `stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stats_costs`
+--
+
+DROP TABLE IF EXISTS `stats_costs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stats_costs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `strength_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `perception_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `endurance_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `charisma_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `intelligence_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `agility_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `luck_cost` int(10) unsigned NOT NULL DEFAULT '10',
+  `level` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stats_costs`
+--
+
+LOCK TABLES `stats_costs` WRITE;
+/*!40000 ALTER TABLE `stats_costs` DISABLE KEYS */;
+INSERT INTO `stats_costs` VALUES (1,1,10,8,2,2,3,4,1,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(2,19,22,34,3,16,34,6,2,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(3,63,84,90,60,78,60,66,3,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(4,32,81,13,16,16,48,18,4,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(5,28,235,75,33,76,135,15,5,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(6,180,56,47,360,34,30,184,6,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(7,413,8,98,198,228,160,177,7,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(8,98,450,141,234,280,145,104,8,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(9,756,77,81,657,70,280,248,9,'2016-06-26 14:10:58','2016-06-26 14:10:58'),(10,37,132,188,60,560,711,94,10,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(11,114,265,168,23,630,90,365,11,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(12,528,280,720,156,84,165,30,12,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(13,247,266,261,590,25,513,726,13,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(14,264,798,69,174,152,174,407,14,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(15,232,828,76,675,1416,1313,122,15,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(16,1032,858,208,385,245,372,576,16,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(17,1510,196,414,1751,432,59,832,17,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(18,160,1169,952,342,330,1875,1148,18,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(19,1605,464,729,354,345,608,960,19,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(20,2805,1022,855,312,122,351,265,20,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(21,2574,2050,450,2864,1278,935,2646,21,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(22,880,1728,3195,2106,2376,940,2680,22,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(23,2592,540,182,3791,1520,2331,476,23,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(24,893,258,3568,4862,950,1032,442,24,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(25,2100,1687,150,2786,1064,891,2482,25,'2016-06-26 14:10:59','2016-06-26 14:10:59'),(26,2040,3048,1050,1836,2892,721,224,26,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(27,2940,168,82,1560,235,1890,1708,27,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(28,2457,7020,1875,2580,1728,136,1806,28,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(29,880,3703,4930,1862,1647,4100,2920,29,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(30,2992,4464,6188,4756,6129,5697,6425,30,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(31,2344,960,4316,555,4060,7099,1116,31,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(32,4840,846,1088,1375,5073,4374,2197,32,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(33,1727,1212,3762,424,3003,4888,1584,33,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(34,7074,3094,3910,5184,230,1664,7260,34,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(35,1050,2235,3360,9452,1092,6264,6650,35,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(36,2460,279,1859,4704,572,2750,2720,36,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(37,2849,880,1769,3870,1920,3382,4192,37,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(38,1092,3938,2990,3058,1404,453,1276,38,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(39,5346,1530,3456,7640,2300,8832,5200,39,'2016-06-26 14:11:00','2016-06-26 14:11:00'),(40,1460,1680,3069,2880,5544,7640,2172,40,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(41,4617,4224,13392,1288,750,7744,9248,41,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(42,1520,1152,1182,775,10063,2486,3496,42,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(43,10659,3852,3048,1290,6120,6696,4628,43,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(44,2660,1305,5850,9000,7289,3609,4428,44,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(45,8880,3032,7725,8800,3780,10680,6400,45,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(46,3220,7245,16692,13653,1610,7644,2185,46,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(47,10920,3798,8976,1544,5624,1054,742,47,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(48,9240,1225,4059,11521,816,2952,3780,48,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(49,13764,9048,6510,15092,197,1972,1990,49,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(50,13132,3880,14500,20962,8022,15314,8426,50,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(51,9006,12308,2068,2664,2952,4140,8460,51,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(52,16160,12737,3750,3375,3450,4232,23690,52,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(53,13533,5742,4836,1430,4392,8616,5720,53,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(54,23358,10208,14085,14896,5271,13950,26418,54,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(55,13468,906,2316,14112,4116,13986,3008,55,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(56,6336,14491,6344,12882,6555,2340,4548,56,'2016-06-26 14:11:01','2016-06-26 14:11:01'),(57,14212,861,17874,1572,3198,4392,15198,57,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(58,12160,9966,900,11596,28203,14063,6784,58,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(59,23828,3774,3556,22734,7105,1482,1384,59,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(60,240,33408,9438,6289,15100,3936,19665,60,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(61,5814,24367,18124,21000,7709,4328,4800,61,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(62,8928,3528,24118,4060,2360,17172,24067,62,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(63,8610,6578,990,1215,27054,4324,5487,63,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(64,3390,8190,27328,9622,19392,6762,22770,64,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(65,7056,11648,10207,23951,6754,23265,3432,65,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(66,1336,10780,6232,20412,10800,3536,18321,66,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(67,19371,1572,4984,6150,14364,27508,17178,67,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(68,11934,18212,3608,8798,24299,8946,5265,68,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(69,37855,6440,10850,18088,5258,512,21279,69,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(70,10626,1212,26316,22134,3174,7623,32686,70,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(71,33855,15360,25370,3971,6762,12742,8398,71,'2016-06-26 14:11:02','2016-06-26 14:11:02'),(72,20664,224,5200,1540,1938,21735,9295,72,'2016-06-26 14:11:03','2016-06-26 14:11:03'),(73,7930,33794,9367,13080,27720,38464,18204,73,'2016-06-26 14:11:03','2016-06-26 14:11:03'),(74,12537,3549,4438,4370,15435,4940,35836,74,'2016-06-26 14:11:03','2016-06-26 14:11:03'),(75,39360,43949,21566,17790,7056,31020,32872,75,'2016-06-26 14:11:03','2016-06-26 14:11:03'),(76,9700,13524,4700,189,19525,9971,10368,76,'2016-06-26 14:11:03','2016-06-26 14:11:03'),(77,352,20876,7194,24999,24525,23698,37504,77,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(78,3588,17936,43617,12551,4577,35466,7790,78,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(79,9512,13860,25116,4807,420,32400,26650,79,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(80,4920,4872,1406,28765,41595,2224,5044,80,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(81,1068,50718,8975,20992,10128,1472,33489,81,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(82,16629,29079,38352,7482,42944,13511,30814,82,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(83,27048,14353,11352,25500,29697,38080,16697,83,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(84,61831,29256,15960,49203,45583,15036,28320,84,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(85,3146,33456,46400,5055,14210,9520,23270,85,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(86,28026,19404,39500,21420,7836,17918,10854,86,'2016-06-26 14:11:04','2016-06-26 14:11:04'),(87,49664,3784,62080,5474,24750,3160,8107,87,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(88,27432,18648,9483,40800,17490,17325,29564,88,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(89,3840,57600,5750,4345,492,2224,9925,89,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(90,6591,10922,39728,29640,13500,17630,32960,90,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(91,12367,4424,12441,42480,52374,43168,13125,91,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(92,26048,41310,33626,47824,3718,27018,45346,92,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(93,1184,7618,13785,8832,9270,10595,8442,93,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(94,8208,48190,2285,14801,38157,44118,2475,94,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(95,15390,6132,45220,27600,52886,35074,63832,95,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(96,51336,15984,11815,17618,12684,31418,39856,96,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(97,14620,22500,41847,5553,1935,36100,45560,97,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(98,44800,23693,39546,46665,17966,58440,29700,98,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(99,4779,4266,20520,30450,6472,29928,7176,99,'2016-06-26 14:11:05','2016-06-26 14:11:05'),(100,72765,13770,19883,25331,9114,1585,12312,100,'2016-06-26 14:11:06','2016-06-26 14:11:06');
+/*!40000 ALTER TABLE `stats_costs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `role` enum('admin','user','moderator') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'admin',
+  `views` bigint(20) NOT NULL DEFAULT '0',
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dictionary` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `money` bigint(20) unsigned NOT NULL DEFAULT '2000',
+  `reference` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'calimanleontin@gmail.com','calimanleontin@gmail.com','$2y$10$VvQ/O67NlROrCL8.jPtvm.DGqnGwkaXRb5RwaNHtexu6Ac5JwJfci','admin',0,'S91Hq3bnRh3pZoTnckbULckiXF9xhs5XSai9cuvAnSVEqokt8pK9L7Dq8Bik','','',560,'','2016-06-26 14:15:49','2016-06-26 19:39:49'),(2,'test1','test1@gmail.com','$2y$10$BE9xKx3w6/F1J2yUy8w/5.jLzzYZ.Lg/h35LELvmg2QdGwGTHJG1S','admin',0,'bHQ3sAEI0vLBebglZiA2oyZKsgDFl9Cp9AuyendbByCYErqxRAmWJsBWA1LP','','',2000,'','2016-06-26 16:51:58','2016-06-26 16:52:23'),(3,'test2','test2@gmail.com','$2y$10$Ylbf.F39kMHC6IK290qXTOoSs3bXJQORIDo44E9.KRcvsifRTgfri','admin',0,'g3WEv6JxAl5XmQrGICxvM1SRZLRpfMwxCxE8JeeldypImMbGWXUEDhfMsqyE','','',2000,'','2016-06-26 16:52:35','2016-06-26 16:52:45'),(4,'test3','test3@gmail.com','$2y$10$q4lpiQSJZrAgcbY7LiWZmOsvOuyLYgrHPV1pLM7S1utY9TsB4DIZW','admin',0,'eINx72srFA4dSvMzfGdGnYFIKARZMOlyhL2HYrUI8PSBsL2IeaE3k1EpxhNL','','',2000,'','2016-06-26 16:52:56','2016-06-26 16:53:07'),(5,'champion4','champion4@gmail.com','$2y$10$e8q4eSe.uxnYaOi.tM1efeyBLG0i70kXrpWZY6O0ltGRciL6yNRaO','admin',0,'zUmC5iHEjK7zHRtKYYco4BTgp5jai5umPYplD4y6mkzV2klVtp7QUkZS6Bmw','','',2000,'','2016-06-26 16:53:20','2016-06-26 16:53:34'),(6,'champion5','champion5@gmail.com','$2y$10$mOCBs8v7lhyR4uRaPkGFdO29f0.5Fb2jkUO0a0oyRv0QLIGPnBnB.','admin',0,'1u2t9S3xwJNu7MC9nFBh5NGokhMadVC5ZNhcUXJ9fq2hsnkBvURe2UW3ylAU','','',2000,'','2016-06-26 16:53:55','2016-06-26 16:54:09'),(7,'champion6','champion6@gmail.com','$2y$10$XtKWyUwMgXXzw3Ys65ocEuM8CLFGZiu.MX3JSiQzMEIpDxumArhm.','admin',0,'dKY8jWPhwQkc735340jlfBc8orUtaajaaSfxsLQr09PbHJjOhREIQVFy6xaU','','',2000,'','2016-06-26 16:54:27','2016-06-26 16:54:46'),(8,'champion7','champion7@gmail.com','$2y$10$ABUe2k/ulMU4SmPrb7K9MeZStmu/qyf4ohpkOu8CR1D9roiHT5x7C','admin',0,'1G5J8XJZD0H4KAalQ4qgkneIWRfmSXLFBW9Bn5wEDbQRsGF0MvGs626IKYeH','','',2000,'','2016-06-26 16:55:03','2016-06-26 16:55:25'),(9,'champion8','champion8@gmail.com','$2y$10$1Cfv85nIpfC/P7cathQjL.0ksRg.QWMqjC8m0j1xf7htNgxipqfeq','admin',0,'4Yyraq1FkiE9T2ecvYZJQMAcs0W51bHML8OMCQ9iX7JBJWc6yck0iQcYggRe','','',2000,'','2016-06-26 16:55:42','2016-06-26 16:55:52'),(10,'champion9','champion9@gmail.com','$2y$10$OMcF9mut0R6M5rL1ZjlW/uetFEkMO/TSxxOFJDwd9dzbSzwmtktC6','admin',0,'rHd48GGRkepB7vD96u3VQbMajK6ddR2fym5DkGKUWuP8p76zdsNua7E2nIWg','','',2000,'','2016-06-26 16:56:08','2016-06-26 16:56:19'),(11,'champion10','champion10@gmail.com','$2y$10$MdG3E5E/XcQ/h50rl608u.t8oqg0GGYoZtVaJJiCSrmbI8h96GXYq','admin',0,'6qo7RH5IygkcPIgewOjVGvuad0zMyi69NG8QnLMWRjD7KKHeS8F3a4VG36Tg','','',2000,'','2016-06-26 16:56:36','2016-06-26 17:07:15'),(12,'champ111','champ111@gmail.com','$2y$10$HBHaf.T.paQn6oohfGDOiOp4zOELmgLuUa52ETMyZKPNHZ6R45U5u','admin',0,NULL,'','',2000,'','2016-06-26 17:07:29','2016-06-26 17:07:29');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `works`
+--
+
+DROP TABLE IF EXISTS `works`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `works` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `time_spent` int(11) NOT NULL,
+  `experience` int(11) NOT NULL,
+  `started_on` date NOT NULL,
+  `ends_on` date NOT NULL,
+  `reward` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `works`
+--
+
+LOCK TABLES `works` WRITE;
+/*!40000 ALTER TABLE `works` DISABLE KEYS */;
+INSERT INTO `works` VALUES (1,'Home',2,10,'2016-06-26','2016-06-26',500,'2016-06-26 14:10:49','2016-06-26 14:10:49'),(2,'Sea',8,80,'2016-06-26','2016-06-27',5000,'2016-06-26 14:10:49','2016-06-26 14:10:49'),(3,'Jungle',12,120,'2016-06-26','2016-06-27',10000,'2016-06-26 14:10:49','2016-06-26 14:10:49');
+/*!40000 ALTER TABLE `works` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-06-27  2:03:35
