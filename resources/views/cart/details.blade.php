@@ -32,6 +32,10 @@
         </table>
         Total price :{{$total}}
     @endif
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
 @endsection
 @section('category-title')
     Categories

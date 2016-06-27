@@ -61,6 +61,7 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/api/getUser', 'UserController@getUser');
 		Route::post('/api/comments/save/{product_slug}', 'ProductController@saveApiComment');
 		Route::get('/set/view/{id}', 'ProductController@viewSet');
+		Route::get('/championship/view/{id}', 'ChampionshipController@show');
 
 		Route::get('/cart/index','CartController@index');
 		Route::get('/cart/increase/{id}','CartController@increase');
@@ -140,7 +141,6 @@ Route::group(['middleware' => ['admin']], function() {
 
 	Route::post('/championship/store', 'ChampionshipController@store');
 	Route::get('/championship/create', 'ChampionshipController@create');
-	Route::get('/championship/view/{id}', 'ChampionshipController@show');
 	Route::get('/championship/destroy/{id}', 'ChampionshipController@destroy');
 
 	Route::get('/backend/classes', 'BackendController@classes');

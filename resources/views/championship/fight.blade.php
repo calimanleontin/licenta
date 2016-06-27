@@ -14,13 +14,11 @@
                 </div>
                 <div class="panel-body">
                         <div class= hero-avatar">
-                            @if($challenger->sex == 'masc')
-                                <img src="../images/champions/darius.jpg" class="hero-avatar-fight">
-                            @else
-                                <img src="../images/champions/riven.jpg" class="hero-avatar-fight">
 
-                            @endif
-                        </div>
+                            <?php
+                            $class = \App\HeroesTypes::find($challenged->class_id);
+                            ?>
+                            <img src="/images/classes/{{$class->image}}" class="hero-avatar-fight">                        </div>
                         <div class="hero-stats">
                             <div class="stat">
                                 <div class="stat-title">
@@ -119,12 +117,10 @@
                 <div class="panel-body">
 
                         <div class= hero-avatar">
-                            @if($challenged->sex == 'masc')
-                                <img src="../images/champions/darius.jpg" class="hero-avatar-fight">
-                            @else
-                                <img src="../images/champions/riven.jpg" class="hero-avatar-fight">
-
-                            @endif
+                            <?php
+                                $class = \App\HeroesTypes::find($challenged->class_id);
+                                ?>
+                            <img src="/images/classes/{{$class->image}}" class="hero-avatar-fight">
                         </div>
                         <div class="hero-stats">
                             <div class="stat">

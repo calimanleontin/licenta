@@ -37,4 +37,10 @@
     @else
     You have nothing in the cart!
     @endif
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+    <div class="space-up"></div>
+
 @endsection

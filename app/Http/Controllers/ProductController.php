@@ -602,7 +602,7 @@ class ProductController extends Controller
             $ids = array_unique(array_merge($ids, $products_ids));
         }
 
-        $products = Products::whereIn('id', $ids)->paginate(9);
+        $products = Products::whereIn('id', $ids)->paginate(2000);
         return view('home-shop')
             ->with('products', $products)
             ->with('title', 'We recommend this ');
